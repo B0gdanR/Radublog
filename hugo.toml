@@ -13,9 +13,6 @@ theme = 'hugo-clarity'
   socialShare = false
   logo = ""
   customCSS = ["css/custom.css"]
-  # Disable language switching
-  enableLangChange = false
-  disableLanguageSwitchingButton = true
   # Tell Hugo to look for posts in 'post' directory (singular)
   mainSections = ["post"]
 
