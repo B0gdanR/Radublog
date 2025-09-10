@@ -13,14 +13,14 @@ theme = 'hugo-clarity'
   socialShare = false
   logo = ""
   customCSS = ["css/custom.css"]
+  # Disable language switching completely
+  enableLangChange = false
+  disableLanguageSwitchingButton = true
 
-disableLanguages = ["pt"]
+# Remove multiple language support
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 disableKinds = ["sitemap", "robotsTXT"]
 removePathAccents = true
 
-[languages]
-[languages.en]
-  languageName = "English"
-  weight = 1
+# Remove the languages section entirely since you only want English
