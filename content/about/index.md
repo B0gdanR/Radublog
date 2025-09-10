@@ -1,33 +1,38 @@
-/* Background image for post previews */
-.excerpt_bg {
-    background-size: 120%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    min-height: 120px;
-}
+---
 
-.excerpt_bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-}
+title: "About"
 
-.excerpt_bg .excerpt_header,
-.excerpt_bg .excerpt_footer,
-.excerpt_bg .pale {
-    position: relative;
-    z-index: 2;
-    color: white;
-}
+date: "2025-09-09T14:30:00+03:00"
 
-.excerpt_bg .post_link a {
-    color: white;
-}
+share: false
+
+---
+
+
+
+\# About Me
+
+
+
+Welcome! My name is \*\*Radu Bogdan\*\* from Bucharest, Romania and I'm the author of www.HalfOnCloud.com, a blog about \*\*Modern Workplace\*\* technologies.
+
+
+
+\*\*Over 17 years of experience\*\* in the IT industry, currently working as a \*\*System Engineer\*\* mainly focused on Microsoft technologies (Configuration Manager, Active Directory, Intune, EntraID, AzureAD, M365) and VMware virtualization.
+
+
+
+I've started this blog to store my notes on various \*\*solutions, procedures and fixes\*\*.
+
+
+
+---
+
+
+
+<a href="https://buymeacoffee.com/yourusername" target="\_blank" style="display: inline-block; background-color: #FFDD00; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 20px 0;">
+
+&nbsp; ☕ Buy me a coffee
+
+</a>
+

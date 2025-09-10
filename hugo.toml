@@ -17,3 +17,10 @@ theme = 'hugo-clarity'
 disableLanguages = ["pt"]
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+disableKinds = ["sitemap", "robotsTXT"]
+removePathAccents = true
+
+[languages]
+[languages.en]
+  languageName = "English"
+  weight = 1
