@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Half on Cloud</title><link>https://halfoncloud.com/</link><description>Recent content on Half on Cloud</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Copyright © 2025, Radu and the Hugo Authors; all rights reserved.</copyright><atom:link href="https://halfoncloud.com/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://halfoncloud.com/post/2025-08-31-sunday/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/2025-08-31-sunday/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="sunday-august-31-2025"&gt;Sunday, August 31, 2025&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/2025/08-August/2025-08-30-Saturday|Yesterday]] | [[Timestamps/2025/09-September/2025-09-01-Monday|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-weekends-tasks"&gt;📅 Weekend's Tasks:&lt;/h3&gt;
+&lt;h5 id="-this-weekend-i"&gt;🌞 This weekend, I...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Managed to study a bit about [[Obsidian]]&lt;/li&gt;
+&lt;li&gt;Managed to add two Community plugins: &amp;quot;&lt;em&gt;Templater&lt;/em&gt;&amp;quot; and &amp;quot;&lt;em&gt;Dataview&lt;/em&gt;&amp;quot;
+Obsidian Daily Note Template: &lt;a href="https://dannb.org/blog/2022/obsidian-daily-note-template/"&gt;https://dannb.org/blog/2022/obsidian-daily-note-template/&lt;/a&gt;
+Raw code for Daily Note Template Gist: &lt;a href="https://gist.github.com/dannberg/48ea2ba3fc0abdf3f219c6ad8bc78eb6"&gt;https://gist.github.com/dannberg/48ea2ba3fc0abdf3f219c6ad8bc78eb6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;![[Pasted image 20250831223257.png|400]]&lt;/p&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Getting closer to create my new blog as a [[Static Site]] still deciding on the hosting choices (the picture bellow is just for reference), since I've already have one here locally&lt;/li&gt;
+&lt;li&gt;Bellow a screenshot from&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;![[Hugo Site.png|900]]&lt;/p&gt;</description></item><item><title/><link>https://halfoncloud.com/post/2025-09-01-monday/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/2025-09-01-monday/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="monday-september-01-2025"&gt;Monday, September 01, 2025&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/2025/08-August/2025-08-31-Sunday|Yesterday]] | [[Timestamps/2025/09-September/2025-09-02-Tuesday|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-daily-questions"&gt;📅 Daily Questions&lt;/h3&gt;
+&lt;h5 id="-last-night-after-work-i"&gt;🌜 Last night, after work, I...&lt;/h5&gt;
+&lt;p&gt;Study a bit about &lt;em&gt;Consensus&lt;/em&gt; and &lt;em&gt;Zotero&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;👉 &lt;strong&gt;In short:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;[[Consensus]] = research discovery + summaries.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;[[Zotero]] = reference library + citation manager.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;p&gt;Ollama&lt;/p&gt;
+&lt;h5 id="-one-thing-i-plan-to-accomplish-today-is"&gt;🚀 One+ thing I plan to accomplish today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-struggling-with-today-is"&gt;👎 One thing I'm struggling with today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="-notes"&gt;📝 Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="notes-created-today"&gt;Notes created today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.cday = date(&amp;#34;2025-09-01&amp;#34;) SORT file.ctime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="notes-last-touched-today"&gt;Notes last touched today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.mday = date(&amp;#34;2025-09-01&amp;#34;) SORT file.mtime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://halfoncloud.com/post/2025-09-02-tuesday/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/2025-09-02-tuesday/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="tuesday-september-02-2025"&gt;Tuesday, September 02, 2025&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/2025/09-September/2025-09-01-Monday|Yesterday]] | [[Timestamps/2025/09-September/2025-09-03-Wednesday|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-daily-questions"&gt;📅 Daily Questions&lt;/h3&gt;
+&lt;h5 id="-last-night-after-work-i"&gt;🌜 Last night, after work, I...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about Obsidian [[Callouts]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-i-plan-to-accomplish-today-is"&gt;🚀 One+ thing I plan to accomplish today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-struggling-with-today-is"&gt;👎 One thing I'm struggling with today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="-notes"&gt;📝 Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="notes-created-today"&gt;Notes created today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.cday = date(&amp;#34;2025-09-02&amp;#34;) SORT file.ctime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="notes-last-touched-today"&gt;Notes last touched today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.mday = date(&amp;#34;2025-09-02&amp;#34;) SORT file.mtime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://halfoncloud.com/post/2025-09-08-monday/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/2025-09-08-monday/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="monday-september-08-2025"&gt;Monday, September 08, 2025&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/2025/09-September/2025-09-07-Sunday|Yesterday]] | [[Timestamps/2025/09-September/2025-09-09-Tuesday|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-daily-questions"&gt;📅 Daily Questions&lt;/h3&gt;
+&lt;h5 id="-last-night-after-work-i"&gt;🌜 Last night, after work, I...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-i-plan-to-accomplish-today-is"&gt;🚀 One+ thing I plan to accomplish today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-struggling-with-today-is"&gt;👎 One thing I'm struggling with today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="-notes"&gt;📝 Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="notes-created-today"&gt;Notes created today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.cday = date(&amp;#34;2025-09-08&amp;#34;) SORT file.ctime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="notes-last-touched-today"&gt;Notes last touched today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.mday = date(&amp;#34;2025-09-08&amp;#34;) SORT file.mtime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://halfoncloud.com/post/2025-09-09-tuesday/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/2025-09-09-tuesday/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="tuesday-september-09-2025"&gt;Tuesday, September 09, 2025&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/2025/09-September/2025-09-08-Monday|Yesterday]] | [[Timestamps/2025/09-September/2025-09-10-Wednesday|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-daily-questions"&gt;📅 Daily Questions&lt;/h3&gt;
+&lt;h5 id="-last-night-after-work-i"&gt;🌜 Last night, after work, I...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-i-plan-to-accomplish-today-is"&gt;🚀 One+ thing I plan to accomplish today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-struggling-with-today-is"&gt;👎 One thing I'm struggling with today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="-notes"&gt;📝 Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="notes-created-today"&gt;Notes created today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.cday = date(&amp;#34;2025-09-09&amp;#34;) SORT file.ctime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="notes-last-touched-today"&gt;Notes last touched today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.mday = date(&amp;#34;2025-09-09&amp;#34;) SORT file.mtime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://halfoncloud.com/post/template-daily-note/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/post/template-daily-note/</guid><description>
+&lt;p&gt;tags:: [[+Daily Notes]]&lt;/p&gt;
+&lt;h1 id="-momenttpfiletitleyyyy-mm-ddformatdddd-mmmm-dd-yyyy-"&gt;&amp;lt;% moment(tp.file.title,'YYYY-MM-DD').format(&amp;quot;dddd, MMMM DD, YYYY&amp;quot;) %&amp;gt;&lt;/h1&gt;
+&lt;p&gt;&amp;lt;&amp;lt; [[Timestamps/&amp;lt;% tp.date.now(&amp;quot;YYYY&amp;quot;, -1) %&amp;gt;/&amp;lt;% tp.date.now(&amp;quot;MM-MMMM&amp;quot;, -1) %&amp;gt;/&amp;lt;% tp.date.now(&amp;quot;YYYY-MM-DD-dddd&amp;quot;, -1) %&amp;gt;|Yesterday]] | [[Timestamps/&amp;lt;% tp.date.now(&amp;quot;YYYY&amp;quot;, 1) %&amp;gt;/&amp;lt;% tp.date.now(&amp;quot;MM-MMMM&amp;quot;, 1) %&amp;gt;/&amp;lt;% tp.date.now(&amp;quot;YYYY-MM-DD-dddd&amp;quot;, 1) %&amp;gt;|Tomorrow]] &amp;gt;&amp;gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="-daily-questions"&gt;📅 Daily Questions&lt;/h3&gt;
+&lt;h5 id="-last-night-after-work-i"&gt;🌜 Last night, after work, I...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-excited-about-right-now-is"&gt;🙌 One thing I'm excited about right now is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-i-plan-to-accomplish-today-is"&gt;🚀 One+ thing I plan to accomplish today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="-one-thing-im-struggling-with-today-is"&gt;👎 One thing I'm struggling with today is...&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="-notes"&gt;📝 Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="notes-created-today"&gt;Notes created today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.cday = date(&amp;#34;&amp;lt;%tp.date.now(&amp;#34;YYYY-MM-DD&amp;#34;)%&amp;gt;&amp;#34;) SORT file.ctime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="notes-last-touched-today"&gt;Notes last touched today&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;List FROM &amp;#34;&amp;#34; WHERE file.mday = date(&amp;#34;&amp;lt;%tp.date.now(&amp;#34;YYYY-MM-DD&amp;#34;)%&amp;gt;&amp;#34;) SORT file.mtime asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
