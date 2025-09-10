@@ -1,0 +1,12 @@
+{{- $t := site.Title -}}
+<a href='{{ absLangURL "" }}' class="nav_brand nav_item{{ with .class }} {{ . }}{{ end }}" title="{{ $t }}">
+  <span style="font-size: 1.8rem; font-weight: bold;">Half<span style="color: #ff4444;">On</span>Cloud</span>
+  {{- if ne (strings.HasSuffix .class "center") true }}
+  <div class="nav_close">
+    <div>
+      {{- partialCached "sprite" (dict "icon" "open-menu") -}}
+      {{- partial "sprite" (dict "icon" "closeme") -}}
+    </div>
+  </div>
+  {{- end }}
+</a>

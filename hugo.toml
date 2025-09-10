@@ -1,3 +1,19 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://halfoncloud.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'HalfOnCloud'
+theme = 'hugo-clarity'
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  description = "IT tutorials, automation scripts, and Microsoft technology insights"
+  showShare = false
+  socialShare = false
+  logo = ""
+  customCSS = ["css/custom.css"]
+
+disableLanguages = ["pt"]
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false

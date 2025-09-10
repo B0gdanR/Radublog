@@ -1,64 +1,87 @@
 [[main]]
   name = "Home"
-  url = ""
-  weight = -110
+  url = "/"
+  weight = 10
 
 [[main]]
-  name = "Archives"
-  url = "post/rich-content/"
-  weight = -109
+  name = "Microsoft"
+  url = "/categories/microsoft/"
+  identifier = "Microsoft"
+  weight = 20
 
-# Submenus are done this way: parent -> identifier
 [[main]]
-  name = "Links"
-  identifier = "Links"
-  weight = -108
+  name = "Azure"
+  url = "/tags/azure/"
+  parent = "Microsoft"
+  weight = 21
+
 [[main]]
-  parent = "Links"
-  name = "LinkedIn"
-  url = "https://www.linkedin.com/"
+  name = "Intune"
+  url = "/tags/intune/"
+  parent = "Microsoft"
+  weight = 22
+
 [[main]]
-  parent = "Links"
-  name = "X"
-  url = "https://x.com/"
+  name = "SCCM"
+  url = "/tags/sccm/"
+  parent = "Microsoft"
+  weight = 23
+
+[[main]]
+  name = "EntraID"
+  url = "/tags/entraid/"
+  parent = "Microsoft"
+  weight = 24
+
+[[main]]
+  name = "M365"
+  url = "/tags/m365/"
+  parent = "Microsoft"
+  weight = 25
+
+[[main]]
+  name = "Virtualization"
+  url = "/categories/virtualization/"
+  identifier = "Virtualization"
+  weight = 30
+
+[[main]]
+  name = "VMware"
+  url = "/tags/vmware/"
+  parent = "Virtualization"
+  weight = 31
+
+[[main]]
+  name = "Hyper-V"
+  url = "/tags/hyperv/"
+  parent = "Virtualization"
+  weight = 32
+
+[[main]]
+  name = "Automation"
+  url = "/categories/automation/"
+  identifier = "Automation"
+  weight = 40
+
+[[main]]
+  name = "PowerShell"
+  url = "/tags/powershell/"
+  parent = "Automation"
+  weight = 41
+
+[[main]]
+  name = "Scripting"
+  url = "/tags/scripting/"
+  parent = "Automation"
+  weight = 42
+
+[[main]]
+  name = "Efficiency"
+  url = "/tags/efficiency/"
+  parent = "Automation"
+  weight = 43
 
 [[main]]
   name = "About"
-  url = "about/"
-  weight = -107
-
-# social menu links
-
-[[social]]
-  name = "github"
-  type = "social"
-  weight = 1
-  url = "https://github.com/#"
-[[social]]
-  name = "X"
-  weight = 2
-  url = "https://x.com/#"
-[[social]]
-  name = "linkedin"
-  weight = 3
-  url = "https://www.linkedin.com/in/#"
-[[social]]
-  name = "rss"
-  weight = 4
-  url = "index.xml"
-
-# other supported social links
-# name = "youtube"
-# url = "https://www.youtube.com/#"
-# name = "facebook"
-# url = "https://facebook.com/#"
-# name = "instagram"
-# url = "https://instagram.com/#"
-# name = "stackoverflow"
-# url = "https://stackoverflow.com/#"
-# name = "gitlab"
-# url = "https://gitlab.com/#"
-# name = "discord"
-# url = "https://discord.gg/#"
-# name = "bluesky"
-# url = "https://bsky.app/profile/#"
+  url = "/about/"
+  weight = 50
