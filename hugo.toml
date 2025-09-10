@@ -16,9 +16,15 @@ theme = 'hugo-clarity'
   # Disable language switching
   enableLangChange = false
   disableLanguageSwitchingButton = true
+  # Tell Hugo to look for posts in 'post' directory (singular)
+  mainSections = ["post"]
 
 # Single language configuration
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 disableKinds = ["sitemap", "robotsTXT"]
 removePathAccents = true
+
+# Configure permalinks for posts
+[permalinks]
+  post = "/post/:slug/"
