@@ -1,3 +1,12 @@
+--- 
+title: "This is my Second blog post" 
+date: $(Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz") 
+draft: false tags: ["SCCM"] 
+categories: ["General"] 
+author: "Radu Bogdan" 
+description: "This is my Third blog post" 
+
+
 Microsoft has released hotfix KB34503790 on September 8, 2025, a revised security update for SCCM versions 2403, 2409, 2503 that resolves the vulnerability described in CVE-2025-47178. The hotfix also improves the security of discovery data records (DDR) processing.
 
 CVE-2025-47178 was originally resolved in the globally available release of Configuration Manager version 2503, and in KB33926600 for versions 2403 and 2409. This new revised update supersedes prior releases of the fix. For Configuration Manager versions 2403 and 2409, this update is listed under KB34503768. Read KB 34503790 hotfix information for more details.
