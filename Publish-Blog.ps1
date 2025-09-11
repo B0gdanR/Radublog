@@ -1,7 +1,7 @@
 # PowerShell Script for Windows - NetworkChuck's Original Method
 
 # Set variables for Obsidian to Hugo copy
-$sourcePath = "D:\Blog\Obsidian\Tutorials\Work"
+$sourcePath = "D:\Blog\Obsidian\Tutorials\Work\Site\Posts"
 $destinationPath = "C:\Users\Radu\Documents\Radublog\content\post"
 
 # Set Github repo 
