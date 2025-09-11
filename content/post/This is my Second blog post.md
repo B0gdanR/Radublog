@@ -11,6 +11,6 @@ description: "This is my Second blog post"
 ---
 Here is a screenshot:
 
-![[CM_LAB_Part2_0181.jpg]]
+!![Image Description](/images/CM_LAB_Part2_0181.jpg)
 
 

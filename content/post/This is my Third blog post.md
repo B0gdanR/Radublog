@@ -21,5 +21,5 @@ CVE-2025-47178 was originally resolved in the globally available release of Conf
 Hotfix Availability
 The KB 34503790 hotfix is available in the Updates and Servicing node of the Configuration Manager console for environments with the following update applied.
 
-![[Pasted image 20250911081748.png]]
+!![Image Description](/images/Pasted%20image%2020250911081748.png)
 
