@@ -1,12 +1,13 @@
---- 
-title: "Welcome to Half on Cloud" 
-date: $(Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz") 
-draft: false tags: ["welcome"] 
-categories: ["General"] 
-author: "Radu Bogdan" 
-description: "Welcome to my blog about modern workplace and cloud technologies" 
-
 ---
+title: "Welcome to Half on Cloud"
+date: "2025-09-09T14:30:00+03:00"
+draft: false
+tags: ["welcome"]
+categories: ["General"]
+author: "Radu Bogdan"
+description: "Welcome to my blog about modern workplace and cloud technologies"
+---
+
 ## Welcome to Half on Cloud! 
 
 This is my new blog about modern workplace technologies and cloud solutions. 
