@@ -11,8 +11,6 @@ description: "This is my Third blog post"
 # This is my Third blog post
 
 Microsoft has released hotfix KB34503790 on September 8, 2025...
-(rest of your content)
-
 
 Microsoft has released hotfix KB34503790 on September 8, 2025, a revised security update for SCCM versions 2403, 2409, 2503 that resolves the vulnerability described in CVE-2025-47178. The hotfix also improves the security of discovery data records (DDR) processing.
 
