@@ -6,6 +6,7 @@ tags: ["welcome"]
 categories: ["General"]
 author: "Radu Bogdan"
 description: "Welcome to my blog about modern workplace and cloud technologies"
+featureImage: "images/ballpoint-pen.jpg"
 ---
 
 ## Welcome to Half on Cloud! 
