@@ -31,3 +31,38 @@
 .excerpt_bg .post_link a {
     color: white;
 }
+
+/* Apply background image to Welcome post */
+.post_item:has(h3 a[title*="Welcome"]) {
+    background-image: url("/images/ballpoint-pen.jpg") !important;
+    background-size: 120% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    min-height: 120px !important;
+}
+
+.post_item:has(h3 a[title*="Welcome"])::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8px !important;
+}
+
+.post_item:has(h3 a[title*="Welcome"]) .excerpt_header,
+.post_item:has(h3 a[title*="Welcome"]) .excerpt_footer,
+.post_item:has(h3 a[title*="Welcome"]) .pale {
+    position: relative !important;
+    z-index: 2 !important;
+    color: white !important;
+}
+
+.post_item:has(h3 a[title*="Welcome"]) .post_link a {
+    color: white !important;
+}

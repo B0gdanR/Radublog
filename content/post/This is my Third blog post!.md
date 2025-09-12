@@ -1,6 +1,6 @@
 ---
 title: "This is my Third blog post"
-date: "2025-09-11T01:00:00+03:00"
+date: "2025-09-12T01:00:00+03:00"
 draft: false
 tags: ["SCCM"]
 categories: ["General"]
@@ -19,5 +19,5 @@ CVE-2025-47178 was originally resolved in the globally available release of Conf
 Hotfix Availability
 The KB 34503790 hotfix is available in the Updates and Servicing node of the Configuration Manager console for environments with the following update applied.
 
-!![Image Description](/images/Pasted%20image%2020250911081748.png)
+![Image](/images/Pasted image 20250911081748.png)
 

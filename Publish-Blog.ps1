@@ -49,7 +49,22 @@ if (-not (Test-Path ".git")) {
     }
 }
 
-# Step 2: Sync posts from Obsidian to Hugo content folder using Robocopy
+# Step 2: Backup custom files before syncing
+Write-Host "Backing up custom files..." -ForegroundColor Cyan
+
+$customFiles = @(
+    "static\css\custom.css",
+    "themes\hugo-clarity\layouts\partials\image.html"
+)
+
+foreach ($file in $customFiles) {
+    if (Test-Path $file) {
+        Copy-Item $file "$file.backup" -Force
+        Write-Host "Backed up: $file" -ForegroundColor Green
+    }
+}
+
+# Step 3: Sync posts from Obsidian to Hugo content folder using Robocopy
 Write-Host "Syncing posts from Obsidian..." -ForegroundColor Cyan
 
 if (-not (Test-Path $sourcePath)) {
@@ -74,7 +89,24 @@ if ($LASTEXITCODE -ge 8) {
     Write-Host "Robocopy completed successfully with exit code $LASTEXITCODE" -ForegroundColor Green
 }
 
-# Step 3: Create and execute Python script to handle image links
+# Step 4: Restore custom files after syncing
+Write-Host "Restoring custom files..." -ForegroundColor Cyan
+
+foreach ($file in $customFiles) {
+    if (Test-Path "$file.backup") {
+        # Ensure directory exists before restoring
+        $fileDir = Split-Path $file -Parent
+        if ($fileDir -and -not (Test-Path $fileDir)) {
+            New-Item -ItemType Directory -Path $fileDir -Force
+        }
+        
+        Copy-Item "$file.backup" $file -Force
+        Remove-Item "$file.backup" -Force
+        Write-Host "Restored: $file" -ForegroundColor Green
+    }
+}
+
+# Step 5: Create and execute Python script to handle image links
 Write-Host "Processing image links in Markdown files..." -ForegroundColor Cyan
 
 # Create the Python script content
@@ -146,7 +178,7 @@ try {
     exit 1
 }
 
-# Step 4: Build the Hugo site
+# Step 6: Build the Hugo site
 Write-Host "Building the Hugo site..." -ForegroundColor Cyan
 try {
     hugo
@@ -156,7 +188,7 @@ try {
     exit 1
 }
 
-# Step 5: Add changes to Git
+# Step 7: Add changes to Git
 Write-Host "Staging changes for Git..." -ForegroundColor Cyan
 $hasChanges = (git status --porcelain) -ne ""
 if (-not $hasChanges) {
@@ -166,7 +198,7 @@ if (-not $hasChanges) {
     Write-Host "Changes staged successfully." -ForegroundColor Green
 }
 
-# Step 6: Commit changes with a dynamic message
+# Step 8: Commit changes with a dynamic message
 $commitMessage = "New Blog Post on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 $hasStagedChanges = (git diff --cached --name-only) -ne ""
 if (-not $hasStagedChanges) {
@@ -182,7 +214,7 @@ if (-not $hasStagedChanges) {
     }
 }
 
-# Step 7: Push all changes to the main branch
+# Step 9: Push all changes to the main branch
 Write-Host "Deploying to GitHub Master..." -ForegroundColor Cyan
 try {
     git push origin master
@@ -192,7 +224,7 @@ try {
     Write-Host "Continuing with hostinger deployment..." -ForegroundColor Yellow
 }
 
-# Step 8: Push the public folder to the hostinger branch using subtree split and force push
+# Step 10: Push the public folder to the hostinger branch using subtree split and force push
 Write-Host "Deploying to GitHub Hostinger..." -ForegroundColor Cyan
 
 # Check if the temporary branch exists and delete it
