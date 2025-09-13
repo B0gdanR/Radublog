@@ -1,12 +1,14 @@
----
-title: "This is my Third blog post"
-date: "2025-09-12T01:00:00+03:00"
-draft: false
-tags: ["SCCM"]
-categories: ["General"]
-author: "Radu Bogdan"
-description: "This is my Third blog post"
----
++++
+title = "This is my Third blog post"
+date = "2025-09-12T01:00:00+03:00"
+draft = false
+tags = ["SCCM"]
+categories = ["General"]
+author = "Radu Bogdan"
+description = "This is my Third blog post"
+thumbnail = "images/laptop-briefcase.jpg"
++++
+
 
 # This is my Third blog post
 
