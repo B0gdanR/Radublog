@@ -7,6 +7,9 @@ theme = 'hugo-clarity'
   tag = "tags"
   category = "categories"
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [params]
   description = "IT tutorials, automation scripts, and Microsoft technology insights"
   showShare = false
@@ -15,6 +18,7 @@ theme = 'hugo-clarity'
   customCSS = ["css/custom.css"]
   # Tell Hugo to look for posts in 'post' directory (singular)
   mainSections = ["post"]
+  enableSearch = true
 
 # Single language configuration
 defaultContentLanguage = "en"
