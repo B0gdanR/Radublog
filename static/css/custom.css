@@ -190,38 +190,3 @@ body[class*="page"] .sidebar,
         font-size: 13px !important;
     }
 }
-{{- $s := .Site.Params }}
-{{- $c := default .Site.Title .Site.Copyright  }}
-{{- if or .Params.enableMathNotation $s.enableMathNotation }}
-  {{ partialCached "math" . }}
-{{- end }}
-{{- $iconsDir := default "icons/" .Site.Params.iconsDir }}
-{{- $defaultFooterLogo := printf "%s%s" $iconsDir "apple-touch-icon.png"}}
-<footer class="footer">
-  <div class="footer_inner wrap pale">
-    <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
-      <p style="margin: 0; white-space: nowrap;">© <span class="year"></span> Radu Bogdan. All rights reserved. | <a href="/privacy-policy/" style="color: inherit;">Privacy Policy</a> | <a href="/terms-of-use/" style="color: inherit;">Terms of Use</a> | <a href="/comment-policy/" style="color: inherit;">Comment Policy</a> | <a href="/cookie-policy/" style="color: inherit;">Cookie Policy</a></p>
-    </div>
-    {{- partialCached "top" .}}
-  </div>
-</footer>
-
-<style>
-/* Force center footer content */
-.footer .footer_inner {
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-}
-
-.footer .footer_inner p {
-    margin: 0 !important;
-    text-align: center !important;
-}
-
-.footer {
-    width: 100% !important;
-}
-</style>
