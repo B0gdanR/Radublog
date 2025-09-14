@@ -18,4 +18,4 @@ Stay tuned for content about:
 - VMware virtualization
 - PowerShell automation
 
-![Image Description](/images/)
+![Image Description](Welcome to Half on Cloud.md)
