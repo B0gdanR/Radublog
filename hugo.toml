@@ -2,7 +2,13 @@ baseURL = 'https://halfoncloud.com/'
 languageCode = 'en-us'
 title = 'HalfOnCloud'
 theme = 'hugo-clarity'
+disableLanguages = ["pt"]
 
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+	
 [taxonomies]
   tag = "tags"
   category = "categories"
