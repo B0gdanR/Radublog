@@ -18,4 +18,4 @@ Stay tuned for content about:
 - VMware virtualization
 - PowerShell automation
 
-![[laptop-2620118_1280.jpg]]
+![Image Description](/images/)
