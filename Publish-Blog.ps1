@@ -22,19 +22,19 @@ Write-Host "Converting image syntax..." -ForegroundColor Yellow
 Get-ChildItem -Path $hugoPosts -Filter "*.md" | ForEach-Object {
     $content = Get-Content -Path $_.FullName -Raw
     
-    # Simple, safe regex replacement
-    $newContent = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif))\]\]', '![Image Description](/images/$1)'
+    # Convert Obsidian syntax to Hugo syntax
+    $newContent = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif|webp))\]\]', '![Image Description](/images/$1)'
     
-    # Only proceed if we actually found matches
+    # Replace spaces with %20 in image paths (simpler approach)
+    $newContent = $newContent -replace '!\[Image Description\]\(/images/([^)]+)\)', {
+        param($match)
+        $fullPath = $match.Groups[1].Value
+        $encodedPath = $fullPath -replace ' ', '%20'
+        "![Image Description](/images/$encodedPath)"
+    }
+    
+    # Only save if changes were made
     if ($content -ne $newContent) {
-        # Replace spaces with %20 in the converted paths only
-        $newContent = $newContent -replace '(/images/)([^)]*)', {
-            param($match)
-            $path = $match.Groups[1].Value
-            $filename = $match.Groups[2].Value -replace ' ', '%20'
-            "$path$filename"
-        }
-        
         Set-Content -Path $_.FullName -Value $newContent -Encoding UTF8
         Write-Host "Fixed images in: $($_.Name)" -ForegroundColor Green
     }
