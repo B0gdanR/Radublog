@@ -21,21 +21,19 @@ robocopy $obsidianImages $hugoImages /MIR /Z
 Write-Host "Converting image syntax..." -ForegroundColor Yellow
 Get-ChildItem -Path $hugoPosts -Filter "*.md" | ForEach-Object {
     $content = Get-Content -Path $_.FullName -Raw
+    $originalContent = $content
     
     # Convert Obsidian syntax to Hugo syntax
-    $newContent = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif|webp))\]\]', '![Image Description](/images/$1)'
+    $content = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif|webp))\]\]', '![Image Description](/images/$1)'
     
-    # Replace spaces with %20 in image paths (simpler approach)
-    $newContent = $newContent -replace '!\[Image Description\]\(/images/([^)]+)\)', {
-        param($match)
-        $fullPath = $match.Groups[1].Value
-        $encodedPath = $fullPath -replace ' ', '%20'
-        "![Image Description](/images/$encodedPath)"
-    }
+    # Simple string replacement for spaces in image paths
+    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2)'
+    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2%20$3)'
+    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*) ([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2%20$3%20$4)'
     
-    # Only save if changes were made
-    if ($content -ne $newContent) {
-        Set-Content -Path $_.FullName -Value $newContent -Encoding UTF8
+    # Save if changes were made
+    if ($originalContent -ne $content) {
+        Set-Content -Path $_.FullName -Value $content -Encoding UTF8
         Write-Host "Fixed images in: $($_.Name)" -ForegroundColor Green
     }
 }
