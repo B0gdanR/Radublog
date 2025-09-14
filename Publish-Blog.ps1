@@ -23,13 +23,13 @@ Get-ChildItem -Path $hugoPosts -Filter "*.md" | ForEach-Object {
     $content = Get-Content -Path $_.FullName -Raw
     $originalContent = $content
     
-    # Convert Obsidian syntax to Hugo syntax
-    $content = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif|webp))\]\]', '![Image Description](/images/$1)'
-    
-    # Simple string replacement for spaces in image paths
-    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2)'
-    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2%20$3)'
-    $content = $content -replace '![Image Description]\(/images/([^)]*) ([^)]*) ([^)]*) ([^)]*)\)', '![Image Description](/images/$1%20$2%20$3%20$4)'
+    # Convert Obsidian syntax to Hugo syntax AND handle spaces in one step
+    $content = $content -replace '!\[\[([^]]+\.(?:png|jpg|jpeg|gif|webp))\]\]', {
+        param($match)
+        $filename = $match.Groups[1].Value
+        $encodedFilename = $filename -replace ' ', '%20'
+        "![Image Description](/images/$encodedFilename)"
+    }
     
     # Save if changes were made
     if ($originalContent -ne $content) {

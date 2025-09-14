@@ -124,12 +124,12 @@ Switch-PoshTheme 'paradox'
 
 Note: Change the theme line from paradox.omp.json to quick-term.omp.json:
 
-![Image Description](/images/Pasted image 20250914165215.png)
+![Image Description](/images/Welcome%20to%20Half%20on%20Cloud.md)
 
 ### Step 10: Reload profile
 
 *. $PROFILE*
 
-![Image Description](/images/Pasted image 20250914165500.png)
+![Image Description](/images/Welcome%20to%20Half%20on%20Cloud.md)
 
 
