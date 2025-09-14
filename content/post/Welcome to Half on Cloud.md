@@ -9,11 +9,13 @@ description = "Welcome to my blog about modern workplace and cloud technologies"
 thumbnail = "images/ballpoint-pen.jpg"
 +++
 
-## Welcome to Half on Cloud!
 
-This is my new blog about modern workplace technologies and cloud solutions. Stay tuned for content about:
+This is my new blog about modern workplace technologies and cloud solutions. 
+Stay tuned for content about:
 
 - Microsoft 365 and Azure
 - SCCM and Intune
 - VMware virtualization
 - PowerShell automation
+
+![[laptop-2620118_1280.jpg]]

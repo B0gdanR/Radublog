@@ -1,13 +1,12 @@
 
 +++
-title = "Complete Oh My Posh PowerShell Tutorial"
+title = "How to setup PowerShell with Oh My Posh"
 date = "2025-09-14T01:00:00+03:00"
 draft = false
 tags = ["PowerShell"]
 categories = ["General"]
 author = "Radu Bogdan"
-description = "Complete Oh My Posh PowerShell Tutorial"
-thumbnail = "images/ballpoint-pen.jpg"
+description = "How to setup PowerShell with Oh My Posh"
 +++
 ### Step 1: Install PowerShell 7
 
