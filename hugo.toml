@@ -1,0 +1,45 @@
+baseURL = 'https://halfoncloud.com/'
+languageCode = 'en-us'
+title = 'HalfOnCloud'
+
+[params]
+  author = "Radu"
+  description = "IT tutorials, automation scripts, and Microsoft technology insights"
+
+[markup]
+  _merge = "deep"
+
+[build]
+  _merge = "deep"
+
+[module]
+  [[module.imports]]
+    path = "github.com/schnerring/hugo-theme-gruvbox"
+  
+  [[module.mounts]]
+    source = "node_modules/prismjs"
+    target = "assets/prismjs"
+  [[module.mounts]]
+    source = "node_modules/prism-themes/themes"
+    target = "assets/prism-themes"
+  [[module.mounts]]
+    source = "node_modules/typeface-fira-code/files"
+    target = "static/fonts"
+  [[module.mounts]]
+    source = "node_modules/typeface-roboto-slab/files"
+    target = "static/fonts"
+  [[module.mounts]]
+    source = "node_modules/@tabler/icons/icons"
+    target = "assets/tabler-icons"
+  [[module.mounts]]
+    source = "node_modules/simple-icons/icons"
+    target = "assets/simple-icons"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
