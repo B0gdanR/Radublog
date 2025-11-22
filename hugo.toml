@@ -3,14 +3,37 @@ languageCode = 'en-us'
 title = 'HalfOnCloud'
 
 [params]
-  author = "Radu"
+  author = "Radu Bogdan"
   description = "IT tutorials, automation scripts, and Microsoft technology insights"
+  # Set default theme to dark
+  defaultTheme = "dark"
+  
+# Logo configuration (separate section, not nested)
+[params.logo]
+  text = "HalfOnCloud"
 
 [markup]
   _merge = "deep"
 
 [build]
   _merge = "deep"
+
+# Main menu configuration
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 10
+  
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+  
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 30
 
 [module]
   [[module.imports]]

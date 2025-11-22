@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Half on Cloud"
-date: 2025-09-10T01:00:00+03:00
+date: 2025-11-23T00:14:00+02:00
 draft: false
 tags: ["welcome"]
 categories: ["General"]
@@ -15,4 +15,6 @@ Stay tuned for content about:
 - SCCM and Intune
 - VMware virtualization
 - PowerShell automation
+
+![Laptop](laptop-2620118_1280.jpg)
 
