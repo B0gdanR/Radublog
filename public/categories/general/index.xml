@@ -1,19 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>General on HalfOnCloud</title>
-    <link>http://localhost:1313/categories/general/</link>
-    <description>Recent content in General on HalfOnCloud</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 23 Nov 2025 00:14:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/general/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Welcome to Half on Cloud</title>
-      <link>http://localhost:1313/posts/welcome-to-half-on-cloud/</link>
-      <pubDate>Sun, 23 Nov 2025 00:14:00 +0200</pubDate>
-      <guid>http://localhost:1313/posts/welcome-to-half-on-cloud/</guid>
-      <description>&lt;p&gt;This is my new blog about modern workplace technologies and cloud solutions.&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for content about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Microsoft 365 and Azure&lt;/li&gt;&#xA;&lt;li&gt;SCCM and Intune&lt;/li&gt;&#xA;&lt;li&gt;VMware virtualization&lt;/li&gt;&#xA;&lt;li&gt;PowerShell automation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/welcome-to-half-on-cloud/laptop-2620118_1280.jpg&#34; alt=&#34;Laptop&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>General on HalfOnCloud</title><link>https://halfoncloud.com/categories/general/</link><description>Recent content in General on HalfOnCloud</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 23 Nov 2025 00:14:00 +0200</lastBuildDate><atom:link href="https://halfoncloud.com/categories/general/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to Half on Cloud</title><link>https://halfoncloud.com/posts/welcome-to-half-on-cloud/</link><pubDate>Sun, 23 Nov 2025 00:14:00 +0200</pubDate><guid>https://halfoncloud.com/posts/welcome-to-half-on-cloud/</guid><description>&lt;p&gt;This is my new blog about modern workplace technologies and cloud solutions.&lt;/p&gt;
+&lt;p&gt;Stay tuned for content about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft 365 and Azure&lt;/li&gt;
+&lt;li&gt;SCCM and Intune&lt;/li&gt;
+&lt;li&gt;VMware virtualization&lt;/li&gt;
+&lt;li&gt;PowerShell automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://halfoncloud.com/posts/welcome-to-half-on-cloud/laptop-2620118_1280.jpg" alt="Laptop"&gt;&lt;/p&gt;</description></item></channel></rss>

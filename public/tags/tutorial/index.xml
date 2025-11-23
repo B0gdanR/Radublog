@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tutorial on HalfOnCloud</title>
-    <link>http://localhost:1313/tags/tutorial/</link>
-    <description>Recent content in Tutorial on HalfOnCloud</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 01 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Claude Desktop Integration Demo</title>
-      <link>http://localhost:1313/posts/demo-blog-post-with-image/</link>
-      <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/demo-blog-post-with-image/</guid>
-      <description>&lt;h1 id=&#34;claude-desktop-integration-demo&#34;&gt;Claude Desktop Integration Demo&lt;/h1&gt;&#xA;&lt;p&gt;This is a demonstration of how Claude can help you create blog posts with images for your Hugo static site.&lt;/p&gt;&#xA;&lt;h2 id=&#34;setup-overview&#34;&gt;Setup Overview&lt;/h2&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s what the Claude Desktop interface looks like with all the integrations enabled:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../Personal/Images/claude-desktop-screenshot.png&#34; alt=&#34;Claude Desktop Interface&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;As you can see in the screenshot above, the following MCP servers are configured and running:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Intune&lt;/strong&gt; - For Microsoft Intune management&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;mcp-obsidian&lt;/strong&gt; - For Obsidian vault integration (enabled)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;SCCM&lt;/strong&gt; - For SCCM administration&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;benefits&#34;&gt;Benefits&lt;/h2&gt;&#xA;&lt;p&gt;With this setup, Claude can:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on HalfOnCloud</title><link>https://halfoncloud.com/tags/tutorial/</link><description>Recent content in Tutorial on HalfOnCloud</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 01 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://halfoncloud.com/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude Desktop Integration Demo</title><link>https://halfoncloud.com/posts/demo-blog-post-with-image/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/posts/demo-blog-post-with-image/</guid><description>&lt;h1 id="claude-desktop-integration-demo"&gt;Claude Desktop Integration Demo&lt;/h1&gt;
+&lt;p&gt;This is a demonstration of how Claude can help you create blog posts with images for your Hugo static site.&lt;/p&gt;
+&lt;h2 id="setup-overview"&gt;Setup Overview&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s what the Claude Desktop interface looks like with all the integrations enabled:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://halfoncloud.com/images/claude-desktop-screenshot.png" alt="Claude Desktop Interface"&gt;&lt;/p&gt;
+&lt;p&gt;As you can see in the screenshot above, the following MCP servers are configured and running:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Intune&lt;/strong&gt; - For Microsoft Intune management&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mcp-obsidian&lt;/strong&gt; - For Obsidian vault integration (enabled)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SCCM&lt;/strong&gt; - For SCCM administration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="benefits"&gt;Benefits&lt;/h2&gt;
+&lt;p&gt;With this setup, Claude can:&lt;/p&gt;</description></item></channel></rss>
