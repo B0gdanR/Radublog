@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
-    
-      <lastmod>2025-11-23T00:14:00+02:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/de/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://halfoncloud.com/categories/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/categories/general/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/posts/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/tags/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/tags/welcome/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/posts/welcome-to-half-on-cloud/</loc><lastmod>2025-11-23T00:14:00+02:00</lastmod></url><url><loc>https://halfoncloud.com/tags/claude/</loc><lastmod>2025-11-01T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/posts/demo-blog-post-with-image/</loc><lastmod>2025-11-01T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/tags/obsidian/</loc><lastmod>2025-11-01T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/tags/tutorial/</loc><lastmod>2025-11-01T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/tags/oh-my-posh/</loc><lastmod>2025-10-30T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/tags/powershell/</loc><lastmod>2025-10-30T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/posts/powershell-ohmyposh-setup/</loc><lastmod>2025-10-30T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/tags/setup/</loc><lastmod>2025-10-30T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/categories/technical-documentation/</loc><lastmod>2025-10-30T00:00:00+00:00</lastmod></url><url><loc>https://halfoncloud.com/about/</loc><lastmod>2025-01-01T00:00:00+00:00</lastmod></url></urlset>

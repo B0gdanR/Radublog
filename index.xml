@@ -1,19 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>HalfOnCloud</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on HalfOnCloud</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 23 Nov 2025 00:14:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Welcome to Half on Cloud</title>
-      <link>http://localhost:1313/posts/welcome-to-half-on-cloud/</link>
-      <pubDate>Sun, 23 Nov 2025 00:14:00 +0200</pubDate>
-      <guid>http://localhost:1313/posts/welcome-to-half-on-cloud/</guid>
-      <description>&lt;p&gt;This is my new blog about modern workplace technologies and cloud solutions.&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for content about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Microsoft 365 and Azure&lt;/li&gt;&#xA;&lt;li&gt;SCCM and Intune&lt;/li&gt;&#xA;&lt;li&gt;VMware virtualization&lt;/li&gt;&#xA;&lt;li&gt;PowerShell automation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;  &#xA;    &#xA;    &#xA;    &#xA;    &#xA;    &#xA;    &#xA;    &#xA;&#xA;    &#xA;    &#xA;    &#xA;    &#xA;      &#xA;        &#xA;          &#xA;          &#xA;        &#xA;        &#xA;        &#xA;        &#xA;          &#xA;          &#xA;          &#xA;        &#xA;      &#xA;    &#xA;      &#xA;        &#xA;          &#xA;          &#xA;        &#xA;        &#xA;        &#xA;        &#xA;          &#xA;          &#xA;          &#xA;        &#xA;      &#xA;    &#xA;      &#xA;        &#xA;          &#xA;        &#xA;        &#xA;        &#xA;        &#xA;          &#xA;          &#xA;          &#xA;        &#xA;      &#xA;    &#xA;&#xA;&#xA;    &lt;picture&gt;&#xA;      &lt;source&#xA;        type=&#34;image/webp&#34;&#xA;        srcset=&#34;http://localhost:1313/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_e4ea97efac03f99e.webp 300w,/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_eb79221e6b13eecc.webp 500w,/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_804ab3641d4ba8dd.webp 700w&#34;&#xA;        sizes=&#34;(max-width: 499px) 300px,(max-width: 699px) 500px,700px&#34;&#xA;      /&gt;&#xA;      &lt;img&#xA;        src=&#34;http://localhost:1313/posts/welcome-to-half-on-cloud/laptop-2620118_1280.jpg&#34;&#xA;        srcset=&#34;http://localhost:1313/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_6eb1366b3b33772f.jpg 300w,/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_f3af349166e3f401.jpg 500w,/posts/welcome-to-half-on-cloud/laptop-2620118_1280_hu_a1590581574e6c31.jpg 700w&#34;&#xA;        sizes=&#34;(max-width: 499px) 300px,(max-width: 699px) 500px,700px&#34;&#xA;        alt=&#34;Laptop&#34;&#xA;        &#xA;        loading=&#34;lazy&#34;&#xA;        width=&#34;1280&#34;&#xA;        height=&#34;853&#34;&#xA;      /&gt;&#xA;    &lt;/picture&gt;&#xA;  &#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HalfOnCloud</title><link>https://halfoncloud.com/</link><description>Recent content on HalfOnCloud</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 23 Nov 2025 00:14:00 +0200</lastBuildDate><atom:link href="https://halfoncloud.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to Half on Cloud</title><link>https://halfoncloud.com/posts/welcome-to-half-on-cloud/</link><pubDate>Sun, 23 Nov 2025 00:14:00 +0200</pubDate><guid>https://halfoncloud.com/posts/welcome-to-half-on-cloud/</guid><description>&lt;p&gt;This is my new blog about modern workplace technologies and cloud solutions.&lt;/p&gt;
+&lt;p&gt;Stay tuned for content about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft 365 and Azure&lt;/li&gt;
+&lt;li&gt;SCCM and Intune&lt;/li&gt;
+&lt;li&gt;VMware virtualization&lt;/li&gt;
+&lt;li&gt;PowerShell automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://halfoncloud.com/posts/welcome-to-half-on-cloud/laptop-2620118_1280.jpg" alt="Laptop"&gt;&lt;/p&gt;</description></item><item><title>Claude Desktop Integration Demo</title><link>https://halfoncloud.com/posts/demo-blog-post-with-image/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/posts/demo-blog-post-with-image/</guid><description>&lt;h1 id="claude-desktop-integration-demo"&gt;Claude Desktop Integration Demo&lt;/h1&gt;
+&lt;p&gt;This is a demonstration of how Claude can help you create blog posts with images for your Hugo static site.&lt;/p&gt;
+&lt;h2 id="setup-overview"&gt;Setup Overview&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s what the Claude Desktop interface looks like with all the integrations enabled:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../Personal/Images/claude-desktop-screenshot.png" alt="Claude Desktop Interface"&gt;&lt;/p&gt;
+&lt;p&gt;As you can see in the screenshot above, the following MCP servers are configured and running:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Intune&lt;/strong&gt; - For Microsoft Intune management&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mcp-obsidian&lt;/strong&gt; - For Obsidian vault integration (enabled)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SCCM&lt;/strong&gt; - For SCCM administration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="benefits"&gt;Benefits&lt;/h2&gt;
+&lt;p&gt;With this setup, Claude can:&lt;/p&gt;</description></item><item><title>PowerShell 7 + Oh My Posh Setup Guide</title><link>https://halfoncloud.com/posts/powershell-ohmyposh-setup/</link><pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/posts/powershell-ohmyposh-setup/</guid><description>&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Run PowerShell as Administrator for initial setup&lt;/p&gt;
+&lt;h2 id="step-1-install-or-upgrade-powershell-7"&gt;Step 1: Install or Upgrade PowerShell 7&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget install Microsoft.PowerShell
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;CRITICAL:&lt;/strong&gt; Close all PowerShell windows and reopen&lt;/p&gt;
+&lt;h2 id="step-2-verify-powershell-version"&gt;Step 2: Verify PowerShell Version&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$PSVersionTable.PSVersion
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Should show 7.5.4 or higher&lt;/p&gt;
+&lt;h2 id="step-3-install-scoop-package-manager"&gt;Step 3: Install Scoop (Package Manager)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Invoke-RestMethod -Uri https&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt;//get.scoop.sh | Invoke-Expression
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="step-4-install-oh-my-posh-via-scoop"&gt;Step 4: Install Oh My Posh via Scoop&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install oh-my-posh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;CRITICAL:&lt;/strong&gt; Close all PowerShell windows and reopen&lt;/p&gt;</description></item><item><title>About</title><link>https://halfoncloud.com/about/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/about/</guid><description>&lt;h2 id="hi-im-radu"&gt;Hi, I&amp;rsquo;m Radu&lt;/h2&gt;
+&lt;p&gt;IT professional specializing in Microsoft technologies: SCCM, Intune, Azure, EntraID, and M365. I also work with VMware for virtualization.&lt;/p&gt;
+&lt;p&gt;This blog is where I share tutorials, automation scripts, and insights from my daily work.&lt;/p&gt;</description></item></channel></rss>
