@@ -94,6 +94,22 @@ function Convert-ObsidianToHugo {
         }
     })
     
+    # Convert standard markdown images with relative paths to /images/
+    # Matches: ![alt text](../path/to/image.png) or ![alt](path/image.png)
+    # But NOT URLs starting with http
+    $mdImagePattern = '!\[([^\]]*)\]\((?!http)([^)]+)\)'
+    
+    $converted = [regex]::Replace($converted, $mdImagePattern, {
+        param($match)
+        $altText = $match.Groups[1].Value.Trim()
+        $imagePath = $match.Groups[2].Value.Trim()
+        
+        # Extract just the filename from any path
+        $imageName = Split-Path $imagePath -Leaf
+        
+        return "![$altText](/images/$imageName)"
+    })
+    
     # Convert Obsidian internal links: [[Page Name]] → [Page Name](/posts/page-name/)
     $linkPattern = '\[\[([^\]|]+)(?:\|([^\]]+))?\]\]'
     $converted = [regex]::Replace($converted, $linkPattern, {
