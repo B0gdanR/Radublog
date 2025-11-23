@@ -13,7 +13,7 @@ This is a demonstration of how Claude can help you create blog posts with images
 
 Here's what the Claude Desktop interface looks like with all the integrations enabled:
 
-![Claude Desktop Interface](../../../Personal/Images/claude-desktop-screenshot.png)
+![Claude Desktop Interface](/images/claude-desktop-screenshot.png)
 
 As you can see in the screenshot above, the following MCP servers are configured and running:
 - **Intune** - For Microsoft Intune management
