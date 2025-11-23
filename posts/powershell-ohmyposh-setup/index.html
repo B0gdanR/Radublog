@@ -1,30 +1,339 @@
-<!doctype html><html lang=en><head><title>PowerShell 7 + Oh My Posh Setup Guide :: HalfOnCloud</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Complete guide to install and configure PowerShell 7 with Oh My Posh using Scoop"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://halfoncloud.com/posts/powershell-ohmyposh-setup/><link rel=stylesheet href=https://halfoncloud.com/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css><link rel=stylesheet href=https://halfoncloud.com/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css><link rel=stylesheet href=https://halfoncloud.com/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css><link rel=stylesheet href=https://halfoncloud.com/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css><link rel=stylesheet href=https://halfoncloud.com/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css><link rel=stylesheet href=https://halfoncloud.com/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css><link rel=stylesheet href=https://halfoncloud.com/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css><link rel=stylesheet href=https://halfoncloud.com/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css><link rel=stylesheet href=https://halfoncloud.com/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css><link rel=stylesheet href=https://halfoncloud.com/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css><link rel=stylesheet href=https://halfoncloud.com/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css><link rel=stylesheet href=https://halfoncloud.com/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css><link rel=stylesheet href=https://halfoncloud.com/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css><link rel=stylesheet href=https://halfoncloud.com/style.css><link rel="shortcut icon" href=https://halfoncloud.com/favicon.png><link rel=apple-touch-icon href=https://halfoncloud.com/apple-touch-icon.png><meta name=twitter:card content="summary"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="og:title" content="PowerShell 7 + Oh My Posh Setup Guide"><meta property="og:description" content="Complete guide to install and configure PowerShell 7 with Oh My Posh using Scoop"><meta property="og:url" content="https://halfoncloud.com/posts/powershell-ohmyposh-setup/"><meta property="og:site_name" content="HalfOnCloud"><meta property="og:image" content="https://halfoncloud.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Technical Documentation"><meta property="article:published_time" content="2025-10-30 00:00:00 +0000 UTC"></head><body><div class="container center"><header class=header><div class=header__inner><div class=header__logo><a class=nav_brand href=https://halfoncloud.com/><span style=font-size:1.2rem;font-weight:600>Half<span style=color:#fe8019>On</span>Cloud</span></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about/>About</a></li><li><a href=/posts/>Posts</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about/>About</a></li><li><a href=/posts/>Posts</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://halfoncloud.com/posts/powershell-ohmyposh-setup/>PowerShell 7 + Oh My Posh Setup Guide</a></h1><div class=post-meta><time class=post-date>2025-10-30</time><span class=post-author>Radu Bogdan</span></div><span class=post-tags>#<a href=https://halfoncloud.com/tags/powershell/>PowerShell</a>&nbsp;
-#<a href=https://halfoncloud.com/tags/oh-my-posh/>Oh-My-Posh</a>&nbsp;
-#<a href=https://halfoncloud.com/tags/setup/>Setup</a>&nbsp;</span><div class=post-content><div><h2 id=prerequisites>Prerequisites<a href=#prerequisites class=hanchor arialabel=Anchor>#</a></h2><p>Run PowerShell as Administrator for initial setup</p><h2 id=step-1-install-or-upgrade-powershell-7>Step 1: Install or Upgrade PowerShell 7<a href=#step-1-install-or-upgrade-powershell-7 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>winget install Microsoft.PowerShell
-</span></span></code></pre></div><p><strong>CRITICAL:</strong> Close all PowerShell windows and reopen</p><h2 id=step-2-verify-powershell-version>Step 2: Verify PowerShell Version<a href=#step-2-verify-powershell-version class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>$PSVersionTable.PSVersion
-</span></span></code></pre></div><p>Should show 7.5.4 or higher</p><h2 id=step-3-install-scoop-package-manager>Step 3: Install Scoop (Package Manager)<a href=#step-3-install-scoop-package-manager class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-</span></span><span style=display:flex><span>Invoke-RestMethod -Uri https<span style=color:#960050;background-color:#1e0010>:</span>//get.scoop.sh | Invoke-Expression
-</span></span></code></pre></div><h2 id=step-4-install-oh-my-posh-via-scoop>Step 4: Install Oh My Posh via Scoop<a href=#step-4-install-oh-my-posh-via-scoop class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>scoop install oh-my-posh
-</span></span></code></pre></div><p><strong>CRITICAL:</strong> Close all PowerShell windows and reopen</p><h2 id=step-5-verify-oh-my-posh-installation>Step 5: Verify Oh My Posh Installation<a href=#step-5-verify-oh-my-posh-installation class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>oh-my-posh --version
-</span></span><span style=display:flex><span>Get-ChildItem <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>\scoop\apps\oh-my-posh\current\themes&#34;</span> | Select-Object -First <span style=color:#ae81ff>5</span> Name
-</span></span></code></pre></div><h2 id=step-6-install-nerd-font>Step 6: Install Nerd Font<a href=#step-6-install-nerd-font class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>oh-my-posh font install meslo
-</span></span></code></pre></div><p><strong>Configure terminal:</strong> Right-click title bar → Properties → Font → Select &ldquo;MesloLGM NF&rdquo;</p><h2 id=step-7-create-powershell-profile>Step 7: Create PowerShell Profile<a href=#step-7-create-powershell-profile class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>New-Item -ItemType File -Path $PROFILE -Force
-</span></span></code></pre></div><h2 id=step-8-configure-profile>Step 8: Configure Profile<a href=#step-8-configure-profile class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>notepad $PROFILE
-</span></span></code></pre></div><p>Add this single line:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>oh-my-posh init pwsh --config <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>\scoop\apps\oh-my-posh\current\themes\quick-term.omp.json&#34;</span> | Invoke-Expression
-</span></span></code></pre></div><p>Save and close</p><h2 id=step-9-reload-profile>Step 9: Reload Profile<a href=#step-9-reload-profile class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>. $PROFILE
-</span></span></code></pre></div><h2 id=step-10-verify-theme-is-working>Step 10: Verify Theme is Working<a href=#step-10-verify-theme-is-working class=hanchor arialabel=Anchor>#</a></h2><p>You should see a styled prompt with segments showing username, path, and execution time</p><h2 id=optional-add-psreadline-configuration>Optional: Add PSReadLine Configuration<a href=#optional-add-psreadline-configuration class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>notepad $PROFILE
-</span></span></code></pre></div><p>Add these lines below the oh-my-posh line:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Set-PSReadLineOption -PredictionSource History
-</span></span><span style=display:flex><span>Set-PSReadLineOption -PredictionViewStyle ListView
-</span></span><span style=display:flex><span>Set-PSReadLineOption -EditMode Windows
-</span></span></code></pre></div><h2 id=changing-themes-later>Changing Themes Later<a href=#changing-themes-later class=hanchor arialabel=Anchor>#</a></h2><h3 id=list-available-themes>List available themes:<a href=#list-available-themes class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Get-ChildItem <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>\scoop\apps\oh-my-posh\current\themes&#34;</span> | ForEach-Object { $_.Name <span style=color:#f92672>-replace</span> <span style=color:#e6db74>&#39;\.omp\.json$&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span> }
-</span></span></code></pre></div><h3 id=change-theme>Change theme:<a href=#change-theme class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>notepad $PROFILE
-</span></span></code></pre></div><p>Edit the theme name in the config path, then reload:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>. $PROFILE
-</span></span></code></pre></div><h2 id=critical-notes>Critical Notes<a href=#critical-notes class=hanchor arialabel=Anchor>#</a></h2><ol><li><strong>ALWAYS close and reopen PowerShell after installations</strong> - environment variables require new process</li><li><strong>DO NOT use winget for Oh My Posh</strong> - the WindowsApps package is broken and missing themes</li><li>Scoop installs to: <code>$HOME\scoop\apps\oh-my-posh\current</code></li><li>Profile location: <code>$PROFILE</code> (typically <code>C:\Users\USERNAME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>)</li><li>If profile errors on startup, disable it: <code>Rename-Item $PROFILE "$PROFILE.bak"</code></li></ol><h2 id=troubleshooting>Troubleshooting<a href=#troubleshooting class=hanchor arialabel=Anchor>#</a></h2><h3 id=check-if-oh-my-posh-is-in-path>Check if oh-my-posh is in PATH:<a href=#check-if-oh-my-posh-is-in-path class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Get-Command oh-my-posh | Select-Object -ExpandProperty Source
-</span></span></code></pre></div><h3 id=verify-themes-exist>Verify themes exist:<a href=#verify-themes-exist class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Test-Path <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>\scoop\apps\oh-my-posh\current\themes\quick-term.omp.json&#34;</span>
-</span></span></code></pre></div><h3 id=view-current-profile>View current profile:<a href=#view-current-profile class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Get-Content $PROFILE
-</span></span></code></pre></div><h3 id=reinstall-if-needed>Reinstall if needed:<a href=#reinstall-if-needed class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>scoop uninstall oh-my-posh
-</span></span><span style=display:flex><span>scoop install oh-my-posh
-</span></span></code></pre></div><h3 id=disable-profile-temporarily>Disable profile temporarily:<a href=#disable-profile-temporarily class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Rename-Item $PROFILE <span style=color:#e6db74>&#34;</span>$PROFILE<span style=color:#e6db74>.bak&#34;</span>
-</span></span></code></pre></div><h3 id=re-enable-profile>Re-enable profile:<a href=#re-enable-profile class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>Rename-Item <span style=color:#e6db74>&#34;</span>$PROFILE<span style=color:#e6db74>.bak&#34;</span> $PROFILE
-</span></span></code></pre></div><h2 id=key-lessons>Key Lessons<a href=#key-lessons class=hanchor arialabel=Anchor>#</a></h2><ol><li>Winget quality varies by package source - Microsoft Store apps are often incomplete</li><li>Always restart terminal sessions after installing tools that modify PATH or environment variables</li><li>Scoop is more reliable than winget for developer CLI tools</li><li>Keep profiles minimal - one line for theme initialization is sufficient</li><li>When troubleshooting, disable the profile first to prevent cascading errors</li><li>For enterprise environments, use Intune/SCCM to deploy these tools, not manual installations</li></ol><h2 id=file-locations-reference>File Locations Reference<a href=#file-locations-reference class=hanchor arialabel=Anchor>#</a></h2><table><thead><tr><th>Item</th><th>Location</th></tr></thead><tbody><tr><td>PowerShell Profile</td><td><code>$PROFILE</code> or <code>C:\Users\USERNAME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code></td></tr><tr><td>Oh My Posh Installation</td><td><code>$HOME\scoop\apps\oh-my-posh\current</code></td></tr><tr><td>Themes</td><td><code>$HOME\scoop\apps\oh-my-posh\current\themes</code></td></tr><tr><td>Scoop Installation</td><td><code>$HOME\scoop</code></td></tr></tbody></table><h2 id=popular-themes-to-try>Popular Themes to Try<a href=#popular-themes-to-try class=hanchor arialabel=Anchor>#</a></h2><ul><li><code>quick-term</code> - Minimal, fast, shows essential info</li><li><code>paradox</code> - Segments with icons and colors</li><li><code>atomicBit</code> - Compact with git status</li><li><code>agnoster</code> - Classic powerline style</li><li><code>jandedobbeleer</code> - Author&rsquo;s personal theme</li></ul><h2 id=additional-resources>Additional Resources<a href=#additional-resources class=hanchor arialabel=Anchor>#</a></h2><ul><li>Oh My Posh Documentation: <a href=https://ohmyposh.dev/docs>https://ohmyposh.dev/docs</a></li><li>Scoop Documentation: <a href=https://scoop.sh>https://scoop.sh</a></li><li>PowerShell Documentation: <a href=https://docs.microsoft.com/powershell>https://docs.microsoft.com/powershell</a></li></ul></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
-<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>PowerShell 7 &#43; Oh My Posh Setup Guide :: HalfOnCloud</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Complete guide to install and configure PowerShell 7 with Oh My Posh using Scoop" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/powershell-ohmyposh-setup/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/style.css">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PowerShell 7 &#43; Oh My Posh Setup Guide">
+<meta property="og:description" content="Complete guide to install and configure PowerShell 7 with Oh My Posh using Scoop" />
+<meta property="og:url" content="http://localhost:1313/posts/powershell-ohmyposh-setup/" />
+<meta property="og:site_name" content="HalfOnCloud" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="Technical Documentation" />
+
+
+  <meta property="article:published_time" content="2025-10-30 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a class="nav_brand" href="http://localhost:1313/">
+  <span style="font-size: 1.2rem; font-weight: 600;">Half<span style="color: #fe8019;">On</span>Cloud</span>
+</a>
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/posts/">Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/posts/" >Posts</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/powershell-ohmyposh-setup/">PowerShell 7 + Oh My Posh Setup Guide</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-10-30</time><span class="post-author">Radu Bogdan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/powershell/">PowerShell</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/oh-my-posh/">Oh-My-Posh</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/setup/">Setup</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="prerequisites">Prerequisites<a href="#prerequisites" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Run PowerShell as Administrator for initial setup</p>
+<h2 id="step-1-install-or-upgrade-powershell-7">Step 1: Install or Upgrade PowerShell 7<a href="#step-1-install-or-upgrade-powershell-7" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>winget install Microsoft.PowerShell
+</span></span></code></pre></div><p><strong>CRITICAL:</strong> Close all PowerShell windows and reopen</p>
+<h2 id="step-2-verify-powershell-version">Step 2: Verify PowerShell Version<a href="#step-2-verify-powershell-version" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$PSVersionTable.PSVersion
+</span></span></code></pre></div><p>Should show 7.5.4 or higher</p>
+<h2 id="step-3-install-scoop-package-manager">Step 3: Install Scoop (Package Manager)<a href="#step-3-install-scoop-package-manager" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+</span></span><span style="display:flex;"><span>Invoke-RestMethod -Uri https<span style="color:#960050;background-color:#1e0010">:</span>//get.scoop.sh | Invoke-Expression
+</span></span></code></pre></div><h2 id="step-4-install-oh-my-posh-via-scoop">Step 4: Install Oh My Posh via Scoop<a href="#step-4-install-oh-my-posh-via-scoop" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>scoop install oh-my-posh
+</span></span></code></pre></div><p><strong>CRITICAL:</strong> Close all PowerShell windows and reopen</p>
+<h2 id="step-5-verify-oh-my-posh-installation">Step 5: Verify Oh My Posh Installation<a href="#step-5-verify-oh-my-posh-installation" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh --version
+</span></span><span style="display:flex;"><span>Get-ChildItem <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">\scoop\apps\oh-my-posh\current\themes&#34;</span> | Select-Object -First <span style="color:#ae81ff">5</span> Name
+</span></span></code></pre></div><h2 id="step-6-install-nerd-font">Step 6: Install Nerd Font<a href="#step-6-install-nerd-font" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh font install meslo
+</span></span></code></pre></div><p><strong>Configure terminal:</strong> Right-click title bar → Properties → Font → Select &ldquo;MesloLGM NF&rdquo;</p>
+<h2 id="step-7-create-powershell-profile">Step 7: Create PowerShell Profile<a href="#step-7-create-powershell-profile" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-Item -ItemType File -Path $PROFILE -Force
+</span></span></code></pre></div><h2 id="step-8-configure-profile">Step 8: Configure Profile<a href="#step-8-configure-profile" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>notepad $PROFILE
+</span></span></code></pre></div><p>Add this single line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh init pwsh --config <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">\scoop\apps\oh-my-posh\current\themes\quick-term.omp.json&#34;</span> | Invoke-Expression
+</span></span></code></pre></div><p>Save and close</p>
+<h2 id="step-9-reload-profile">Step 9: Reload Profile<a href="#step-9-reload-profile" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>. $PROFILE
+</span></span></code></pre></div><h2 id="step-10-verify-theme-is-working">Step 10: Verify Theme is Working<a href="#step-10-verify-theme-is-working" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>You should see a styled prompt with segments showing username, path, and execution time</p>
+<h2 id="optional-add-psreadline-configuration">Optional: Add PSReadLine Configuration<a href="#optional-add-psreadline-configuration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>notepad $PROFILE
+</span></span></code></pre></div><p>Add these lines below the oh-my-posh line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-PSReadLineOption -PredictionSource History
+</span></span><span style="display:flex;"><span>Set-PSReadLineOption -PredictionViewStyle ListView
+</span></span><span style="display:flex;"><span>Set-PSReadLineOption -EditMode Windows
+</span></span></code></pre></div><h2 id="changing-themes-later">Changing Themes Later<a href="#changing-themes-later" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="list-available-themes">List available themes:<a href="#list-available-themes" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-ChildItem <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">\scoop\apps\oh-my-posh\current\themes&#34;</span> | ForEach-Object { $_.Name <span style="color:#f92672">-replace</span> <span style="color:#e6db74">&#39;\.omp\.json$&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span> }
+</span></span></code></pre></div><h3 id="change-theme">Change theme:<a href="#change-theme" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>notepad $PROFILE
+</span></span></code></pre></div><p>Edit the theme name in the config path, then reload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>. $PROFILE
+</span></span></code></pre></div><h2 id="critical-notes">Critical Notes<a href="#critical-notes" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>ALWAYS close and reopen PowerShell after installations</strong> - environment variables require new process</li>
+<li><strong>DO NOT use winget for Oh My Posh</strong> - the WindowsApps package is broken and missing themes</li>
+<li>Scoop installs to: <code>$HOME\scoop\apps\oh-my-posh\current</code></li>
+<li>Profile location: <code>$PROFILE</code> (typically <code>C:\Users\USERNAME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code>)</li>
+<li>If profile errors on startup, disable it: <code>Rename-Item $PROFILE &quot;$PROFILE.bak&quot;</code></li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="check-if-oh-my-posh-is-in-path">Check if oh-my-posh is in PATH:<a href="#check-if-oh-my-posh-is-in-path" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Command oh-my-posh | Select-Object -ExpandProperty Source
+</span></span></code></pre></div><h3 id="verify-themes-exist">Verify themes exist:<a href="#verify-themes-exist" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Test-Path <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">\scoop\apps\oh-my-posh\current\themes\quick-term.omp.json&#34;</span>
+</span></span></code></pre></div><h3 id="view-current-profile">View current profile:<a href="#view-current-profile" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-Content $PROFILE
+</span></span></code></pre></div><h3 id="reinstall-if-needed">Reinstall if needed:<a href="#reinstall-if-needed" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>scoop uninstall oh-my-posh
+</span></span><span style="display:flex;"><span>scoop install oh-my-posh
+</span></span></code></pre></div><h3 id="disable-profile-temporarily">Disable profile temporarily:<a href="#disable-profile-temporarily" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Rename-Item $PROFILE <span style="color:#e6db74">&#34;</span>$PROFILE<span style="color:#e6db74">.bak&#34;</span>
+</span></span></code></pre></div><h3 id="re-enable-profile">Re-enable profile:<a href="#re-enable-profile" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Rename-Item <span style="color:#e6db74">&#34;</span>$PROFILE<span style="color:#e6db74">.bak&#34;</span> $PROFILE
+</span></span></code></pre></div><h2 id="key-lessons">Key Lessons<a href="#key-lessons" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li>Winget quality varies by package source - Microsoft Store apps are often incomplete</li>
+<li>Always restart terminal sessions after installing tools that modify PATH or environment variables</li>
+<li>Scoop is more reliable than winget for developer CLI tools</li>
+<li>Keep profiles minimal - one line for theme initialization is sufficient</li>
+<li>When troubleshooting, disable the profile first to prevent cascading errors</li>
+<li>For enterprise environments, use Intune/SCCM to deploy these tools, not manual installations</li>
+</ol>
+<h2 id="file-locations-reference">File Locations Reference<a href="#file-locations-reference" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<table>
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>PowerShell Profile</td>
+          <td><code>$PROFILE</code> or <code>C:\Users\USERNAME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code></td>
+      </tr>
+      <tr>
+          <td>Oh My Posh Installation</td>
+          <td><code>$HOME\scoop\apps\oh-my-posh\current</code></td>
+      </tr>
+      <tr>
+          <td>Themes</td>
+          <td><code>$HOME\scoop\apps\oh-my-posh\current\themes</code></td>
+      </tr>
+      <tr>
+          <td>Scoop Installation</td>
+          <td><code>$HOME\scoop</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="popular-themes-to-try">Popular Themes to Try<a href="#popular-themes-to-try" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><code>quick-term</code> - Minimal, fast, shows essential info</li>
+<li><code>paradox</code> - Segments with icons and colors</li>
+<li><code>atomicBit</code> - Compact with git status</li>
+<li><code>agnoster</code> - Classic powerline style</li>
+<li><code>jandedobbeleer</code> - Author&rsquo;s personal theme</li>
+</ul>
+<h2 id="additional-resources">Additional Resources<a href="#additional-resources" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Oh My Posh Documentation: <a href="https://ohmyposh.dev/docs">https://ohmyposh.dev/docs</a></li>
+<li>Scoop Documentation: <a href="https://scoop.sh">https://scoop.sh</a></li>
+<li>PowerShell Documentation: <a href="https://docs.microsoft.com/powershell">https://docs.microsoft.com/powershell</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
