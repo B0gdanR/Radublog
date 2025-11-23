@@ -1,0 +1,62 @@
+<!-- Image lightbox/zoom functionality -->
+<style>
+.image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-overlay.active {
+    display: flex;
+}
+
+.image-overlay img {
+    max-width: 95%;
+    max-height: 95%;
+    border: 2px solid #ffffff;
+    object-fit: contain;
+}
+
+article img {
+    cursor: pointer;
+}
+</style>
+
+<div class="image-overlay" id="imageOverlay">
+    <img src="" alt="Enlarged image" id="overlayImage">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('imageOverlay');
+    const overlayImg = document.getElementById('overlayImage');
+    
+    // Add click event to all images in articles
+    document.querySelectorAll('article img').forEach(function(img) {
+        img.addEventListener('click', function() {
+            overlayImg.src = this.src;
+            overlay.classList.add('active');
+        });
+    });
+    
+    // Close overlay when clicking on it
+    overlay.addEventListener('click', function() {
+        overlay.classList.remove('active');
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            overlay.classList.remove('active');
+        }
+    });
+});
+</script>

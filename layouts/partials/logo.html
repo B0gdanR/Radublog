@@ -1,3 +1,5 @@
-<a class="nav_brand" href="{{ absLangURL "" }}">
-  <span style="font-size: 1.2rem; font-weight: 600;">Half<span style="color: #fe8019;">On</span>Cloud</span>
+<a href="{{ if $.Site.Params.Logo.LogoHomeLink }}{{ $.Site.Params.Logo.LogoHomeLink }}{{else}}{{ $.Site.BaseURL }}{{ end }}">
+  <div class="logo">
+    <span style="margin-right: 10px; color: #ffffff; font-size: 1.8rem;">Half<span style="color: #ff0000;">On</span>Cloud</span>
+  </div>
 </a>

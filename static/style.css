@@ -1,3 +1,22 @@
+/* Existing logo spacing fix */
 .header__logo::after {
     margin-left: 10px;
+}
+
+/* Remove yellow background from logo */
+.logo {
+    background: transparent !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Thinner image borders */
+img {
+    border-width: 2px !important;
+}
+
+/* Change background from brown to dark grey */
+body,
+html {
+    background-color: #1a1a1a !important;
 }

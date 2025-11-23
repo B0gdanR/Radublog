@@ -1,6 +1,7 @@
 baseURL = 'https://halfoncloud.com/'
 languageCode = 'en-us'
 title = 'HalfOnCloud'
+copyright = "2025 Radu Bogdan :: HalfOnCloud"
 theme = 'terminal'
 
 [params]
