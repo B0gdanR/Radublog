@@ -1,68 +1,36 @@
 baseURL = 'https://halfoncloud.com/'
 languageCode = 'en-us'
 title = 'HalfOnCloud'
+theme = 'terminal'
 
 [params]
-  author = "Radu Bogdan"
+  themeColor = "orange"
+  showMenuItems = 3
+  fullWidthTheme = false
+  centerTheme = true
+  autoCover = true
+  showLastUpdated = false
   description = "IT tutorials, automation scripts, and Microsoft technology insights"
-  # Set default theme to dark
-  defaultTheme = "dark"
-  
-# Logo configuration (separate section, not nested)
-[params.logo]
-  text = "HalfOnCloud"
+  author = "Radu"
 
-[markup]
-  _merge = "deep"
-
-[build]
-  _merge = "deep"
-
-# Main menu configuration
 [menu]
   [[menu.main]]
-    name = "Blog"
-    url = "/posts/"
-    weight = 10
-  
-  [[menu.main]]
+    identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 20
-  
+    weight = 1
   [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 30
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
 
-[module]
-  [[module.imports]]
-    path = "github.com/schnerring/hugo-theme-gruvbox"
-  
-  [[module.mounts]]
-    source = "node_modules/prismjs"
-    target = "assets/prismjs"
-  [[module.mounts]]
-    source = "node_modules/prism-themes/themes"
-    target = "assets/prism-themes"
-  [[module.mounts]]
-    source = "node_modules/typeface-fira-code/files"
-    target = "static/fonts"
-  [[module.mounts]]
-    source = "node_modules/typeface-roboto-slab/files"
-    target = "static/fonts"
-  [[module.mounts]]
-    source = "node_modules/@tabler/icons/icons"
-    target = "assets/tabler-icons"
-  [[module.mounts]]
-    source = "node_modules/simple-icons/icons"
-    target = "assets/simple-icons"
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
+[languages]
+  [languages.en]
+    languageName = "English"
+    [languages.en.params]
+      readMore = "Read More"
+      readOtherPosts = "Read other posts"
+    [languages.en.params.logo]
+      logoText = "HalfOnCloud "
+      logoCursor = "|"
