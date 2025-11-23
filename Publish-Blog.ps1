@@ -340,7 +340,7 @@ Write-Info "This step often fails with git subtree. Attempting anyway..."
 try {
     # Delete remote hostinger branch
     Write-Info "Deleting old hostinger branch..."
-    git push $Config.GitRemote --delete $Config.HostingerBranch 2>$null
+    git push origin --delete hostinger 2>$null
     
     # Create new subtree split
     Write-Info "Creating subtree split..."
@@ -348,7 +348,7 @@ try {
     
     # Push to hostinger branch
     Write-Info "Pushing to hostinger branch..."
-    git push $Config.GitRemote new-hostinger:$Config.HostingerBranch
+    git push origin new-hostinger:hostinger
     
     # Cleanup local branch
     git branch -D new-hostinger 2>$null
