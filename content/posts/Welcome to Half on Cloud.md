@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Half on Cloud"
-date: 2025-11-26T08:49:35+02:00
+date: 2025-11-26T09:21:14+02:00
 draft: false
 tags: []
 ---
