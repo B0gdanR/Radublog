@@ -1,15 +1,20 @@
 <style>
 
-/* Completely hide heading anchor links - all variations */
-.heading-link,
-.anchor,
-.zola-anchor,
-h1 a.anchor,
-h2 a.anchor,
-h3 a.anchor,
-h1 > a[href^="#"],
-h2 > a[href^="#"],
-h3 > a[href^="#"] {
+/* Apply blue theme to About page and all pages */
+article h1,
+article h2,
+article h3,
+.content h1,
+.content h2,
+.content h3 {
+    color: #4a9eff !important;
+    border-bottom: none !important;
+}
+
+/* Remove dotted lines from all headings */
+h1::after,
+h2::after,
+h3::after {
     display: none !important;
 }
 
