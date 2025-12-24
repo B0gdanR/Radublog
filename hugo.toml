@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'HalfOnCloud'
 copyright = "2025 Radu Bogdan :: HalfOnCloud"
 theme = 'terminal'
+summaryLength = 100
 
 [params]
   themeColor = "orange"
