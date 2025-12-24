@@ -1,18 +1,124 @@
 <style>
+/* Logo fixes */
 .logo {
     background: transparent !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
 
+.header__logo::after {
+    margin-left: 10px;
+}
+
+/* Image borders */
 img {
     border-width: 2px !important;
 }
 
+/* Background color */
 body,
 html {
     background-color: #1a1d2e !important;
 }
-</style>
 
-<link rel="stylesheet" href="{{ "style.css" | absURL }}">
+/* Post cards */
+.post.on-list {
+    background: #363636;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Post titles */
+.post-title a {
+    font-size: 1.4rem !important;
+}
+
+/* Remove dotted lines */
+.post-title {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.post-title::after {
+    display: none !important;
+}
+
+/* Blue post titles */
+.post-title,
+.post-title a {
+    color: #4a9eff !important;
+}
+
+/* Blue tags */
+.post-tags a {
+    color: #4a9eff !important;
+}
+
+.post-tags a:hover {
+    color: #6bb0ff !important;
+}
+
+.post-tags {
+    color: #4a9eff !important;
+}
+
+/* Blue navigation */
+.navigation-menu a {
+    color: #4a9eff !important;
+}
+
+.navigation-menu a:hover {
+    color: #6bb0ff !important;
+}
+
+/* Blue decorative lines */
+.header__logo::after {
+    background: repeating-linear-gradient(90deg, #4a9eff, #4a9eff 2px, transparent 0, transparent 10px) !important;
+}
+
+/* Read More button */
+.read-more.button {
+    display: inline-block !important;
+    background-color: #4a9eff !important;
+    color: #ffffff !important;
+    padding: 12px 24px !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    font-size: 0 !important;
+}
+
+.read-more.button::after {
+    content: "Read More →" !important;
+    font-size: 0.95rem !important;
+    display: inline-block;
+}
+
+.read-more.button:hover {
+    background-color: #6bb0ff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Blue bullet points */
+.post-content ul {
+    list-style: none;
+}
+
+.post-content ul li {
+    position: relative;
+    padding-left: 20px;
+    color: #ffffff !important;
+}
+
+.post-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4a9eff !important;
+    font-weight: bold;
+}
+</style>
