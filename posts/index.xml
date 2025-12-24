@@ -7,4 +7,11 @@
 &lt;/ul&gt;
 &lt;p&gt;I care more about what actually works in production than what looks good on slides.&lt;/p&gt;
 &lt;h2 id="what-you-will-find-here"&gt;What You Will Find Here&lt;/h2&gt;
-&lt;p&gt;This blog is a collection of solutions and notes taken from real issues I&amp;rsquo;ve had to solve:&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;This blog is a collection of solutions and notes taken from real issues I&amp;rsquo;ve had to solve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step-by-step guides based on actual implementations&lt;/li&gt;
+&lt;li&gt;PowerShell scripts I use in real environments&lt;/li&gt;
+&lt;li&gt;Troubleshooting notes and lessons learned&lt;/li&gt;
+&lt;li&gt;Observations from working with Microsoft infrastructure at scale&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The goal is to keep things practical, direct, and reproducible.&lt;/p&gt;</description></item></channel></rss>
