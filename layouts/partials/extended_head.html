@@ -1,23 +1,4 @@
 <style>
-
-/* Apply blue theme to About page and all pages */
-article h1,
-article h2,
-article h3,
-.content h1,
-.content h2,
-.content h3 {
-    color: #4a9eff !important;
-    border-bottom: none !important;
-}
-
-/* Remove dotted lines from all headings */
-h1::after,
-h2::after,
-h3::after {
-    display: none !important;
-}
-
 /* NetworkChuck-style fonts */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
@@ -29,18 +10,18 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700 !important;
 }
 
-/* Force blue theme on single posts too */
+/* Apply blue theme to all pages including About */
+article h1,
+article h2,
+article h3,
 article.post h1,
 article.post h2,
-article.post h3 {
+article.post h3,
+.content h1,
+.content h2,
+.content h3 {
     color: #4a9eff !important;
-}
-
-/* Force blue theme on single posts too */
-article.post h1,
-article.post h2,
-article.post h3 {
-    color: #4a9eff !important;
+    border-bottom: none !important;
 }
 
 article.post .post-title {
@@ -61,6 +42,7 @@ article.post .post-title a {
 
 .header__logo::after {
     margin-left: 10px;
+    background: repeating-linear-gradient(90deg, #4a9eff, #4a9eff 2px, transparent 0, transparent 10px) !important;
 }
 
 /* Image borders */
@@ -85,6 +67,7 @@ html {
 /* Post titles */
 .post-title a {
     font-size: 1.4rem !important;
+    color: #4a9eff !important;
 }
 
 /* Remove dotted lines */
@@ -93,27 +76,24 @@ html {
     padding-bottom: 0 !important;
 }
 
-.post-title::after {
+.post-title::after,
+h1::after,
+h2::after,
+h3::after {
     display: none !important;
 }
 
-/* Blue post titles */
-.post-title,
-.post-title a {
+/* Blue tags */
+.post-tags {
     color: #4a9eff !important;
 }
 
-/* Blue tags */
 .post-tags a {
     color: #4a9eff !important;
 }
 
 .post-tags a:hover {
     color: #6bb0ff !important;
-}
-
-.post-tags {
-    color: #4a9eff !important;
 }
 
 /* Blue navigation */
@@ -123,11 +103,6 @@ html {
 
 .navigation-menu a:hover {
     color: #6bb0ff !important;
-}
-
-/* Blue decorative lines */
-.header__logo::after {
-    background: repeating-linear-gradient(90deg, #4a9eff, #4a9eff 2px, transparent 0, transparent 10px) !important;
 }
 
 /* Read More button */
@@ -174,5 +149,18 @@ html {
     color: #4a9eff !important;
     font-weight: bold;
 }
-</style>
 
+/* Completely hide heading anchor links - MUST BE LAST */
+.heading-link,
+.anchor,
+.zola-anchor,
+h1 a.anchor,
+h2 a.anchor,
+h3 a.anchor,
+h1 > a[href^="#"],
+h2 > a[href^="#"],
+h3 > a[href^="#"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+</style>
