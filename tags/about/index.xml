@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About on HalfOnCloud</title><link>https://halfoncloud.com/tags/about/</link><description>Recent content in About on HalfOnCloud</description><generator>Hugo</generator><language>en</language><copyright>2026 Radu Bogdan :: HalfOnCloud</copyright><lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://halfoncloud.com/tags/about/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to HalfOnCloud</title><link>https://halfoncloud.com/posts/welcome-to-halfoncloud/</link><pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate><guid>https://halfoncloud.com/posts/welcome-to-halfoncloud/</guid><description>&lt;h2 id="who-i-am"&gt;Who I Am&lt;/h2&gt;
-&lt;p&gt;I work in IT, mainly around Microsoft environments. Most of my day-to-day work involves building, fixing, and securing systems based on:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Microsoft SCCM, Intune, Azure, Entra ID, and Microsoft 365&lt;/li&gt;
-&lt;li&gt;VMware virtualization&lt;/li&gt;
-&lt;li&gt;PowerShell for automation and troubleshooting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I care more about what actually works in production than what looks good on slides.&lt;/p&gt;
-&lt;h2 id="what-you-will-find-here"&gt;What You Will Find Here&lt;/h2&gt;
-&lt;p&gt;This blog is a collection of solutions and notes taken from real issues I&amp;rsquo;ve had to solve:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Step-by-step guides based on actual implementations&lt;/li&gt;
-&lt;li&gt;PowerShell scripts I use in real environments&lt;/li&gt;
-&lt;li&gt;Troubleshooting notes and lessons learned&lt;/li&gt;
-&lt;li&gt;Observations from working with Microsoft infrastructure at scale&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The goal is to keep things practical, direct, and reproducible.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on HalfOnCloud</title>
+    <link>https://halfoncloud.com/tags/about/</link>
+    <description>Recent content in About on HalfOnCloud</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>2026 Radu Bogdan :: HalfOnCloud</copyright>
+    <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://halfoncloud.com/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to HalfOnCloud</title>
+      <link>https://halfoncloud.com/posts/welcome-to-halfoncloud/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://halfoncloud.com/posts/welcome-to-halfoncloud/</guid>
+      <description>&lt;h2 id=&#34;who-i-am&#34;&gt;Who I Am&lt;/h2&gt;&#xA;&lt;p&gt;I work in IT, mainly around Microsoft environments. Most of my day-to-day work involves building, fixing, and securing systems based on:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Microsoft SCCM, Intune, Azure, Entra ID, and Microsoft 365&lt;/li&gt;&#xA;&lt;li&gt;VMware virtualization&lt;/li&gt;&#xA;&lt;li&gt;PowerShell for automation and troubleshooting&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I care more about what actually works in production than what looks good on slides.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-you-will-find-here&#34;&gt;What You Will Find Here&lt;/h2&gt;&#xA;&lt;p&gt;This blog is a collection of solutions and notes taken from real issues I&amp;rsquo;ve had to solve:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Step-by-step guides based on actual implementations&lt;/li&gt;&#xA;&lt;li&gt;PowerShell scripts I use in real environments&lt;/li&gt;&#xA;&lt;li&gt;Troubleshooting notes and lessons learned&lt;/li&gt;&#xA;&lt;li&gt;Observations from working with Microsoft infrastructure at scale&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The goal is to keep things practical, direct, and reproducible.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
