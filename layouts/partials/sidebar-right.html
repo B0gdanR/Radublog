@@ -1,0 +1,50 @@
+<aside class="sidebar-right">
+  <div class="sidebar-right__inner">
+    
+    <!-- Search Widget -->
+    <div class="widget search-widget">
+      <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+      </div>
+      <div id="search-results"></div>
+    </div>
+    
+    <!-- Recent Posts Widget -->
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul class="widget-list">
+        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+    
+    <!-- Categories Widget -->
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="widget-tags">
+        {{ range .Site.Taxonomies.categories }}
+          <a href="{{ .Page.Permalink }}" class="widget-tag">
+            {{ .Page.Title }} <span class="count">{{ .Count }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    
+    <!-- Tags Widget -->
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <div class="widget-tags">
+        {{ range .Site.Taxonomies.tags }}
+          <a href="{{ .Page.Permalink }}" class="widget-tag">
+            {{ .Page.Title }} <span class="count">{{ .Count }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    
+  </div>
+</aside>

@@ -1,10 +1,17 @@
 baseURL = 'https://halfoncloud.com/'
 languageCode = 'en-us'
 title = 'HalfOnCloud'
-copyright = "2025 Radu Bogdan :: HalfOnCloud"
+copyright = "2026 Radu Bogdan :: HalfOnCloud"
 theme = 'terminal'
 summaryLength = 100
 
+[markup]
+  [markup.highlight]
+    style = "native"
+    lineNos = false
+    noClasses = true
+    guessSyntax = true
+	
 [params]
   themeColor = "orange"
   showMenuItems = 3
@@ -36,3 +43,6 @@ summaryLength = 100
     [languages.en.params.logo]
       logoText = "HalfOnCloud "
       logoCursor = "|"
+	  
+[outputs]
+  home = ["HTML", "JSON"]

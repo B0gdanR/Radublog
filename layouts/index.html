@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <div class="posts">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+    {{ range $paginator.Pages }}
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="post-meta">
+          <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+          {{ with .Params.author }}<span class="post-author">{{ . }}</span>{{ end }}
+        </div>
+        {{ with .Params.tags }}
+          <span class="post-tags">
+            {{ range . }}
+              #<a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>&nbsp;
+            {{ end }}
+          </span>
+        {{ end }}
+        <div class="post-summary">
+          {{ if .Description }}
+            {{ .Description }}
+          {{ else }}
+            {{ .Summary | truncate 150 }}
+          {{ end }}
+        </div>
+      </article>
+    {{ end }}
+    <div class="pagination">
+      <div class="pagination__buttons">
+        {{ if .Paginator.HasPrev }}
+          <a class="button previous" href="{{ .Paginator.Prev.URL }}">← Previous</a>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+          <a class="button next" href="{{ .Paginator.Next.URL }}">Next →</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

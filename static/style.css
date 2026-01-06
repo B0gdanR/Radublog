@@ -49,8 +49,8 @@ html {
     display: inline-block !important;
     background-color: #4a9eff !important; /* Light blue */
     color: #ffffff !important;
-    padding: 12px 24px !important;
-    border-radius: 25px !important;
+    padding: 8px 18px !important;
+    border-radius: 20px !important;
     text-decoration: none !important;
     font-weight: 600 !important;
     transition: all 0.3s ease !important;
@@ -60,7 +60,7 @@ html {
 
 .read-more.button::after {
     content: "Read More →" !important;
-    font-size: 0.95rem !important;
+    font-size: 0.85rem !important;
     display: inline-block;
 }
 

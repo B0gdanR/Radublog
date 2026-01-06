@@ -13,27 +13,22 @@
     justify-content: center;
     align-items: center;
 }
-
 .image-overlay.active {
     display: flex;
 }
-
 .image-overlay img {
     max-width: 95%;
     max-height: 95%;
     border: 2px solid #ffffff;
     object-fit: contain;
 }
-
 article img {
     cursor: pointer;
 }
 </style>
-
 <div class="image-overlay" id="imageOverlay">
     <img src="" alt="Enlarged image" id="overlayImage">
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('imageOverlay');
@@ -59,4 +54,93 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+</script>
+
+<!-- Search Functionality -->
+<script>
+(function() {
+    let searchIndex = null;
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    if (!searchInput || !searchResults) return;
+    
+    // Load search index
+    fetch('/index.json')
+        .then(response => response.json())
+        .then(data => {
+            searchIndex = data;
+        })
+        .catch(err => console.log('Search index not found'));
+    
+    // Debounce function
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+    
+    // Search function
+    function performSearch(query) {
+        if (!searchIndex || query.length < 2) {
+            searchResults.innerHTML = '';
+            return;
+        }
+        
+        const results = searchIndex.filter(item => {
+            const searchText = (item.title + ' ' + item.contents + ' ' + (item.tags || []).join(' ')).toLowerCase();
+            return searchText.includes(query.toLowerCase());
+        }).slice(0, 8); // Limit to 8 results
+        
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+            return;
+        }
+        
+        searchResults.innerHTML = results.map(item => {
+            // Get snippet from content
+            const contentLower = item.contents.toLowerCase();
+            const queryLower = query.toLowerCase();
+            let snippet = '';
+            
+            const matchIndex = contentLower.indexOf(queryLower);
+            if (matchIndex !== -1) {
+                const start = Math.max(0, matchIndex - 40);
+                const end = Math.min(item.contents.length, matchIndex + query.length + 60);
+                snippet = (start > 0 ? '...' : '') + item.contents.substring(start, end) + (end < item.contents.length ? '...' : '');
+            } else {
+                snippet = item.contents.substring(0, 100) + '...';
+            }
+            
+            return `
+                <div class="search-result-item">
+                    <a href="${item.permalink}">${item.title}</a>
+                    <div class="search-date">${item.date}</div>
+                    <div class="search-snippet">${snippet}</div>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    // Event listener with debounce
+    searchInput.addEventListener('input', debounce(function(e) {
+        performSearch(e.target.value.trim());
+    }, 300));
+    
+    // Clear results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.innerHTML = '';
+        }
+    });
+    
+    // Keep results when clicking inside search
+    searchInput.addEventListener('focus', function() {
+        if (this.value.length >= 2) {
+            performSearch(this.value.trim());
+        }
+    });
+})();
 </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language }}">
+<head>
+  {{ block "title" . }}
+    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+  {{ end }}
+  {{ partial "head.html" . }}
+</head>
+<body class="three-column-layout">
+
+  <!-- Left Sidebar -->
+  {{ partial "sidebar-left.html" . }}
+
+  <!-- Right Sidebar (must be before footer so search script can find elements) -->
+  {{ partial "sidebar-right.html" . }}
+
+  <!-- Main Content Area -->
+  <div class="main-wrapper">
+    <div class="content">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+    {{ block "footer" . }}
+      {{ partial "footer.html" . }}
+    {{ end }}
+  </div>
+
+</body>
+</html>
