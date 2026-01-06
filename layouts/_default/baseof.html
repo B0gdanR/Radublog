@@ -7,6 +7,15 @@
   {{ partial "head.html" . }}
 </head>
 <body class="three-column-layout">
+  <!-- Hamburger menu button -->
+  <button class="hamburger-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
   <!-- Left Sidebar -->
   {{ partial "sidebar-left.html" . }}
@@ -25,5 +34,11 @@
     {{ end }}
   </div>
 
+<script>
+function toggleSidebar() {
+    document.querySelector('.sidebar-left').classList.toggle('active');
+    document.querySelector('.sidebar-overlay').classList.toggle('active');
+}
+</script>
 </body>
 </html>
