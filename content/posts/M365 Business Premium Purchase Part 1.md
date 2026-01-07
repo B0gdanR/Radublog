@@ -46,7 +46,7 @@ I chose 1 user and monthly billing. Yes, monthly costs more per month, but I wan
 
 ![](/images/Intune_P1_001.jpg)
 
-![](/images/Pasted image 20260107000626.png)
+![](/images/Pasted-image-20260107000626.png)
 
 ## Creating Your Admin Account
 
@@ -56,7 +56,7 @@ In my case: RaduBogdan@HalfOnCloud.onmicrosoft.com
 
 Store these credentials somewhere safe. This is your "break glass" account for when things go wrong. Password manager, secure notes, whatever you use. Just don't lose it.
 
-![](/images/Pasted image 20260107000817.png)
+![](/images/Pasted-image-20260107000817.png)
 
 ![](/images/Intune_P1_006.jpg)
 
@@ -66,7 +66,7 @@ Standard payment form. Credit card, billing address, the usual. Microsoft accept
 
 Note that it says "You won't be charged until you buy something" which confused me at first. They mean the trial period if you selected one, otherwise you get charged immediately after completing the order.
 
-![](/images/Pasted image 20260107001024.png)
+![](/images/Pasted-image-20260107001024.png)
 
 ## Order Review
 
@@ -74,7 +74,7 @@ Final confirmation before purchase. Check the price, quantity, payment method, a
 
 The fine print mentions you can cancel within 7 days for a prorated refund. After that, no refunds. Also worth noting: Global, Billing, and Reader admin roles will automatically get access to the billing account.
 
-![](/images/Pasted image 20260107001136.png)
+![](/images/Pasted-image-20260107001136.png)
 
 ## Order Confirmed
 
@@ -82,7 +82,7 @@ Done. Order is placed and Microsoft immediately asks you to set up MFA. This is 
 
 The "Action required" box tells you to set up Microsoft Authenticator. You can use other authenticator apps, but Microsoft pushes their own.
 
-![](/images/Pasted image 20260107001239.png)
+![](/images/Pasted-image-20260107001239.png)
 
 ## Setting Up MFA
 
