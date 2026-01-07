@@ -11,12 +11,12 @@ author: Radu Bogdan
 description: Step-by-step guide to purchasing M365 Business Premium and initial tenant configuration
 draft: false
 ---
+
 ## Choosing the Right Plan
 
 Microsoft offers three main business tiers: Basic, Standard, and Premium. For this blog and my testing environment, I went with "Business Premium" because it's the only one that includes Intune and Entra ID P1. If you need device management and Conditional Access, the other two won't cut it.
 
 The pricing shows $22/user/month for annual billing. I started with monthly to test things out first.
-
 
 ![](/images/Intune_P1_000.jpg)
 
@@ -46,8 +46,6 @@ I chose 1 user and monthly billing. Yes, monthly costs more per month, but I wan
 
 ![](/images/Intune_P1_001.jpg)
 
-
-
 ![](/images/Pasted image 20260107000626.png)
 
 ## Creating Your Admin Account
@@ -61,6 +59,7 @@ Store these credentials somewhere safe. This is your "break glass" account for w
 ![](/images/Pasted image 20260107000817.png)
 
 ![](/images/Intune_P1_006.jpg)
+
 ## Payment Details
 
 Standard payment form. Credit card, billing address, the usual. Microsoft accepts Visa, Mastercard, and Amex.
@@ -82,7 +81,9 @@ The fine print mentions you can cancel within 7 days for a prorated refund. Afte
 Done. Order is placed and Microsoft immediately asks you to set up MFA. This is not optional anymore, Microsoft enforces it for all new admin accounts.
 
 The "Action required" box tells you to set up Microsoft Authenticator. You can use other authenticator apps, but Microsoft pushes their own.
+
 ![](/images/Pasted image 20260107001239.png)
+
 ## Setting Up MFA
 
 Microsoft walks you through the Authenticator setup. Download the app if you don't have it, then follow the prompts.
@@ -94,6 +95,7 @@ The process is straightforward: open the app, add a work account, scan the QR co
 ![](/images/Intune_P1_013.jpg)
 
 ![](/images/Intune_P1_014.jpg)
+
 ## MFA Complete
 
 Once the authenticator is linked, you're done with the initial security setup. This becomes your default sign-in method going forward.
@@ -105,8 +107,3 @@ Once the authenticator is linked, you're done with the initial security setup. T
 At this point you have an active M365 Business Premium subscription and a secured admin account. The next steps would be accessing the admin center, adding a custom domain, and starting to configure the tenant.
 
 I'll cover those in the next post.
-
-![](/images/Pasted image 20260107001410.png)
-
-
-![](/images/Intune_P1_020.jpg)
