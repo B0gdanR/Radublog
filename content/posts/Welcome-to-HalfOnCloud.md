@@ -1,6 +1,6 @@
 ---
 title: "Welcome to HalfOnCloud"
-date: "2025-01-06"
+date: "2025-01-07"
 tags: ["About"]
 categories: ["General"]
 author: "Radu Bogdan"
