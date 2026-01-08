@@ -1,5 +1,5 @@
 ---
-title: M365 Business Premium Part 1: Purchase and Tenant Setup
+title: "M365 Business Premium Part 1: Purchase and Tenant Setup"
 date: 2025-01-08
 tags:
   - MSIntune
