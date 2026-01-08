@@ -13,9 +13,9 @@
     6. Updates the hostinger branch for deployment
 
 .NOTES
-    Author: Radu
+    Author: Radu Bogdan
     Blog: halfoncloud.com
-    Last Updated: 2025-11-23
+    Last Updated: 2026-01-08
 #>
 
 #Requires -Version 5.1
@@ -29,7 +29,7 @@ $Config = @{
     HugoBlogPath       = "C:\Users\Radu\Documents\Radublog"
     
     # Obsidian paths
-    ObsidianPostsPath  = "D:\Blog\Obsidian\Tutorials\Work\Site\Posts"
+    ObsidianPostsPath  = "D:\Blog\Obsidian\Tutorials\Work\Site\Articles\Published\Cloud"
     ObsidianImagesPath = "D:\Blog\Obsidian\Tutorials\Personal\Images"
     
     # Hugo content paths (relative to HugoBlogPath)
