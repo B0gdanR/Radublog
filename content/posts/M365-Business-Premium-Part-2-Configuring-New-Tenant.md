@@ -17,7 +17,7 @@ After completing the purchase and the initial MFA setup, you land in the Microso
 
 Everything looks correct: Global Administrator role assigned, MFA configured, and the default HalfOnCloud.onmicrosoft.com domain attached to my account.
 
-![[Intune_P1_021.jpg]]
+![](/images/Intune_P1_021.jpg)
 
 ## Organization Settings
 
@@ -27,7 +27,7 @@ There are three tabs here: Services, Security & privacy and Organization profile
 
 I started with **Organization profile** to set the basics.
 
-![[Intune_P1_033.jpg]]
+![](/images/Intune_P1_033.jpg)
 
 ## Organization Information
 
@@ -37,7 +37,7 @@ Important to set this to someone who actually monitors emails!
 
 The sold-to address is pulled from your billing info, so that's already filled in from the purchase (I had to remove mine due to security concerns)
 
-![[Intune_P1_022.jpg]]
+![](/images/Intune_P1_022.jpg)
 
 ## Release Preferences
 
@@ -49,7 +49,7 @@ This one matters if you want early access to new features. Microsoft offers thre
 
 I went with targeted release for select users and added my admin account. This way I can test new features before they hit the rest of the organization. In a production environment, you'd add your IT team here.
 
-![[Intune_P1_042.jpg]]
+![](/images/Intune_P1_042.jpg)
 
 ## Data Location
 
@@ -59,7 +59,7 @@ Note the "Advanced Data Residency" section is a paid add-on for stricter data re
 
 Not available in all regions and not necessary for most small businesses!
 
-![[Intune_P1_036.jpg]]
+![](/images/Intune_P1_036.jpg)
 
 ## Security and Privacy Settings
 
@@ -67,7 +67,7 @@ Switching to the Security & privacy tab.
 
 This is where you find password policies, session timeouts, and other security-related tenant settings.
 
-![[Intune_P1_037.jpg]]
+![](/images/Intune_P1_037.jpg)
 
 ## Password Expiration Policy
 
@@ -75,7 +75,7 @@ Microsoft now recommends setting passwords to never expire which might sound cou
 
 Combined with MFA (which I've already set up), non-expiring passwords are actually more secure than the old "change every 90 days" approach.
 
-![[Intune_P1_038.jpg]]
+![](/images/Intune_P1_038.jpg)
 
 ## Idle Session Timeout
 
@@ -85,7 +85,7 @@ The balance here is security versus convenience, 12 hours means users won't get 
 
 Adjust this based on your environment, high-security environments might want 1-4 hours, but for a small business 12 hours is reasonable.
 
-![[Intune_P1_039.jpg]]
+![](/images/Intune_P1_039.jpg)
 
 ## Self-Service Password Reset
 
@@ -95,7 +95,7 @@ This is configured in the Entra ID portal, the link takes you directly there.
 
 Note: I'll cover SSPR setup in a later post when we configure Entra ID settings.
 
-![[Intune_P1_040.jpg]]
+![](/images/Intune_P1_040.jpg)
 
 ## Domains
 
@@ -103,7 +103,7 @@ A quick look at the **Domains** section, right now I only have the default *Half
 
 In a real deployment, you'd add your company's custom domain here, this involves adding DNS records to verify ownership. 
 
-![[Intune_P1_055.jpg]]
+![](/images/Intune_P1_055.jpg)
 
 ## Adding a Custom Domain
 
@@ -113,7 +113,7 @@ Using the default *onmicrosoft.com* address works too but it looks unprofessiona
 
 Add a custom domain you already own and enter your domain name (without www or http)
 
-![[Intune_P1_056.jpg]]
+![](/images/Intune_P1_056.jpg)
 
 ## Domain Verification Options
 
@@ -121,7 +121,7 @@ Microsoft needs to verify you actually own this domain, the recommended method i
 
 There are other options if your registrar doesn't support TXT records, but TXT is the cleanest approach.
 
-![[Intune_P1_057.jpg]]
+![](/images/Intune_P1_057.jpg)
 
 ## The TXT Record Details
 
@@ -133,7 +133,7 @@ Microsoft gives you the exact values to add. In my case:
 
 Copy these values exactly and please note that the MS= code is unique to your tenant!
 
-![[Intune_P1_058.jpg]]
+![](/images/Intune_P1_058.jpg)
 
 ## Adding the TXT Record at Your Host Provider
 
@@ -141,26 +141,26 @@ Now switch to your domain registrar, find the DNS zone editor and add a new TXT 
 
 Select your custom domain and Edit the DNS zone:
 
-![[Intune_P1_059b.jpg]]
+![](/images/Intune_P1_059b.jpg)
 
 Here's what it looks like in domain registrar DNS management:
 
 Type is *TXT*, name is *@*, value is the *MS=* string from Microsoft and TTL is *3600*
 
-![[Intune_P1_061.jpg]]
+![](/images/Intune_P1_061.jpg)
 
 ## Domain Verified - Connection Options
 
 Once Microsoft verifies the TXT record, you move to the connection phase. This is where you decide how to set up DNS for Microsoft services.
 
-![[Intune_P1_063.jpg]]
+![](/images/Intune_P1_063.jpg)
 
 I chose "*Add your own DNS records*" because I want full control over my DNS configuration. 
 
 The other option lets Microsoft manage everything, but that means pointing your nameservers to Microsoft which I don't want for a domain that also hosts a website.
 
 
-![[Intune_P1_065.jpg]]
+![](/images/Intune_P1_065.jpg)
 
 ## Required DNS Records for Exchange
 
@@ -172,7 +172,7 @@ For Exchange Online, you need the following three records:
 - **CNAME record**: autodiscover for email client configuration
 - **TXT record**: SPF record to prevent email spoofing
 
-![[Intune_P1_066.jpg]]
+![](/images/Intune_P1_066.jpg)
 
 ## Adding the MX Record
 
@@ -180,13 +180,13 @@ Back in the domain registrar, add an *MX* record pointing to Microsoft's mail se
 
 The value is *devworkplace-cloud.mail.protection.outlook.com* with priority *0* and TTL *3600*:
 
-![[Intune_P1_067.jpg]]
+![](/images/Intune_P1_067.jpg)
 
 ## Adding the Autodiscover CNAME
 
 The autodiscover **CNAME** helps email clients like Outlook automatically find the correct server settings. Name is "*autodiscover*", target is "*autodiscover.outlook.com*" and TTL *3600*:
 
-![[Intune_P1_068.jpg]]
+![](/images/Intune_P1_068.jpg)
 
 ## Adding the SPF Record
 
@@ -196,7 +196,7 @@ This is critical for email deliverability, without it your emails might land in 
 
 The value is: "*v=spf1 include:spf.protection.outlook.com -all*" and TTL *3600*:
 
-![[Intune_P1_069.jpg]]
+![](/images/Intune_P1_069.jpg)
 
 ## Advanced Options - Intune and DKIM
 
@@ -204,13 +204,13 @@ If you're planning to use Intune for device management (which we are), check "*I
 
 This adds two more CNAME records.
 
-![[Intune_P1_072.jpg]]
+![](/images/Intune_P1_072.jpg)
 
 I've  also enabled **DKIM** (DomainKeys Identified Mail) which adds email signing for better deliverability and security. 
 
 DKIM requires two additional CNAME records.
 
-![[Intune_P1_079.jpg]]
+![](/images/Intune_P1_079.jpg)
 
 ## Intune CNAME Records
 
@@ -221,9 +221,9 @@ For Intune device enrollment to work with your custom domain, add these two CNAM
 
 These allow devices to automatically discover your Intune tenant during enrollment.
 
-![[Intune_P1_073.jpg]]
+![](/images/Intune_P1_073.jpg)
 
-![[Intune_P1_074.jpg]]
+![](/images/Intune_P1_074.jpg)
 
 ## DKIM CNAME Records
 
@@ -237,15 +237,15 @@ selector2-devworkplace-cloud._domainkey.HalfOnCloud.n-v1.dkim.mail.microsoft
 
 Note: The values are unique to your tenant!
 
-![[Intune_P1_075.jpg]]
+![](/images/Intune_P1_075.jpg)
 
-![[Intune_P1_076.jpg]]
+![](/images/Intune_P1_076.jpg)
 
 ## Domain Setup Complete
 
 After adding all the DNS records and giving them time to propagate (usually a few minutes, sometimes up to an hour), Microsoft verifies everything and marks the domain as complete.
 
-![[Intune_P1_080.jpg]]
+![](/images/Intune_P1_080.jpg)
 
 ## Final Domain Configuration
 
@@ -255,7 +255,7 @@ I've set *devworkplace.cloud* as the default, which means new users will automat
 
 Both domains show as **Healthy**, which means all DNS records are correctly configured!
 
-![[Intune_P1_081.jpg]]
+![](/images/Intune_P1_081.jpg)
 
 With the custom domain configured, the tenant is now properly set up for professional use. 
 
