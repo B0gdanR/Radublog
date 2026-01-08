@@ -1,6 +1,6 @@
 ---
 title: Microsoft 365 Business Premium vs E3 vs E5
-date: 2025-01-08
+date: 2025-01-07
 tags:
   - MSIntune
   - M365

@@ -307,7 +307,7 @@ if ($obsidianPosts.Count -eq 0) {
 Write-Step "STEP 2: Building Hugo Site"
 
 # Clean and build
-hugo --cleanDestinationDir --minify
+hugo --cleanDestinationDir --minify --baseURL "https://halfoncloud.com/"
 
 if ($LASTEXITCODE -eq 0) {
     Write-Success "Hugo build completed successfully"
