@@ -253,11 +253,14 @@ if ($obsidianPosts.Count -eq 0) {
         # Convert Obsidian syntax to Hugo
         $convertedContent = Convert-ObsidianToHugo -Content $content -PostName $post.BaseName
         
-        # Save to Hugo posts folder
+# Save to Hugo posts folder - SKIP if file already exists
         $destPath = Join-Path $hugoPostsPath $post.Name
-        $convertedContent | Set-Content $destPath -Encoding UTF8 -NoNewline
-        
-        Write-Success "Copied: $($post.Name)"
+        if (Test-Path $destPath) {
+            Write-Info "SKIPPED (already exists): $($post.Name)"
+        } else {
+            $convertedContent | Set-Content $destPath -Encoding UTF8 -NoNewline
+            Write-Success "Copied: $($post.Name)"
+        }
         
         if ($images.Count -gt 0) {
             Write-Info "  Found $($images.Count) image(s): $($images -join ', ')"
