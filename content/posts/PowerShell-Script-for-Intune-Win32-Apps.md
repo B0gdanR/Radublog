@@ -1,6 +1,6 @@
 ---
 title: PowerShell script installer for Win32 apps Guide
-date: 2026-01-14
+date: 2026-01-15
 tags:
   - MSIntune
   - PowerShell
@@ -84,10 +84,9 @@ catch {
 
 When creating a new app, selecting `Windows app (Win32)` from the dropdown enables the full Win32 app deployment workflow. From the Intune portal, select "Create" and from the App type choose "Windows app (Win32)".
 
-Add the newly created "*7z2501-x64.intunewin*" into the "Select app package file"
+Add the newly created "*7z2501-x64.intunewin*" into the "Select app package file":
 
-
-![](/images/Pasted image 20260115173250.png)
+![](/images/Blog_P10_023.png)
 
 Once the intunewim is added continue with the new application customizations.
 
