@@ -124,7 +124,7 @@ This version-based detection is superior to simple file existence checks, it pre
 
 Final step is to assign the application to a group, in this case I specifically add it as an "*Available*" type, since I want to manually install it from the "Company Portal":
 
-![](/images/Blog_P11_000 1.jpg)
+![](/images/Blog_P11_000.jpg)
 
 After finishing creating the application and reviewing it once again, you'll notice something interesting, the Install command shows a `-` (dash) and the Install script shows: `Install_7Zip_2501.ps1` but if you edit the app again it will show the correct Installer type: `PowerShell script` .
 
@@ -171,7 +171,7 @@ Understanding and correlating these logs is essential when diagnosing Win32 app 
 
 Reviewing `7-Zip-25.01-x64-install.log` will reveal the following two entries:
 
-![](/images/Blog_P10_017 1.jpg)
+![](/images/Blog_P10_017.jpg)
 
 `Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Windows\IMECache\6e0911dd-6755-4eb7-8a75-ba02e685232b_1\ea57d2d6-fb24-45a9-a0d0-638eb33b93f4.ps1`
 
