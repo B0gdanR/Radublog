@@ -1,6 +1,6 @@
 ---
 title: "M365 Business Premium Part 6: Building the Intune Foundation for Autopilot"
-date: 2026-02-02
+date: 2026-02-01
 tags:
   - MSIntune
   - EntraID
@@ -271,6 +271,7 @@ An **email notification is sent to the end user after one day** of continued non
 With tenant readiness confirmed, enrollment controls in place, ESP behavior tuned and a compliance baseline that covers BitLocker, Defender, Secure Boot and credential management, the foundation is set.
 
 The next article moves from configuration to execution, walking through an actual Intune Autopilot deployment and showing how these settings behave during real device provisioning.
+
 
 
 
