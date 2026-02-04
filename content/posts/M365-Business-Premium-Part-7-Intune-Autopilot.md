@@ -133,9 +133,8 @@ First-time authentication on a fresh device shows the "Let's get you signed in" 
 
 ![](/images/Blog_P16_183.jpg)
 
-```
-Note: As of December 2025 (Microsoft Graph PowerShell SDK v2.34) the authentication experience changed from browser-based to Windows Account Manager (WAM). You'll see a native Windows dialog asking to select "Work or school account" instead of a browser popup.
-```
+
+>Note: As of December 2025 (Microsoft Graph PowerShell SDK v2.34) the authentication experience changed from browser-based to Windows Account Manager (WAM). You'll see a native Windows dialog asking to select "Work or school account" instead of a browser popup.
 
 
 ![](/images/Blog_P16_187.jpg)
@@ -568,9 +567,8 @@ All six files are present and accessible at X:\Autopilot exactly where I've plac
 
 The script now displays a temporary device code *DVJ9C2UY6* and waits for me to authenticate. Notice the Device Serial field is empty, this is expected on VMware VMs where OA3Tool reads from SMBIOS Type 1 which contains no serial number. The GroupTag *A-RO-U-D-V* is automatically applied based on the parameter in CaptureHash.cmd:
 
-```
-Note: This guide covers a single GroupTag scenario so if your organization uses multiple GroupTags for different device configurations, the approach here would need to be extended so that's outside the scope of this article for now.
-```
+
+>Note: This guide covers a single GroupTag scenario so if your organization uses multiple GroupTags for different device configurations, the approach here would need to be extended so that's outside the scope of this article for now.
 
 
 ![](/images/Blog_P16_195.jpg)
