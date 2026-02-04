@@ -133,14 +133,16 @@ First-time authentication on a fresh device shows the "Let's get you signed in" 
 
 ![](/images/Blog_P16_183.jpg)
 
-> [!Note]
-> As of December 2025 (Microsoft Graph PowerShell SDK v2.34) the authentication experience changed from browser-based to Windows Account Manager (WAM). You'll see a native Windows dialog asking to select "Work or school account" instead of a browser popup.
+```
+Note: As of December 2025 (Microsoft Graph PowerShell SDK v2.34) the authentication experience changed from browser-based to Windows Account Manager (WAM). You'll see a native Windows dialog asking to select "Work or school account" instead of a browser popup.
+```
+
 
 ![](/images/Blog_P16_187.jpg)
 
 Once authenticated the script connects to Microsoft Graph, gathers the hardware details and uploads the hash to the Intune tenant. The process typically takes 2-4 minutes ending with a confirmation that the device was imported successfully:
 
-![](/images/Blog_P16_189.jpg)
+![](/images/Blog_P16_289.jpg)
 
 The device is now registered in Intune with Autopilot profile assigned:
 
@@ -176,11 +178,9 @@ These are the files originally created into my location "*C:\AutopilotUSB*" that
 With these commands I've created a staging folder called "*C:\AutopilotUSB*" to collect all the files needed for the custom ISO, then I've copied *oa3tool.exe* from the Microsoft Windows Assessment and Deployment Kit (ADK) installation, this is Microsoft's OEM Activation 3.0 tool that extracts hardware identifiers from the device's SMBIOS and TPM to generate the Autopilot hash:
 
 ```PowerShell
-
 New-Item -Path "C:\AutopilotUSB" -ItemType Directory -Force
 
 Copy-Item "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\amd64\Licensing\OA30\oa3tool.exe" -Destination "C:\AutopilotUSB\"
-
 ```
 
 
@@ -209,11 +209,9 @@ With these commands I've first verified that *PCPKsp.dll* exists in the System32
 At this point the staging folder contains three files: oa3tool.exe, OA3.cfg (which I created manually) and PCPKsp.dll. The remaining three files are PowerShell scripts that handle the CSV conversion and upload to Intune.
 
 ```PowerShell
-
 Test-Path "C:\Windows\System32\PCPKsp.dll"
 
 Copy-Item "C:\Windows\System32\PCPKsp.dll" -Destination "C:\AutopilotUSB\" -Force
-
 ```
 
 ![](/images/Blog_P15_005.jpg)
@@ -223,7 +221,6 @@ Copy-Item "C:\Windows\System32\PCPKsp.dll" -Destination "C:\AutopilotUSB\" -Forc
 This new custom PS script bridges the gap between oa3tool.exe output and what Intune expects. The OA3 tool generates an XML file with the hardware hash buried inside XML nodes. This script extracts the hash and serial number, then formats them into the exact CSV structure that Intune's Autopilot import API requires: three columns with Device Serial Number, Windows Product ID (left empty) and Hardware Hash. Without this conversion step, you'd be manually copy-pasting Base64 strings.
 
 ```PowerShell
-
 param(
     [Parameter(Mandatory=$false)]
     [string]$OutputFile = ".\AutopilotHash.csv"
@@ -262,7 +259,6 @@ $csvContent | Out-File -FilePath $OutputFile -Encoding ASCII -Force
 
 Write-Host "SUCCESS: Hash exported to $OutputFile" -ForegroundColor Green
 Write-Host "Serial Number: $SerialNumber" -ForegroundColor Cyan
-
 ```
 
 
@@ -273,7 +269,6 @@ This is where the magic happens, instead of manually uploading the CSV through t
 You can authenticate on your phone or another PC, manually entering the code shown on screen and the script handles the rest: uploading the hash, applying your GroupTag and triggering an Autopilot sync. The device is ready for Autopilot before Windows even finishes installing:
 
 ```PowerShell
-
 param(
     [Parameter(Mandatory=$false)]
     [string]$CsvFile = "X:\Autopilot\AutopilotHash.csv",
@@ -409,8 +404,6 @@ Write-Host "  Serial: $SerialNumber" -ForegroundColor White
 Write-Host "  GroupTag: $GroupTag" -ForegroundColor White
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
-
-
 ```
 
 ## Creating a Custom Windows 11 ISO with Embedded Autopilot Scripts
@@ -575,8 +568,10 @@ All six files are present and accessible at X:\Autopilot exactly where I've plac
 
 The script now displays a temporary device code *DVJ9C2UY6* and waits for me to authenticate. Notice the Device Serial field is empty, this is expected on VMware VMs where OA3Tool reads from SMBIOS Type 1 which contains no serial number. The GroupTag *A-RO-U-D-V* is automatically applied based on the parameter in CaptureHash.cmd:
 
-> [!Note] 
-> This guide covers a single GroupTag scenario so if your organization uses multiple GroupTags for different device configurations, the approach here would need to be extended. That's outside the scope of this article for now.
+```
+Note: This guide covers a single GroupTag scenario so if your organization uses multiple GroupTags for different device configurations, the approach here would need to be extended so that's outside the scope of this article for now.
+```
+
 
 ![](/images/Blog_P16_195.jpg)
 
@@ -742,8 +737,9 @@ At first glance this made no sense the device was Azure AD joined, the user was 
 
 Every single failure came from the "Device Management Client" application trying to authenticate to "Microsoft Intune", the error message said the user would be redirected to satisfy additional authentication challenges but here's the catch: the Device Management Client is a background service which cannot be redirected, cannot click buttons and cannot accept terms. Something in my Conditional Access configuration was demanding an interactive response from a non-interactive process:
 
->[!Note]
->For readers who want deeper context around my Conditional Access design I've covered the full policy architecture in [Part 5](https://halfoncloud.com/posts/m365-business-premium-part-5-intune-conditional-access-policies/). That article explains the rationale, targeting strategy and security strategy implemented, which directly influences how Autopilot authentication behaves as well.
+
+>Note: For readers who want deeper context around my Conditional Access design I've covered the full policy architecture in [Part 5](https://halfoncloud.com/posts/m365-business-premium-part-5-intune-conditional-access-policies/). That article explains the rationale, targeting strategy and security strategy implemented, which directly influences how Autopilot authentication behaves as well.
+
 
 ![](/images/Blog_P16_283.jpg)
 
@@ -764,8 +760,8 @@ The fix was quite simple once I've understood the problem, I needed to exclude t
 
 But wait there's more ! Apparently in newer Microsoft 365 tenants the "*Microsoft Intune Enrollment*" service principal simply doesn't exist so you can't exclude something from a Conditional Access policy if it doesn't exist in your tenant's Enterprise Applications, therefore I've used the following PowerShell script to create it manually:
 
->[!NOTE]
->If you're setting up a new tenant and plan to use Conditional Access policies that target "All cloud apps," run this script first, it only takes 30 seconds and prevents hours of troubleshooting mysterious device sync failures later.
+
+>Note: If you're setting up a new tenant and plan to use Conditional Access policies that target "All cloud apps," run this script first, it only takes 30 seconds and prevents hours of troubleshooting mysterious device sync failures later.
 
 
 ```PowerShell
