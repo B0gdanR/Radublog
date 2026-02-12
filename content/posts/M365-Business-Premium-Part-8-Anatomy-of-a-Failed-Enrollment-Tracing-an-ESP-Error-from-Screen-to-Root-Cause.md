@@ -48,8 +48,8 @@ Two show green checkmarks (Installation successful), the third "Win32App_56bbf89
 *Finish Time:  < time not available >*
 *Status: The current status of this resource event is unknown.*
 
-| **💡 CLUE #1**<br><br>The app started but never finished "*Finish Time: < time not available >*" means the install process exited without reporting completion back to the ESP tracker. |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+>💡**Clue #1**
+>The app started but never finished "*Finish Time: < time not available >*" means the install process exited without reporting completion back to the ESP tracker.
 
 ![](/images/Blog_P17_078.jpg)
 
@@ -89,8 +89,8 @@ Notice that in the last snapshot only *56bbf894* appears, the other two apps are
 | 21:53:28Z           | **4 (FAILED)**  | -               | -               |
 | **LastLoggedState** | **4 (FAILED)**  | **3 (Success)** | **3 (Success)** |
 
-| **💡 CLUE #2**<br><br>App *56bbf894* stayed at state 1 (In Progress) for approximately six minutes while the other two apps completed successfully, then flipped directly to state 4 (Failed) at 21:53:28Z. The periodic snapshots confirm this is not a sudden crash, the app was stuck for an extended period before ESP finally recorded the failure. Combined with CLUE #1 (no finish time in the Ctrl+Shift+D output), the evidence now points to something going wrong during or immediately after the install attempt itself. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+>💡**Clue #2**
+>App *56bbf894* stayed at state 1 (In Progress) for approximately six minutes while the other two apps completed successfully, then flipped directly to state 4 (Failed) at 21:53:28Z. The periodic snapshots confirm this is not a sudden crash, the app was stuck for an extended period before ESP finally recorded the failure. Combined with CLUE #1 (no finish time in the Ctrl+Shift+D output), the evidence now points to something going wrong during or immediately after the install attempt itself.
 
 ### **STEP 3:** **Verify the Autopilot Profile**
 
@@ -184,8 +184,8 @@ Select-String -Path "C:\ProgramData\Microsoft\IntuneManagementExtension\Logs\  
 
 Annnd no results return...
 
-| **💡 CLUE #3 - The missing Exit Code **<br><br>There is no *lpExitCode* anywhere in the entire IME log so this is a important finding. The absence of an exit code means that *msiexec* was never called, the install command never reached the MSI engine and the content was downloaded successfully, but something failed between the download completing and the installer being invoked. The failure happened inside the PowerShell wrapper script before it could call the installer. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+>💡**Clue #3**
+>There is no *lpExitCode* anywhere in the entire IME log so this is a important finding. The absence of an exit code means that *msiexec* was never called, the install command never reached the MSI engine and the content was downloaded successfully, but something failed between the download completing and the installer being invoked. The failure happened inside the PowerShell wrapper script before it could call the installer.
 
 ### **STEP 6: Check Available Log Files**
 
@@ -214,8 +214,9 @@ The NotepadPlusPlus log was written at 1:53 PM right in the window when the Side
 
 Now we have a name and the failed app is **Notepad++** which left behind a transcript describing exactly what happened during its installation attempt.
 
-| **💡 CLUE #4**<br><br>*NotepadPlusPlus-install.log* exists in the IME logs directory,  the install script used Start-Transcript to record its own execution. This is the direct eyewitness account of what happened inside the script, not filtered through the IME's perspective, but the script's own record of every command it ran and every error it encountered. |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+>💡**Clue #4**
+>*NotepadPlusPlus-install.log* exists in the IME logs directory,  the install script used Start-Transcript to record its own execution. This is the direct eyewitness account of what happened inside the script, not filtered through the IME's perspective, but the script's own record of every command it ran and every error it encountered.
 
 ### **STEP 7:** **Read the Install Log - The Smoking Gun**
 
@@ -227,8 +228,14 @@ Get-Content "C:\ProgramData\Microsoft\IntuneManagementExtension\Logs\  NotepadP
 
 ![](/images/Blog_P17_091.jpg)
 
-| 💡 **Smoking gun**:<br><br>If you look close enough, the MSI filename contains an extra space before the extension: *npp.8.9.1.Installer.x64. msi* when the actual file on disk is **npp.8.9.1.Installer.x64.msi** without space so the script looked for a file that does not exist, logged the error and exited. Start time and end time are identical: 20260209135308 therefore the entire script lived and died within the same second.<br><br>*msiexec* was never invoked because there was nothing to invoke it with, the file path pointed to a filename that did not exist on disk.<br><br>**Root cause:** A single extra space in the $MsiFile variable inside the PS script *Install-NotepadPlusPlus.ps1*. |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+>💡**Smoking gun:**
+>If you look close enough, the MSI filename contains an extra space before the extension: *npp.8.9.1.Installer.x64. msi* when the actual file on disk is **npp.8.9.1.Installer.x64.msi** without space so the script looked for a file that does not exist, logged the error and exited. Start time and end time are identical: 20260209135308 therefore the entire script lived and died within the same second.
+>
+>*msiexec* was never invoked because there was nothing to invoke it with, the file path pointed to a filename that did not exist on disk.
+>
+>**Root cause:** A single extra space in the $MsiFile variable inside the PS script *Install-NotepadPlusPlus.ps1*.
+
 
 ### **STEP 8:** **Cross-Validate with AppWorkload.log**
 
@@ -282,8 +289,8 @@ What matters just as much as what is present is what is absent: Event **303** wh
 | 153          | State changed to ProfileState_Available | Profile activated                |
 | **303**      | **(NOT PRESENT)**                       | **Provisioning never completed** |
 
-| **💡 CLUE #5**<br><br>Missing Event 303 confirms provisioning never completed. Missing MsiInstaller entry for Notepad++ confirms msiexec was never invoked so this cross-validates the install log finding from a completely independent source. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+>💡**Clue #5**
+>Missing Event 303 confirms provisioning never completed. Missing MsiInstaller entry for Notepad++ confirms msiexec was never invoked so this cross-validates the install log finding from a completely independent source.
 
 ### The Red Herrings
 
@@ -302,6 +309,7 @@ Event **1097** is even more deceptive because it appears as a warning and the me
 These are AAD plugin migration tasks that completed fine so the misleading log text is a formatting issue in the event message itself and not an indication of failure.
 
 ![](/images/Blog_P17_099.jpg)
+
 
 >**Pro tip:** When scanning Event Viewer during Autopilot troubleshooting do not react to the event level (Warning, Error) or to keywords in isolation, instead always read the complete message text. Event 1097 in particular has tripped up countless engineers because the word "Error" appears in a message that actually reports success. 
 >
