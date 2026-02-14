@@ -1,3 +1,12 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NQJGGWW9C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9NQJGGWW9C');
+</script>
+
 <style>
 /* NetworkChuck-style fonts */
 body {
@@ -794,6 +803,57 @@ body.three-column-layout .header {
 
 .sidebar-social a:hover {
     color: #4a9eff;
+}
+
+
+/* ============================================
+   BLOCKQUOTE STYLING - Obsidian-style
+   ============================================ */
+
+blockquote {
+    border-left: 4px solid #ff0000 !important;
+    background-color: rgba(255, 107, 107, 0.03) !important;
+	background-color: transparent !important;
+    margin: 1.5em 0 !important;
+    padding: 15px 20px !important;
+    border-radius: 0 8px 8px 0 !important;
+    color: #cccccc !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}
+
+blockquote p {
+    margin: 0 !important;
+}
+
+blockquote::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* ============================================
+   CODE BLOCK STYLING - Full width, wrap lines
+   ============================================ */
+
+pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-x: hidden !important;
+}
+
+pre code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+}
+
+/* ============================================
+   TABLE STYLING - Thinner borders
+   ============================================ */
+
+table, th, td {
+    border-width: 2px !important;
+    border-color: #2a2d3e !important;
 }
 
 </style>

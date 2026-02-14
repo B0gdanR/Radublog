@@ -7,7 +7,7 @@ summaryLength = 100
 
 [markup]
   [markup.highlight]
-    style = "native"
+    style = "paraiso-dark"
     lineNos = false
     noClasses = true
     guessSyntax = true
@@ -19,8 +19,8 @@ summaryLength = 100
   centerTheme = true
   autoCover = true
   showLastUpdated = false
-  description = "IT tutorials, automation scripts, and Microsoft technology insights"
-  author = "Radu"
+  description = "Tutorials, Automation scripts and Microsoft technology insights"
+  author = "Radu Bogdan"
 
 [menu]
   [[menu.main]]
