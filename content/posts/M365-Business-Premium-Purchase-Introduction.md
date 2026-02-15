@@ -1,6 +1,6 @@
 ---
 title: Microsoft 365 Business Premium vs E3 vs E5
-date: 2025-01-07
+date: 2026-01-07
 tags:
   - MSIntune
   - M365
@@ -9,7 +9,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: An honest comparison for small businesses deciding between M365 plans in 2025
+description: "An honest comparison of Microsoft 365 Business Basic, Standard and Premium plans for small businesses, breaking down features, licensing costs and which plan actually fits your needs."
 draft: false
 ---
 

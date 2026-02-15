@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: PowerShell script installer for Win32 apps Install and Troubleshooting
+description: "How to build a PowerShell installer script for deploying Win32 apps through Microsoft Intune, covering detection rules, install commands and common troubleshooting scenarios."
 draft: false
 ---
 ## The New Way

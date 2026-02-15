@@ -1,6 +1,6 @@
 ---
 title: "M365 Business Premium Part 2: Configuring the new tenant"
-date: 2025-01-09
+date: 2026-01-09
 tags:
   - MSIntune
   - M365
@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: "Step-by-step guide to configuring the new M365 Business Premium tenant"
+description: "How to configure a new Microsoft 365 Business Premium tenant from scratch, covering admin center setup, domain verification, DNS records and initial security settings."
 draft: false
 ---
 ## First Look at the Tenant

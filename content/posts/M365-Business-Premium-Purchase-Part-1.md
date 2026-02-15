@@ -1,6 +1,6 @@
 ---
 title: "M365 Business Premium Part 1: Purchase and Tenant Setup"
-date: 2025-01-08
+date: 2026-01-08
 tags:
   - MSIntune
   - M365
@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: Step-by-step guide to purchasing M365 Business Premium and initial tenant configuration
+description: "Step-by-step walkthrough of purchasing Microsoft 365 Business Premium, from selecting the plan to completing the first admin portal login and initial tenant configuration."
 draft: false
 ---
 

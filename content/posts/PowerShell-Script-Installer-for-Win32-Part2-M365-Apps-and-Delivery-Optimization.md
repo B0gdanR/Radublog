@@ -12,7 +12,7 @@ categories:
   - "#M365Apps"
   - "#DeliveryOptimization"
 author: Radu Bogdan
-description: "Part 2 of my PowerShell Win32 Apps guide: M365 Apps deployment and how to handle Delivery Optimization settings"
+description: "Deploying Microsoft 365 Apps as a Win32 package through Intune with PowerShell, plus how to configure and troubleshoot Delivery Optimization settings for large app downloads."
 draft: false
 ---
 ## Building on the Foundation

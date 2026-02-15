@@ -9,7 +9,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: Understanding Declarative Device Management, what it is, why it matters and what you need to do about it
+description: "What is Declarative Device Management (DDM) in Microsoft Intune, how it differs from traditional MDM policy delivery and what IT admins need to prepare for."
 draft: false
 ---
 ## Background and Intent

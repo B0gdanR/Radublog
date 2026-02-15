@@ -7,7 +7,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: Microsoft Entra ID Conditional Access Policies explained in detail
+description: "How to configure Conditional Access policies in Microsoft Entra ID for M365 Business Premium, covering MFA requirements, device compliance, location-based rules and common challenges."
 draft: false
 ---
 ## The Policy Dashboard

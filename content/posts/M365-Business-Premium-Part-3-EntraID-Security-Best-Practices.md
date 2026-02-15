@@ -1,6 +1,6 @@
 ---
 title: "M365 Business Premium Part 3: Entra ID Security Best Practices"
-date: 2025-01-10
+date: 2026-01-10
 tags:
   - MSIntune
   - M365
@@ -9,7 +9,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: "Step-by-step guide to configuring Microsoft Entra ID security best practices"
+description: "Microsoft Entra ID security hardening for M365 Business Premium, covering MFA enforcement, Security Defaults, admin role protection and identity best practices."
 draft: false
 ---
 ## Security Before Enrollment

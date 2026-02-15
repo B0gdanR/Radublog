@@ -1,6 +1,6 @@
 ---
 title: "M365 Business Premium Part 4: Naming Conventions and Standards"
-date: 2025-01-11
+date: 2026-01-11
 tags:
   - MSIntune
   - M365
@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: Enterprise naming conventions for Intune policies, groups and apps
+description: "A practical naming convention framework for Microsoft Intune policies, device groups, compliance policies and Win32 apps that scales from small business to enterprise."
 draft: false
 ---
 ## Why Naming Conventions Matter

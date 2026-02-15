@@ -7,6 +7,15 @@
   gtag('config', 'G-9NQJGGWW9C');
 </script>
 
+<!-- RSS Feed Discovery -->
+<link rel="alternate" type="application/rss+xml" title="HalfOnCloud" href="/index.xml">
+
+<!-- Structured Data for Articles (JSON-LD) -->
+{{ if .IsPage }}
+{{ $s := printf `<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":%q,"description":%q,"author":{"@type":"Person","name":%q},"datePublished":"%s","dateModified":"%s","url":"%s","publisher":{"@type":"Organization","name":"HalfOnCloud"},"keywords":[%s],"wordCount":%d,"timeRequired":"PT%dM"}</script>` .Title (.Description | default (.Summary | plainify | truncate 160)) (.Params.author | default .Site.Params.author) (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02") .Permalink (delimit (apply .Params.tags "printf" "%q" ".") ",") .WordCount .ReadingTime }}
+{{ $s | safeHTML }}
+{{ end }}
+
 <style>
 /* NetworkChuck-style fonts */
 body {
