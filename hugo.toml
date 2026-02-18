@@ -11,6 +11,10 @@ summaryLength = 100
     lineNos = false
     noClasses = true
     guessSyntax = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
 	
 [params]
   themeColor = "orange"

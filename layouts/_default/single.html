@@ -15,7 +15,17 @@
       {{ end }}
     </header>
 
-    <div class="post-content">
+<div class="post-content">
+      {{ if gt .WordCount 600 }}
+        {{ with .TableOfContents }}
+        <div class="toc-container">
+          <details>
+            <summary class="toc-title">Table of Contents</summary>
+            {{ . }}
+          </details>
+        </div>
+        {{ end }}
+      {{ end }}
       {{ .Content }}
     </div>
 
