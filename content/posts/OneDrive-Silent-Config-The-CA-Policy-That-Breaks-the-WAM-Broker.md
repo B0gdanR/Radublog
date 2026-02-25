@@ -1,5 +1,5 @@
 ---
-title: '"OneDrive Silent Config: The CA Policy That Breaks the WAM Broker"'
+title: "OneDrive Silent Config: The CA Policy That Breaks the WAM Broker"
 date: 2026-02-25
 tags:
   - MSIntune
@@ -14,6 +14,7 @@ draft: false
 ## TL;DR
 
 Turns out a Terms of Use Conditional Access policy scoped to All apps will quietly take down every Microsoft app on a fresh Autopilot device. No errors or warnings, just everything broken at once. Here is how I found it and fixed it.
+
 
 ---
 
@@ -218,7 +219,7 @@ CA-005 is the exception, "Terms of Use" has no silent fulfillment path since it 
 Now that CA-005 is the prime suspect, inspect its exact configuration to understand the full scope of what it covers and what it demands.
 
 ```PowerShell
-$ca005 = Get-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId "a7b4ed92-d67b-406d-8111-2d1355f3685c"
+$ca005 = Get-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId "<your-policy-id>"
 $ca005.Conditions.Applications | ConvertTo-Json -Depth 5
 $ca005.Conditions.Users | ConvertTo-Json -Depth 5
 $ca005.GrantControls | ConvertTo-Json -Depth 5
