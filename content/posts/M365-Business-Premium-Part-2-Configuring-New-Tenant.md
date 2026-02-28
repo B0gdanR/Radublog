@@ -1,5 +1,5 @@
 ---
-title: "M365 Business Premium Part 2: Configuring the new tenant"
+title: "M365 Business Premium: Initial Tenant Configuration and Custom Domain Setup"
 date: 2026-01-09
 tags:
   - MSIntune
@@ -8,14 +8,14 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: "How to configure a new Microsoft 365 Business Premium tenant from scratch, covering admin center setup, domain verification, DNS records and initial security settings."
+description: Step-by-step guide to configuring the new M365 Business Premium tenant
 draft: false
 ---
 ## First Look at the Tenant
 
 After completing the purchase and the initial MFA setup, you land in the Microsoft 365 admin center. First thing I did here was to check my Admin account under Users > Active users.
 
-Everything looks correct: Global Administrator role assigned, MFA configured, and the default HalfOnCloud.onmicrosoft.com domain attached to my account.
+Everything looks correct: Global Administrator role assigned, MFA configured and the default *HalfOnCloud.onmicrosoft.com* domain attached to my account.
 
 ![](/images/Intune_P1_021.jpg)
 
@@ -53,7 +53,7 @@ I went with targeted release for select users and added my admin account. This w
 
 ## Data Location
 
-Worth checking where Microsoft stores your data. Since I'm in Europe, my tenant data sits in European Union/EFTA datacenters for Exchange, Teams & SharePoint.
+Worth checking where Microsoft stores your data. Since I'm in Europe, my tenant data sits in European Union/EFTA datacenters for Exchange, Teams and SharePoint.
 
 Note the "Advanced Data Residency" section is a paid add-on for stricter data residency controls. 
 
@@ -65,7 +65,7 @@ Not available in all regions and not necessary for most small businesses!
 
 Switching to the Security & privacy tab. 
 
-This is where you find password policies, session timeouts, and other security-related tenant settings.
+This is where you find password policies, session timeouts and other security-related tenant settings.
 
 ![](/images/Intune_P1_037.jpg)
 
@@ -97,11 +97,42 @@ Note: I'll cover SSPR setup in a later post when we configure Entra ID settings.
 
 ![](/images/Intune_P1_040.jpg)
 
+## Block self-service trials and purchases
+
+Settings > Org settings, select "Self-service trials and purchases" in order to prevent users from purchasing products without admin consent
+
+![](/images/Blog_P8_000.jpg)
+
+Select the product, for example "Microsoft 365 Copilot" and change it from *Allow* (default) to *Do not allow* thus you prevent regular user from making purchases by themselves:
+
+![](/images/Blog_P8_003.jpg)
+
+>**Note**: In order to block self-service trials and purchases for all products at once you need to use the following PS commands:
+
+```PowerShell
+Install-Module -Name MSCommerce
+
+Connect-MSCommerce
+
+$enabledProductPolicies = Get-MSCommerceProductPolicies -PolicyId AllowSelfServicePurchase | Where-Object { $_.PolicyValue -eq "Enabled" }
+
+if ($null -eq $enabledProductPolicies) {
+	  Write-Host "No policies are enabled." -ForegroundColor Yellow
+    return
+}
+
+foreach ($policy in $enabledProductPolicies) {
+    $null = Update-MSCommerceProductPolicy -PolicyId AllowSelfServicePurchase -ProductId $policy.ProductId -Value "Disabled"
+    Write-Host "The policy for $($policy.ProductName) has been set to disabled." -ForegroundColor Green
+}
+```
+
+
 ## Domains
 
 A quick look at the **Domains** section, right now I only have the default *HalfOnCloud.onmicrosoft.com* domain, which Microsoft creates automatically.
 
-In a real deployment, you'd add your company's custom domain here, this involves adding DNS records to verify ownership. 
+In a real deployment you'd add your company's custom domain here, this involves adding DNS records to verify ownership. 
 
 ![](/images/Intune_P1_055.jpg)
 
@@ -216,8 +247,8 @@ DKIM requires two additional CNAME records.
 
 For Intune device enrollment to work with your custom domain, add these two CNAME records:
 
-- enterpriseregistration → enterpriseregistration.windows.net
-- enterpriseenrollment → enterpriseenrollment-s.manage.microsoft.com
+- **enterpriseregistration**: enterpriseregistration.windows.net
+- **enterpriseenrollment**: enterpriseenrollment-s.manage.microsoft.com
 
 These allow devices to automatically discover your Intune tenant during enrollment.
 
@@ -231,11 +262,10 @@ DKIM records are longer and look messy, but they're important. You need two sele
 
 The names are: 
 
-selector1-devworkplace-cloud._domainkey.HalfOnCloud.n-v1.dkim.mail.microsoft
+- selector1-devworkplace-cloud._domainkey.HalfOnCloud.n-v1.dkim.mail.microsoft
+- selector2-devworkplace-cloud._domainkey.HalfOnCloud.n-v1.dkim.mail.microsoft
 
-selector2-devworkplace-cloud._domainkey.HalfOnCloud.n-v1.dkim.mail.microsoft
-
-Note: The values are unique to your tenant!
+>**Note**: Be aware that these values are unique to your tenant!
 
 ![](/images/Intune_P1_075.jpg)
 
@@ -259,4 +289,5 @@ Both domains show as **Healthy**, which means all DNS records are correctly conf
 
 With the custom domain configured, the tenant is now properly set up for professional use. 
 
-Users can have email addresses like RaduBogdan@devworkplace.cloud instead of the long onmicrosoft.com addresses.
+Users can have email addresses like < *UserName* >@devworkplace.cloud instead of the long onmicrosoft.com addresses.
+
