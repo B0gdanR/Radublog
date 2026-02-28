@@ -121,7 +121,7 @@ Windows 11 devices maintain two parallel enrollments:
 | **Type 6**      | MS DM Server                | OMA-DM      | Legacy policies, broad CSP coverage |
 | **Type 26**     | Microsoft Device Management | MMP-C/WinDC | Declarative workloads               |
 
-Note: This dual enrollment is automatic for all Intune-enrolled Windows devices.
+>**Note**: This dual enrollment is automatic for all Intune-enrolled Windows devices.
 
 ---
 
@@ -148,7 +148,7 @@ There are three services that matter:
 - **DmEnrollmentSvc** is only used during enrollment, on an already enrolled device it is normally Stopped and set to Manual.
 - **dcsvc** is the Declared Configuration service, it runs only when DDM work is needed, so Stopped with Manual start is expected most of the time.
 
-Note: Seeing the last two services stopped does not indicate a problem, this is normal behavior on a healthy enrolled device.
+>**Note**: Seeing the last two services stopped does not indicate a problem, this is normal behavior on a healthy enrolled device.
 
 ---
 
