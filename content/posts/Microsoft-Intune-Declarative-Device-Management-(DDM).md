@@ -9,7 +9,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: "What is Declarative Device Management (DDM) in Microsoft Intune, how it differs from traditional MDM policy delivery and what IT admins need to prepare for."
+description: Understanding Declarative Device Management, what it is, why it matters and what you need to do about it
 draft: false
 ---
 ## Background and Intent
@@ -100,7 +100,7 @@ A new management plane designed for speed, reliability, and scale. It adds a par
 The Windows service that receives, processes and enforces declarative configurations.
 
 **Service Name:** 
-`dcsvc` (Declared Configuration Service)
+*dcsvc* (Declared Configuration Service)
 
 ### WinDC Client Stack Components
 
@@ -184,7 +184,7 @@ On a properly enrolled Intune device you should see multiple enrollment entries,
 
 Seeing both entries together is expected and indicates that the device supports both management models. Other enrollment types may appear depending on Autopilot, co-management or local authority and their presence is normal.
 
-Note: If type 26 is missing, Declared Configuration is not active on that device even if other MDM components appear healthy.
+>**Note**: If type 26 is missing, Declared Configuration is not active on that device even if other MDM components appear healthy.
 
 ---
 ### 3. DeclaredConfiguration CSP Registration
@@ -264,13 +264,13 @@ As of January 2026 DDM is used for some specific workloads:
 - Most configuration policies _today_ are still delivered via OMA-DM and Policy CSPs, Microsoft is gradually expanding declarative management coverage.
 - Win32 app deployment and PowerShell script execution (IME) remain outside DDM/MMP-C, they use the Intune Management Extension.
 
-Note: Microsoft is gradually migrating more policy types to DDM, the transition is automatic and transparent to administrators.
+>**Note**: Microsoft is gradually migrating more policy types to DDM, the transition is automatic and transparent to administrators.
 
 ---
 
 ## Channel Distribution on Windows
 
-Current **approximate** distribution of Intune management channels:
+Current *approximate* distribution of Intune management channels:
 
 | Channel | Percentage | Examples |
 |---------|------------|----------|
@@ -278,9 +278,8 @@ Current **approximate** distribution of Intune management channels:
 | Intune Management Extension (IME) | ~15% | Win32 apps, PowerShell scripts, remediations |
 | DDM (MMP-C/WinDC) | ~5% | EPM, Device Inventory |
 
-```
-Important: These are not official telemetry figures from Microsoft, the precise percentage split (~80/15/5) is not documented by Microsoft and should be presented as an informed industry estimate rather than a firm metric!
-```
+>**Note**: These are not official telemetry figures from Microsoft, the precise percentage split (~80/15/5) is not documented by Microsoft and should be presented as an informed industry estimate rather than a firm metric!
+
 
 General reality:
 
