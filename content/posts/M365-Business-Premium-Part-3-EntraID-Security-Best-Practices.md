@@ -1,5 +1,5 @@
 ---
-title: "M365 Business Premium Part 3: Entra ID Security Best Practices"
+title: "Entra ID Security Hardening for M365 Business Premium: Practical Settings That Make a Difference"
 date: 2026-01-10
 tags:
   - MSIntune
@@ -9,7 +9,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: "Microsoft Entra ID security hardening for M365 Business Premium, covering MFA enforcement, Security Defaults, admin role protection and identity best practices."
+description: Step-by-step guide to configuring Microsoft Entra ID security best practices
 draft: false
 ---
 ## Security Before Enrollment
@@ -18,7 +18,7 @@ Users should have MFA configured before they enroll devices, **Conditional Acces
 
 Get this right and you have minor interruptions during onboarding,  get it wrong and you'll be fielding angry phone calls. This matches what I experienced in the past, having CA policies and authentication methods configured before Autopilot enrollment made the process smooth.
 
-## The Real Threat Landscape
+### The Real Threat Landscape
 
 Microsoft blocks an average of ~7,000 password attacks per second, Cyberattacks strike at an unprecedented scale, with Microsoft recording approximately ~600 million blocked threat attempts every 24 hours. This volume represents an increase in hostile actions, creating a threat environment where malicious packets slam into networks nearly every second.
 
@@ -30,7 +30,7 @@ https://www.microsoft.com/en-us/corporate-responsibility/dmc/en-us/corporate-res
 
 The good news: most successful cyberattacks could be stopped with basic security hygiene.
 
-## The 99% Rule
+### The 99% Rule
 
 Basic security hygiene still protects against 99% of attacks. The five fundamentals are:
 
@@ -40,7 +40,7 @@ Basic security hygiene still protects against 99% of attacks. The five fundament
 4. Keep systems up to date
 5. Protect data
 
-## What Are You Protecting?
+### What Are You Protecting?
 
 Focus on what matters to the organization: sensitive information, device security, encryption and malware protection.
 
@@ -55,7 +55,7 @@ The Entra admin center gives you a quick snapshot of your tenant. Here you can s
 
 ![](/images/Blog_P5_000.jpg)
 
-## Tenant Properties
+### Tenant Properties
 
 The Properties tab shows the tenant configuration, data is stored in *EU Model Clause compliant datacenters*, which matters for GDPR.
 
@@ -63,7 +63,7 @@ Note: Security Defaults is blocked because **Conditional Access** policies are a
 
 ![](/images/Blog_P5_001.jpg)
 
-## Identity Secure Score
+### Identity Secure Score
 
 The Recommendations tab shows the Identity Secure Score at the moment 50.76% which refreshes every ~24 hours.
 
@@ -71,7 +71,7 @@ Probably you'll see a couple of recommendations broken down by priority, the hig
 
 ![](/images/Blog_P5_002.jpg)
 
-## Identity Secure Score - Status View
+### Identity Secure Score - Status View
 
 This expanded view shows which recommendations are completed and when.
 
@@ -79,7 +79,7 @@ Several items show "Completed" status: consent controls, multiple global admins,
 
 ![](/images/Blog_P5_003.jpg)
 
-## Identity Secure Score - P2 Requirements
+### Identity Secure Score - P2 Requirements
 
 Scrolling down reveals items that require higher licensing. "Protect all users with a sign-in risk policy" and "Protect all users with a user risk policy" both need Entra ID P2, same with Defender for Identity deployment.
 
@@ -87,7 +87,7 @@ Note: These will be address in the future with the addition of the E5 Security a
 
 ![](/images/Blog_P5_004.jpg)
 
-## Named Locations
+### Named Locations
 
 Named locations help reduce false positives in security reports and enable location-based Conditional Access policies.
 
@@ -95,7 +95,7 @@ In my tenant I've configured *RO-Home-HalfOnCloud* as a trusted IP ranges locati
 
 ![](/images/Blog_P5_005.jpg)
 
-## Named Location Details
+### Named Location Details
 
 Opening the location shows the configuration, the name follows my naming convention (Country-Context-Tenant).
 
@@ -105,7 +105,7 @@ Note: The "Naming Convention" section will be addressed in a future article.
 
 ![](/images/Blog_P5_006.jpg)
 
-## Authentication Methods
+### Authentication Methods
 
 The Authentication methods Policies blade shows all available methods:
 
@@ -117,7 +117,7 @@ Note: In a hardened environment, you'd disable SMS and Voice call since they're 
 
 ![](/images/Blog_P5_007.jpg)
 
-## Microsoft Authenticator - Enable and Target
+### Microsoft Authenticator - Enable and Target
 
 The Microsoft Authenticator settings show Enable and Target configuration.
 
@@ -125,7 +125,7 @@ It's enabled for All users with Optional registration, authentication mode is se
 
 ![](/images/Blog_P5_008.jpg)
 
-## Microsoft Authenticator - Configure
+### Microsoft Authenticator - Configure
 
 The Configure tab has the important security features.
 
@@ -135,7 +135,7 @@ The Configure tab has the important security features.
 
 ![](/images/Blog_P5_009.jpg)
 
-## Temporary Access Pass
+### Temporary Access Pass
 
 Temporary Access Pass (TAP) is enabled for All users with Optional registration.
 
@@ -145,7 +145,7 @@ Note: Only administrators can issue TAP codes.
 
 ![](/images/Blog_P5_010.jpg)
 
-## Temporary Access Pass - Configure
+### Temporary Access Pass - Configure
 
 The Configure tab shows the TAP settings I'm using. Minimum lifetime is 1 hour, maximum is 23 hours, and default is 8 hours.
 
@@ -153,7 +153,7 @@ The important setting here is "One-time" set to No. One-time TAP codes break Int
 
 ![](/images/Blog_P5_011.jpg)
 
-## Temporary Access Pass - Edit Settings
+### Temporary Access Pass - Settings
 
 This is how the edit panel for TAP configuration looks, you can set lifetime in Minutes, Hours or Days.
 
@@ -162,7 +162,7 @@ I've configured 1 hour minimum, 23 hours maximum and 8 hours default, Length is 
 
 ![](/images/Blog_P5_012.jpg)
 
-## Password Protection
+### Password Protection
 
 Password protection helps prevent weak and predictable passwords, Smart lockout is configured with 10 failed attempts before lockout and 60 seconds lockout duration.
 
@@ -172,7 +172,7 @@ Note: Password protection for Windows Server Active Directory is disabled since 
 
 ![](/images/Blog_P5_013.jpg)
 
-## Authentication Strengths
+### Authentication Strengths
 
 Authentication strengths let you define which MFA methods are acceptable for different scenarios. You can use built-in strengths or create custom ones.
 
@@ -181,7 +181,7 @@ I have one custom strength called "*SecInfo-Registration-Secure*", plus the thre
 
 ![](/images/Blog_P5_014.jpg)
 
-## Custom Authentication Strength
+### Custom Authentication Strength
 
 This shows my custom "SecInfo-Registration-Secure" authentication strength. It solves the chicken-and-egg problem where users need MFA to register their MFA methods.
 
@@ -191,7 +191,7 @@ Note: The Phishing-resistant custom MFA is linked to a Microsoft-managed policy,
 
 ![](/images/Blog_P5_015.jpg)
 
-## Password Reset - Properties
+### Password Reset - Properties
 
 Self-service password reset is enabled for All users. 
 
@@ -201,7 +201,7 @@ This page links to Authentication methods, Registration, Notifications and other
 
 ![](/images/Blog_P5_016.jpg)
 
-## Password Reset - Authentication Methods
+### Password Reset - Authentication Methods
 
 Users need 1 method to reset their password, also Security questions are available as an option.
 
@@ -209,7 +209,7 @@ For my tenant I've configured 5 questions required to register and 4 questions r
 
 ![](/images/Blog_P5_017.jpg)
 
-## Password Reset - Registration
+### Password Reset - Registration
 
 Users are required to register when signing in, this ensures everyone has SSPR methods configured before they actually need them.
 
@@ -217,7 +217,7 @@ Re-confirmation is set to 180 days, so users verify their authentication info ev
 
 ![](/images/Blog_P5_018.jpg)
 
-## Password Reset - Notifications
+### Password Reset - Notifications
 
 Both notification options are enabled. Users get notified when their password is reset and all admins get notified when any admin resets their password.
 
@@ -225,7 +225,7 @@ The admin notification is a security feature, it helps detect if someone has com
 
 ![](/images/Blog_P5_019.jpg)
 
-## Password Reset - Administrator Policy
+### Password Reset - Administrator Policy
 
 This read-only page shows the administrator-specific SSPR policy. Admins always have SSPR enabled and always require 2 methods to reset.
 
@@ -243,7 +243,7 @@ Users cannot register applications or create security groups, Non-admin users ar
 
 ![](/images/Blog_P5_027.jpg)
 
-## External Collaboration Settings
+### External Collaboration Settings
 
 This page controls guest user behavior. Guest user access restrictions are set to the most restrictive option, guests can only see their own directory objects.
 
@@ -251,7 +251,7 @@ For guest invites, only users with specific admin roles can invite guests. Self-
 
 ![](/images/Blog_P5_028.jpg)
 
-## Groups - General Settings
+### Groups - General Settings
 
 Group settings control self-service group management, Owners can manage group membership requests in My Groups.
 
@@ -269,7 +269,7 @@ Note: This was created on November 26, 2025 when I've first connected with the M
 
 ![](/images/Blog_P5_030.jpg)
 
-## User Consent Settings
+### User Consent Settings
 
 User consent for applications is set to "*Do not allow user consent*", this means an administrator must approve all apps that request access to organizational data.
 
@@ -277,7 +277,7 @@ Note: This is more restrictive than the recommended "*Allow user consent for app
 
 ![](/images/Blog_P5_031.jpg)
 
-## Admin Consent Settings
+### Admin Consent Settings
 
 The admin consent workflow is enabled. When users try to access an app they can't consent to, they can request admin approval.
 
@@ -287,7 +287,7 @@ Note: Consent requests expire after 30 days if not acted upon.
 
 ![](/images/Blog_P5_032.jpg)
 
-## Admin Consent Request Reviewers
+### Admin Consent Request Reviewers
 
 This shows the reviewer selection for admin consent requests, here I've selected my own user as the reviewer.
 
@@ -295,7 +295,7 @@ Note: Only users with Global Administrator, Application Administrator or Cloud A
 
 ![](/images/Blog_P5_033.jpg)
 
-## Admin Consent Requests Queue
+### Admin Consent Requests Queue
 
 This is where pending consent requests appear, currently there are no pending requests.
 
