@@ -89,11 +89,11 @@ I've named my applications to follow this pattern, instead of using generic name
 
 ## Groups
 
-Groups follow a simpler pattern: `GRP-[Type]-[Purpose]`
+Groups follow a simpler pattern: "GRP-[Type]-[Purpose]"
 
-Notice the mix of `Dynamic` and `Assigned` membership types, Dynamic groups automatically populate based on device attributes, no manual management required.
+Notice the mix of *Dynamic* and *Assigned* membership types, Dynamic groups automatically populate based on device attributes, no manual management required.
 
-The `GRP-Devices-Development-Hardware` and `GRP-Devices-Development-VM` groups separate physical test machines from virtual machines which is useful when certain policies behave differently, for example in VMware or Hyper-V environments:
+The "*GRP-Devices-Development-Hardware*" and "*GRP-Devices-Development-VM*" groups separate physical test machines from virtual machines which is useful when certain policies behave differently, for example in VMware or Hyper-V environments:
 
 ![](/images/Blog_P7_001.jpg)
 
@@ -101,9 +101,9 @@ The `GRP-Devices-Development-Hardware` and `GRP-Devices-Development-VM` groups s
 
 Here's where GroupTags become powerful, each Autopilot device gets a GroupTag during enrollment that encodes its characteristics.
 
-The rule `(device.devicePhysicalIds -any (_ -contains "[OrderId]:A-RO-U-P-"))` automatically captures all devices with a GroupTag starting with `A-RO-U-P-` (Azure AD joined, Romania, User, Production). 
+The rule *(device.devicePhysicalIds -any (_ -contains "[OrderId]:A-RO-U-P-"))* automatically captures all devices with a GroupTag starting with `A-RO-U-P-` (Azure AD joined, Romania, User, Production). 
 
-**GroupTag structure:** `[JoinType]-[Country]-[UserType]-[Ring]-[DeviceType]`: this eliminates manual group assignments entirely, devices land in the correct groups automatically based on how they were enrolled:
+GroupTag structure: *[JoinType]-[Country]-[UserType]-[Ring]-[DeviceType]* eliminates manual group assignments entirely, devices land in the correct groups automatically based on how they were enrolled:
 
 ![](/images/Blog_P7_003.jpg)
 
