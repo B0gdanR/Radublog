@@ -1,9 +1,10 @@
 ---
-title: OneDrive Silent Config Not Working? Why the Sign-In Logs Hold the Answer
+title: "OneDrive SilentAccountConfig: When There Are No Sign-In Logs and Where to Look Next"
 date: 2026-02-18
 tags:
   - MSIntune
   - OneDrive
+  - PowerShell
 categories:
   - Cloud
 author: Radu Bogdan
@@ -310,7 +311,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive\AllowTenantLi
 
 So yes there you have it two different symptoms, two different root causes and two different fixes.
 
-*Known Folder Move* has its own quirks too, but that is a story for another time.
+*Known Folder Move* has its own quirks too, but that is a story for another article.
 
 ## References
 
