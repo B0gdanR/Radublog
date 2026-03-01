@@ -1,13 +1,14 @@
 ---
-title: "M365 Business Premium Part 5: Conditional Access Policies"
+title: "Conditional Access Policies for M365 Business Premium: MFA, Compliance and Location Rules"
 date: 2026-01-19
 tags:
   - MSIntune
   - EntraID
+  - ConditionalAccess
 categories:
   - Cloud
 author: Radu Bogdan
-description: "How to configure Conditional Access policies in Microsoft Entra ID for M365 Business Premium, covering MFA requirements, device compliance, location-based rules and common challenges."
+description: How to configure Conditional Access policies in Microsoft Entra ID for M365 Business Premium, covering MFA requirements, device compliance, location-based rules and common challenges.
 draft: false
 ---
 ## The Policy Dashboard
@@ -34,7 +35,7 @@ This structure helps keep Conditional Access readable, predictable and maintaina
 
 ![](/images/Blog_P13_001.jpg)
 
-**Note**: To keep things readable avoiding unnecessary repetition, I don’t re-show identical Conditional Access sections for every policy, common settings such as **Users and groups** and the usual **Include / Exclude** logic are explained in detail once and then reused across the other policies.
+>Note: To keep things readable avoiding unnecessary repetition, I don’t re-show identical Conditional Access sections for every policy, common settings such as **Users and groups** and the usual **Include / Exclude** logic are explained in detail once and then reused across the other policies.
 
 For each additional policy, I've focus only on what changes and why it matters. If a setting isn’t shown again, it follows the same pattern already introduced earlier unless I explicitly call out a difference.
 
@@ -52,6 +53,8 @@ Every Conditional Access design needs an explicit emergency access path. I've ex
 
 This account uses a long, complex password stored offline and is never used for daily administration. The account name is intentionally blurred here, publishing break-glass account details publicly is a poor operational security practice.
 
+>**Note**: Microsoft's current best practice recommends protecting emergency access accounts with FIDO2 keys or certificates rather than excluding them from MFA entirely. In this lab environment with limited hardware I've used the exclusion approach, but production deployments should implement phishing-resistant MFA for break-glass accounts.
+
 
 ![](/images/Blog_P13_003.jpg)
 
@@ -61,7 +64,7 @@ CA-001 targets **All resources (formerly “All cloud apps”)**, meaning every 
 
 This warning is expected and appropriate. Any policy that applies to all resources should be deployed cautiously, ideally first in report-only mode or during a controlled change window.
 
-**Note:**: The informational banner referencing Global Secure Access can be ignored unless you are actively deploying Microsoft’s SASE capabilities.
+>**Note**: The informational banner referencing Global Secure Access can be ignored unless you are actively deploying Microsoft’s SASE capabilities.
 
 ![](/images/Blog_P13_004.jpg)
 
@@ -98,7 +101,7 @@ This policy extends MFA requirements to all users, not just administrators, whil
 
 In practice MFA is required everywhere except a trusted home network. This balances usability with security by reducing friction in a controlled environment while maintaining strong authentication everywhere else.
 
-Note: Microsoft is gradually transitioning location-based conditions into the broader Network model as part of its Global Secure Access strategy.
+>**Note**: Microsoft is gradually transitioning location-based conditions into the broader Network model as part of its Global Secure Access strategy.
 
 ![](/images/Blog_P13_015.jpg)
 
@@ -106,7 +109,7 @@ Note: Microsoft is gradually transitioning location-based conditions into the br
 
 Named Locations define trusted networks for CA policies. The "New location (IP ranges)" panel shows creating " " with "Mark as trusted location" checked. The IP range field shows my subnet representing a single public IP address.
 
-**Note:** I've blurred the actual IP in the published version. Never expose your home or office public IPs.
+>**Note** I've blurred some of the sensitive data since I don't want to share any of my home or office public IPs.
 
 ![](/images/Blog_P13_057.jpg)
 
@@ -184,7 +187,7 @@ To keep the user experience simple in this lab tenant, I've disabled:
 - Require users to expand the terms of use
 - Require users to consent on every device
    
-**Note:** In a production environment these options are often enabled to meet stricter compliance or audit requirements.
+>**Note**: In a production environment these options are often enabled to meet stricter compliance or audit requirements.
 
 ![](/images/Blog_P13_061.jpg)
 
@@ -194,7 +197,7 @@ The **Terms of use** blade shows the document _Privacy Notice – Intune Device 
 
 At this stage acceptance counters show zero activity. This is expected before the policy is enforced.
 
-**Note:** This is the document referenced later by CA-005.
+>**Note**: This is the document referenced later by CA-005.
 
 ![](/images/Blog_P13_062.jpg)
 
@@ -224,7 +227,7 @@ Expanding the Privacy Notice displays the PDF inline, the document outlines:
 - The types of data collected, such as device model, serial number, OS version, installed applications, compliance state, and location.
 - How that data is used.
 
-**Note:** This level of transparency is particularly important for EU tenants and supports GDPR notification requirements.
+>**Note**: This level of transparency is particularly important for EU tenants and supports GDPR notification requirements.
 
 ![](/images/Blog_P13_066.jpg)
 
@@ -244,7 +247,7 @@ In larger environments this view becomes a quick health indicator during rollout
 
 ## CA-006-Block-NonCompliant
 
-**Important note**: In this tenant I only have a single user. I’m on a monthly subscription with one license so I reuse my own account for testing. My account is also a Global Administrator, which means I have to be especially careful with Conditional Access changes. This setup isn’t ideal, but it’s a common reality for lab tenants and personal learning environments and it influenced how this policy was designed and tested.
+>**Note**: In this tenant I only have a single user, I’m on a monthly subscription with one license so I reuse my own account for testing. My account is also a Global Administrator, which means I have to be especially careful with Conditional Access changes. This setup isn’t ideal, but it’s a common reality for lab tenants and personal learning environments and it influenced how this policy was designed and tested.
 
 This policy ended up being one of the most instructive ones for me, CA-006 uses a **device filter** with two combined conditions:
 
@@ -261,15 +264,15 @@ The intent is very specific: target only devices that are **Entra joined** and *
 
 ## Why Block Access Instead of Require Compliance
 
-**Note**: The Grant control is configured as **Block access** not **Require device to be marked as compliant**
+Initially I've built this policy using _Require compliant device_ as the Grant control and within minutes I've managed to locked myself out of the tenant. 
 
-Initially, I built this policy using _Require compliant device_ as the Grant control, within minutes, I locked myself out of the tenant. 
+>**Note**: The Grant control is configured as **Block access** not **Require device to be marked as compliant**
 
 ![](/images/Blog_P13_042.jpg)
 
 At first I've excluded my own user from the policy (together with the break-glass account), because this tenant only has one user and I didn’t want to lock myself out. Later I've temporarily removed my own exclusion just to test the behavior. The policy is intentionally left in **Report-only** mode, in a single-user tenant where the administrator and user are the same person enforcing device compliance offers little practical benefit
 
-The confusing part is how **Require compliant device** really works.
+The confusing part is how *Require compliant device* really works.
 
 When you use _Require compliant device_, Conditional Access doesn’t just look at the user, it also looks at the **device** trying to sign in. If that device is not enrolled or registered, it has **no compliance status**, Conditional Access treats “no status” the same as **not compliant**.
 
@@ -354,13 +357,13 @@ Enforcing **Phishing-resistant MFA** would restrict authentication to:
  
 While Windows Hello works on my virtual machines, I don’t (yet) have a FIDO2 hardware key, and certificate-based authentication would require PKI infrastructure that I haven’t deployed in this tenant.
 
-For now the authentication strength exists as a **prepared control**. When the environment expands to multiple users, or once I introduce FIDO2 hardware, enforcement can be enabled with confidence knowing the configuration has already been designed and reviewed.
+For now the authentication strength exists as a prepared control. When the environment expands to multiple users, or once I introduce FIDO2 hardware, enforcement can be enabled with confidence knowing the configuration has already been designed and reviewed.
 
 ---
 ## What’s Coming Next
 
-This concludes the Conditional Access portion of the series. Up to this point the focus has been on establishing a minimal but coherent identity security baseline using Conditional Access designed to be understandable, auditable and safe to evolve.
+This concludes the Conditional Access portion of my tenant, up to this point the focus has been on establishing a minimal but coherent identity security baseline using Conditional Access designed to be understandable, auditable and safe to evolve.
 
-In **Part 6** I’ll shift the focus to **Intune best practices**. That section will cover how device management, compliance and configuration policies complement Conditional Access and where responsibilities should be deliberately separated between identity and device controls.
+In the next article I’ll shift the focus to Intune best practices. That section will cover how device management, compliance and configuration policies complement Conditional Access and where responsibilities should be deliberately separated between identity and device controls.
 
 
