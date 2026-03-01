@@ -327,11 +327,11 @@ From the PowerShell prompt run the following command:
 MdmDiagnosticsTool.exe -area Autopilot -cab E:\AutopilotDiag\AutopilotDiag.cab
 ```
 
->**Note:** On Windows 11 v25H2, the *Tpm* diagnostic area should be added too using *-area Autopilot;Tpm*, however since I've did all my testing on a VMware Workstation Pro VM, adding the *Tpm* area caused the collection to fail even though the VM has a functional vTPM that Windows recognizes for BitLocker and Autopilot enrollment. 
->
->The likely reason is that the *Tpm* area triggers deeper TPM hardware interrogation (attestation keys, EK certificates) that VMware's software-emulated vTPM does not fully support. [Michael Niehaus](https://oofhours.com/2019/07/09/tpm-attestation-what-can-possibly-go-wrong/) notes that the *Tpm* area can generate error messages or popups and recommends it only for self-deploying or pre-provisioning (white glove) scenarios where TPM attestation is actually required. 
->
->For user-driven Autopilot troubleshooting (my scenario) the *Autopilot* area alone is sufficient. Also worth noting that Microsoft's older documentation references the area as *TPM* (all caps), while the tool's own help text on newer builds shows *Tpm* (Pascal case). The area names are stored as registry keys under *HKLM\SOFTWARE\Microsoft\MdmDiagnostics\Area*, so check what your build actually has if you run into issues.
+On Windows 11 v25H2, the *Tpm* diagnostic area should be added too using *-area Autopilot;Tpm*, however since I've did all my testing on a VMware Workstation Pro VM, adding the *Tpm* area caused the collection to fail even though the VM has a functional vTPM that Windows recognizes for BitLocker and Autopilot enrollment. 
+
+The likely reason is that the *Tpm* area triggers deeper TPM hardware interrogation (attestation keys, EK certificates) that VMware's software-emulated vTPM does not fully support. [Michael Niehaus](https://oofhours.com/2019/07/09/tpm-attestation-what-can-possibly-go-wrong/) notes that the *Tpm* area can generate error messages or popups and recommends it only for self-deploying or pre-provisioning (white glove) scenarios where TPM attestation is actually required. 
+
+For user-driven Autopilot troubleshooting (my scenario) the *Autopilot* area alone is sufficient. Also worth noting that Microsoft's older documentation references the area as *TPM* (all caps), while the tool's own help text on newer builds shows *Tpm* (Pascal case). The area names are stored as registry keys under *HKLM\SOFTWARE\Microsoft\MdmDiagnostics\Area*, so check what your build actually has if you run into issues.
 
 
 ![](/images/Blog_P17_108.jpg)
