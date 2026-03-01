@@ -1,5 +1,5 @@
 ---
-title: "M365 Business Premium Part 8: Anatomy of a Failed Enrollment - Tracing an ESP Error from Screen to Root Cause"
+title: "Autopilot ESP Failure: Tracing the Error from Screen to Root Cause"
 date: 2026-02-12
 tags:
   - MSIntune
@@ -14,7 +14,7 @@ draft: false
 ---
 ## When the Enrollment Status Page Fails
 
-This article picks up where [Part 7](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot/) left off. If you followed that walkthrough, you have a working Autopilot deployment that registers devices, joins them to Entra ID and delivers apps through the Enrollment Status Page. This part covers what to do when that process breaks.
+This article picks up where the previous [article](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot-troubleshooting/) left off. If you followed that walkthrough, you have a working Autopilot deployment that registers devices, joins them to Entra ID and delivers apps through the Enrollment Status Page. This part covers what to do when that process breaks.
 
 The Enrollment Status Page is the gatekeeper of Windows Autopilot. It tracks device preparation, device setup and account setup in sequence, holding the user at a progress screen until every assigned policy and application has been applied. When everything works, the user sees green checkmarks, login and lands on a configured desktop but when something fails, the ESP displays an error code and stops.
 
@@ -48,8 +48,8 @@ Two show green checkmarks (Installation successful), the third "Win32App_56bbf89
 *Finish Time:  < time not available >*
 *Status: The current status of this resource event is unknown.*
 
->💡**Clue #1**
->The app started but never finished "*Finish Time: < time not available >*" means the install process exited without reporting completion back to the ESP tracker.
+> 💡**Clue #1**
+> The app started but never finished "*Finish Time: < time not available >*" means the install process exited without reporting completion back to the ESP tracker.
 
 ![](/images/Blog_P17_078.jpg)
 
@@ -282,9 +282,8 @@ What matters just as much as what is present is what is absent: Event **303** wh
 
 > Note: If you also verify the *Event Viewer - Applications and Services Logs - Microsoft - Windows - ModernDeployment-Diagnostics-Provider - Admin* and find it empty means that Enterprise Diagnostics log rules out MDM enrollment issues, policy conflicts and CSP failures hence the problem is isolated to the Win32 app installation pipeline.
 
-|              |                                         |                                  |
-| ------------ | --------------------------------------- | -------------------------------- |
 | **Event ID** | **Message**                             | **Status**                       |
+| ------------ | --------------------------------------- | -------------------------------- |
 | 170          | Autopilot profile download complete     | Profile downloaded OK            |
 | 153          | State changed to ProfileState_Available | Profile activated                |
 | **303**      | **(NOT PRESENT)**                       | **Provisioning never completed** |
