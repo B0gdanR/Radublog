@@ -13,7 +13,7 @@ draft: false
 ---
 ## What is Windows Autopilot?
 
-This walkthrough assumes the tenant foundation is already in place. If you're starting fresh, the [previous](https://halfoncloud.com/posts/m365-business-premium-part-6-intune-best-practices-device-management-foundations/)article covers the enrollment controls, compliance baseline and ESP configuration that make this deployment easy to follow-up.
+This walkthrough assumes the tenant foundation is already in place. If you're starting fresh, the [previous](https://halfoncloud.com/posts/m365-business-premium-part-6-intune-best-practices-device-management-foundations/) article covers the enrollment controls, compliance baseline and ESP configuration that make this deployment easy to follow-up.
 
 Windows Autopilot is Microsoft's cloud-based provisioning service that simplifies how organizations deploy Windows devices. Instead of manually imaging each endpoint, Autopilot leverages the factory installed Windows image and orchestrates device setup through Microsoft Intune and Microsoft Entra ID.
 
