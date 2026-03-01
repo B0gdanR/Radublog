@@ -4,7 +4,7 @@ date: 2026-01-23
 tags:
   - MSIntune
   - PowerShell
-  - Win32
+  - Win32Apps
 categories:
   - "#MSIntune "
   - "#PowerShell"

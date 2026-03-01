@@ -22,18 +22,6 @@
       </ul>
     </div>
     
-    <!-- Categories Widget -->
-    <div class="widget">
-      <h3 class="widget-title">Categories</h3>
-      <div class="widget-tags">
-        {{ range .Site.Taxonomies.categories }}
-          <a href="{{ .Page.Permalink }}" class="widget-tag">
-            {{ .Page.Title }} <span class="count">{{ .Count }}</span>
-          </a>
-        {{ end }}
-      </div>
-    </div>
-    
     <!-- Tags Widget -->
     <div class="widget">
       <h3 class="widget-title">Tags</h3>

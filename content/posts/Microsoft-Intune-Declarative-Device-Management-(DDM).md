@@ -3,9 +3,6 @@ title: Microsoft Intune Declarative Device Management (DDM) Guide
 date: 2026-01-14
 tags:
   - MSIntune
-  - DDM
-  - MMP-C
-  - WinDC
 categories:
   - Cloud
 author: Radu Bogdan

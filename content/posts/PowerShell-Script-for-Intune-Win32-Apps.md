@@ -4,7 +4,7 @@ date: 2026-01-15
 tags:
   - MSIntune
   - PowerShell
-  - Win32
+  - Win32Apps
 categories:
   - Cloud
 author: Radu Bogdan

@@ -18,25 +18,13 @@ summaryLength = 100
 	
 [params]
   themeColor = "orange"
-  showMenuItems = 3
+  showMenuItems = 4
   fullWidthTheme = false
   centerTheme = true
   autoCover = true
   showLastUpdated = false
   description = "Tutorials, Automation scripts and Microsoft technology insights"
   author = "Radu Bogdan"
-
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 1
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 2
 
 [languages]
   [languages.en]
@@ -47,6 +35,21 @@ summaryLength = 100
     [languages.en.params.logo]
       logoText = "HalfOnCloud "
       logoCursor = "|"
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Posts"
+      url = "/posts/"
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = "privacy"
+      name = "Privacy Policy"
+      url = "/privacy-policy/"
+      weight = 3
 	  
 [outputs]
   home = ["HTML", "JSON"]

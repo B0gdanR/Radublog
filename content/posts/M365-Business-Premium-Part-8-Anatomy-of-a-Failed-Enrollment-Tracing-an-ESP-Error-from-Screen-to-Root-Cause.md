@@ -4,7 +4,6 @@ date: 2026-02-12
 tags:
   - MSIntune
   - Autopilot
-  - ESP
   - Win32Apps
 categories:
   - Cloud

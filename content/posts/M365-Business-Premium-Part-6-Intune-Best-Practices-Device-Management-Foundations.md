@@ -4,9 +4,6 @@ date: 2026-02-01
 tags:
   - MSIntune
   - EntraID
-  - DeviceManagement
-  - CompliancePolicies
-  - ConfigurationProfiles
 categories:
   - Cloud
 author: Radu Bogdan

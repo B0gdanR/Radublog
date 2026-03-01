@@ -4,7 +4,6 @@ date: 2026-02-21
 tags:
   - MSIntune
   - Win32Apps
-  - "#LayoutXML"
 categories:
   - Cloud
 author: Radu Bogdan

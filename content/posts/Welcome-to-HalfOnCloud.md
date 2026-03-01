@@ -1,7 +1,7 @@
 ---
 title: "Welcome to HalfOnCloud"
 date: "2025-01-07"
-tags: ["About"]
+tags: []
 categories: ["General"]
 author: "Radu Bogdan"
 description: "IT professional sharing Microsoft technologies, automation scripts, and real-world solutions"
