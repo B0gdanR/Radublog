@@ -3,9 +3,6 @@ title: "Privacy Policy"
 date: "2026-02-18"
 draft: false
 ---
-
-## Privacy Policy
-
 **Last updated:** February 18, 2026
 
 This Privacy Policy explains how HalfOnCloud (halfoncloud.com) handles information when you visit this website.
