@@ -1,5 +1,5 @@
 ---
-title: "M365 Business Premium Part 6: Building the Intune Foundation for Autopilot"
+title: "Intune Foundation for Windows Autopilot: Enrollment, ESP, Compliance and Device Configuration"
 date: 2026-02-01
 tags:
   - MSIntune
@@ -50,7 +50,7 @@ The Automatic Enrollment settings determine which users can enroll Windows devic
 
 The three URLs from the screenshot below are the endpoints that Windows uses during enrollment, Microsoft's default URLs and rarely need modification. The MDM terms of use URL points to a generic terms page, the discovery URL is how devices find the enrollment server and the compliance URL is where devices check their compliance status.
 
-Note: The **Windows Information Protection (WIP)** section at the bottom shows the deprecation notice, WIP is no longer supported for new deployments so the scope is set to "None". Organizations still using WIP should plan their migration to Microsoft Purview Information Protection.
+>**Note**: The **Windows Information Protection (WIP)** section at the bottom shows the deprecation notice, WIP is no longer supported for new deployments so the scope is set to "None". Organizations still using WIP should plan their migration to Microsoft Purview Information Protection.
 
 ![](/images/Blog_P6_014.jpg)
 
@@ -70,7 +70,7 @@ This auto-created policy is a Windows health monitoring profile that deploys to 
 
 The relationship works like this: the tenant-level toggle in Windows data enables the infrastructure, while the auto-created policy deploys the configuration to devices that actually collects and sends the data.
 
-Note: The policy can be safely renamed to match organizational naming conventions despite being auto-created, it's a standard configuration profile under full administrative control. 
+>**Note**: The policy can be safely renamed to match organizational naming conventions despite being auto-created, it's a standard configuration profile under full administrative control. 
 
 
 ![](/images/Blog_P6_003.jpg)
@@ -127,7 +127,7 @@ Device limit restrictions control how many devices each user can enroll in Intun
 
 This limit applies across all device types combined, if a user has enrolled 10 devices and tries to add another, the enrollment will be blocked until they remove an existing device. For organizations with users who legitimately need more devices, additional restriction policies can be created and assigned to specific groups with higher limits.
 
-Note: The priority system mentioned at the top means that if a user is targeted by multiple restriction policies, the one with the highest priority wins.
+>**Note**: The priority system mentioned at the top means that if a user is targeted by multiple restriction policies, the one with the highest priority wins.
 
 ![](/images/Blog_P6_013.jpg)
 
@@ -271,7 +271,6 @@ An **email notification is sent to the end user after one day** of continued non
 With tenant readiness confirmed, enrollment controls in place, ESP behavior tuned and a compliance baseline that covers BitLocker, Defender, Secure Boot and credential management, the foundation is set.
 
 The next article moves from configuration to execution, walking through an actual Intune Autopilot deployment and showing how these settings behave during real device provisioning.
-
 
 
 
