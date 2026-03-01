@@ -1,10 +1,10 @@
 ---
-title: "OneDrive Silent Config: The CA Policy That Breaks the WAM Broker"
+title: "OneDrive SilentAccountConfig: How a Conditional Access Policy Silently Blocks the WAM Broker"
 date: 2026-02-25
 tags:
   - MSIntune
   - OneDrive
-  - "#troubleshooting"
+  - PowerShell
 categories:
   - Cloud
 author: Radu Bogdan
@@ -18,7 +18,7 @@ Turns out a Terms of Use Conditional Access policy scoped to All apps will quiet
 
 ---
 
-If you followed the [previous](https://halfoncloud.com/posts/onedrive-silentaccountconfig-troubleshooting-the-zero-sign-in-log-clue/) OneDrive troubleshooting article on this blog, you already know that a certain policy "CA-005" was investigated and cleared, the sign-in logs showed zero OneDrive authentication attempts, proving that the problem was entirely local and Conditional Access was not an issue. That same policy was also addressed not too long ago in [Part 7](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot/) where it silently broke Intune device sync by demanding interactive Terms of Use acceptance from a background service that could never click a button.
+If you followed the [previous](https://halfoncloud.com/posts/onedrive-silentaccountconfig-troubleshooting-the-zero-sign-in-log-clue/) OneDrive troubleshooting article on this blog, you already know that a certain policy "CA-005" was investigated and cleared, the sign-in logs showed zero OneDrive authentication attempts, proving that the problem was entirely local and Conditional Access was not an issue. That same policy was also addressed into a previous article [here](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot/) where it silently broke Intune device sync by demanding interactive Terms of Use acceptance from a background service that could never click a button.
 
 This time the failure is different and far more disruptive. On a freshly enrolled Autopilot device, CA-005 doesn't just break one background service, it creates a complete Windows Authentication Manager broker authentication deadlock that silently takes down every Microsoft app on the device at once which makes it challenging.
 
@@ -229,7 +229,7 @@ $ca005.GrantControls | ConvertTo-Json -Depth 5
 
 So what exactly can we see in this screenshot:
 
-Every app in the tenant is in scope, one of the excluded GUIDs is the *Microsoft Intune service principal* that was already there, the other is the *Intune Enrollment service principal* added in in [Part 7](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot/) specifically to stop the ToU policy from blocking device sync.
+Every app in the tenant is in scope, one of the excluded GUIDs is the *Microsoft Intune service principal* that was already there, the other is the *Intune Enrollment service principal* added into a previous article [here](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot/) specifically to stop the ToU policy from blocking device sync.
 
 **Output: Applications:**
 
@@ -474,4 +474,4 @@ The grant control remains the "Privacy Notice - Intune Device Management Terms o
 
 So under these circumstances the case is closed, for now.
 
-Thank you.
+
