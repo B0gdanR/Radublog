@@ -772,5 +772,5 @@ With all columns added and configured, the completed list shows exactly the stru
 ---
 The list is built and the upload script will populate it automatically when the first device goes through WinPE. 
 
-In Part 2, the naming engine picks up from there and turns that Pending row into a device name.
+In [Part 2](https://halfoncloud.com/posts/autopilot-device-naming-part-2-sharepoint-queue-to-sequential-names/), the naming engine picks up from there and turns that Pending row into a device name.
 
