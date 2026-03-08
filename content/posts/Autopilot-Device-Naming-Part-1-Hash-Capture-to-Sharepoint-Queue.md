@@ -1,6 +1,6 @@
 ---
 title: "Part 1: Autopilot Automated Device Naming: From Hash Capture to SharePoint Queue"
-date: 2026-03-08
+date: 2026-03-07
 tags:
   - MSIntune
   - "#Autopilot"
