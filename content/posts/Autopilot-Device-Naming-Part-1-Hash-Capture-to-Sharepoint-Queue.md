@@ -14,7 +14,7 @@ draft: false
 ---
 # Before We Begin
 
-This article builds directly on the foundation established in an older Autopilot deployment article which covers what Autopilot is, why the WinPE hash capture approach was chosen over traditional methods, how the custom ISO is built and how the original device registration scripts work together. If you are curious about any of that, it is all documented there, otherwise everything you need about this new solution is explained in detail here.
+This article builds directly on the foundation established in an older Autopilot deployment [article](https://halfoncloud.com/posts/m365-business-premium-part-7-intune-autopilot-troubleshooting/) which covers what Autopilot is, why the WinPE hash capture approach was chosen over traditional methods, how the custom ISO is built and how the original device registration scripts work together. If you are curious about any of that, it is all documented there, otherwise everything you need about this new solution is explained in detail here.
 
 ## The Autopilot Deployment Loose Ends
 
@@ -44,7 +44,7 @@ One thing worth being transparent about is that everything documented in this ar
 
 ---
 
-# Architecture Overview
+## Architecture Overview
 
 The solution has **three** components, the first two run at the device during WinPE, before Windows Setup begins. The third runs independently on a separate machine on a timer. A SharePoint list is the only connection between them, serving as both the work queue and the audit log.
 
@@ -54,7 +54,7 @@ The solution has **three** components, the first two run at the device during Wi
 
 **Three: Invoke-AutopilotNaming.ps1** runs on a separate machine as a scheduled task every 15 minutes. It checks the SharePoint list for rows where Status equals Pending, finds the matching Autopilot device by serial number, generates the next sequential name such as DT001RO or LPT002RO, sets the displayName via Graph API and updates the SharePoint row with the result.
 
-## How the data flows between components
+### How the data flows between components
 
 When *CaptureHash.cmd* runs, the technician selects the device type and department. That information is encoded into the *purchaseOrderIdentifier* field such as "RO_DT_IT" and stored on the Autopilot device object at upload time. *Upload_AutopilotHash.ps1* also creates the corresponding row in the SharePoint list automatically as its final step, so by the time the script finishes, both the Autopilot object and the SharePoint queue entry exist.
 
@@ -62,28 +62,28 @@ When *Invoke-AutopilotNaming.ps1* runs, it reads the Pending rows from SharePoin
 
 > **Note**: The *purchaseOrderIdentifier* field on an Autopilot device object is read-only after enrollment. It must be set at upload time. This is the key design decision that drives the entire workflow since the device type and department must be captured in WinPE, before the upload happens.
 
-# The ISO and What Goes Inside It
+## The ISO and What Goes Inside It
 
 The scripts run inside WinPE during Windows Setup, which means they need to be embedded in the *boot.wim* of your Windows 11 installation ISO. Here is the exact process that worked.
 
-## Prerequisites
+### Prerequisites
 
 •       Windows ADK installed on a separate device
 •       A Windows 11 25H2 ISO
 •       The six files that go into the Autopilot folder inside boot.wim
 
-## The Six Files
+### The Six Files
 
 Before mounting, place all of these in "C:\AutopilotUSB":
 
-|**File**|**Purpose**|
-|---|---|
-|CaptureHash.cmd|Main orchestrator script|
-|Create_4kHash_using_OA3_Tool.ps1|Converts OA3.xml output to CSV format|
-|Upload_AutopilotHash.ps1|Uploads hash to Intune via Graph API|
-|OA3.cfg|Tells oa3tool.exe where to write its output|
-|oa3tool.exe|Generates the hardware hash from SMBIOS and TPM|
-|PCPKsp.dll|TPM provider DLL required by oa3tool.exe|
+| **File**                         | **Purpose**                                     |
+| -------------------------------- | ----------------------------------------------- |
+| CaptureHash.cmd                  | Main orchestrator script                        |
+| Create_4kHash_using_OA3_Tool.ps1 | Converts OA3.xml output to CSV format           |
+| Upload_AutopilotHash.ps1         | Uploads hash to Intune via Graph API            |
+| OA3.cfg                          | Tells oa3tool.exe where to write its output     |
+| oa3tool.exe                      | Generates the hardware hash from SMBIOS and TPM |
+| PCPKsp.dll                       | TPM provider DLL required by oa3tool.exe        |
 
 For the QR code feature in *Upload_AutopilotHash.ps1*, you also need a "QRModule" subfolder containing QRCoder.dll. This DLL is loaded at runtime as a byte array, which avoids execution policy issues in WinPE.
 
@@ -725,7 +725,7 @@ The list was created on the root SharePoint site with these columns:
 | GeneratedName   | Single line | Filled by the naming script                   |
 | AutopilotID     | Single line | Filled by the naming script                   |
 
-### How rows get created
+## How rows get created
 
 The row is created automatically by *Upload_AutopilotHash.ps1* as its final step. When the hash upload completes, the script writes a new row with the serial number, DeviceType, Department and Status set to Pending. By the time the naming script runs its next scheduled check, the row is already there.
 
@@ -770,5 +770,7 @@ With all columns added and configured, the completed list shows exactly the stru
 ![](/images/Blog_P20_123.jpg)
 
 ---
-The list is built and the upload script will populate it automatically when the first device goes through WinPE. In Part 2, the naming engine picks up from there and turns that Pending row into a device name.
+The list is built and the upload script will populate it automatically when the first device goes through WinPE. 
+
+In Part 2, the naming engine picks up from there and turns that Pending row into a device name.
 
