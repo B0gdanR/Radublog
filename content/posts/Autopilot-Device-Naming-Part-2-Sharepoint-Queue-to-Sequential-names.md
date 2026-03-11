@@ -162,6 +162,7 @@ With these six values in place the script knows who it is, how to authenticate a
 
 With the app registration created, permissions granted and certificate in place, this is the script that puts it all to work. It runs on a separate machine as a scheduled task every 15 minutes, reads the Pending rows from SharePoint, looks up each device in Autopilot, generates the next sequential name and writes the result back. Because it uses certificate-based authentication, it needs no human interaction and leaves no stored password anywhere.
 
+{{< expand title="Invoke-AutopilotNaming.ps1" >}}
 ```PowerShell
 # =============================================================================
 # Invoke-AutopilotNaming.ps1
@@ -555,6 +556,7 @@ Write-Log "  Invoke-AutopilotNaming.ps1 - Complete"
 Write-Log "============================================"
 
 ```
+{{< /expand >}}
 
 
 ## The Scheduled Task

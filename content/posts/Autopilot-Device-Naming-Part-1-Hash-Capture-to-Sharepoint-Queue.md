@@ -118,7 +118,7 @@ Four things worth knowing before you look at the script:
 
 >**Note:** The *purchaseOrderIdentifier* format is "RO_DT_IT" or "RO_LPT_Finance". The country code (RO) is hardcoded because this tenant is Romania-only. The device type and department come from the technician’s selections during the WinPE session.
 
-
+{{< expand title="CaptureHash.cmd" >}}
 ```PowerSHell
 # CaptureHash.cmd
 # Author: RaduBogdan @ devworkplace.cloud
@@ -292,6 +292,7 @@ echo ==========================================
 echo.
 pause
 ```
+{{< /expand >}}
 
 
 
@@ -299,7 +300,7 @@ pause
 
 This script converts the XML output from *oa3tool.exe* into the CSV format that Intune expects. It reads the OA3.xml file that oa3tool writes, extracts the hardware hash and serial number, and produces a correctly formatted CSV. The field names in the CSV header matter since Intune will reject the file if they are wrong.
 
-
+{{< expand title="Create_4kHash_using_OA3_Tool.ps1" >}}
 ```PowerShell
 # Create_4kHash_using_OA3_Tool.ps1
 # Source: Michael Meier (mmeierm) adapted for standalone use
@@ -350,6 +351,8 @@ $csvContent | Out-File -FilePath $OutputFile -Encoding ASCII -Force
 Write-Host "SUCCESS: Hash exported to $OutputFile" -ForegroundColor Green
 Write-Host "Serial Number: $SerialNumber" -ForegroundColor Cyan
 ```
+{{< /expand >}}
+
 
 
 >**Note**: On VMware VMs, OA3Tool reads SMBIOS Type 1 which VMware leaves empty, so *SmbiosSystemSerialNumber* will be blank in the CSV. This is expected and does not prevent the upload. Intune uses the hardware hash for matching. On physical hardware, the serial number populates correctly from SMBIOS.
@@ -365,6 +368,7 @@ To make the authentication step as fast as possible in a WinPE environment, the 
 >**Note**: If the DLL is missing, the script falls back gracefully to displaying the manual device code.
 
 
+{{< expand title="Upload_AutopilotHash.ps1" >}}
 ```PowerShell
 # Upload_AutopilotHash.ps1
 # Secure upload using Device Code Flow with QR Code support
@@ -646,8 +650,10 @@ if ($Department -ne "") {
 }
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
-
 ```
+{{< /expand >}}
+
+
 
 
 ## Mounting, Injecting WinPE Components and Copying Files

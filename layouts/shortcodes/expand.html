@@ -1,0 +1,15 @@
+{{ $title := .Get "title" | default "PowerShell Script" }}
+
+<div class="expand-block">
+  <div class="expand-header">
+    <span class="expand-title">{{ $title }}</span>
+  </div>
+  <div class="expand-preview">
+    {{ .Inner | markdownify }}
+  </div>
+  <div class="expand-full" style="display:none;">
+    {{ .Inner | markdownify }}
+  </div>
+  <button class="expand-btn expand-btn--open" onclick="expandToggle(this, 'open')">▼ View full code</button>
+  <button class="expand-btn expand-btn--close" style="display:none;" onclick="expandToggle(this, 'close')">▲ Collapse</button>
+</div>

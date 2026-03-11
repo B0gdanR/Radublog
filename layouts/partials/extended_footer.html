@@ -177,3 +177,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 })();
 </script>
+
+<!-- Collapsible script block logic -->
+<script>
+function expandToggle(btn, action) {
+    var block = btn.closest('.expand-block');
+    var preview = block.querySelector('.expand-preview');
+    var full    = block.querySelector('.expand-full');
+    var btnOpen = block.querySelector('.expand-btn--open');
+    var btnClose= block.querySelector('.expand-btn--close');
+
+    if (action === 'open') {
+        preview.style.display = 'none';
+        full.style.display    = 'block';
+        btnOpen.style.display = 'none';
+        btnClose.style.display= 'block';
+    } else {
+        preview.style.display = 'block';
+        full.style.display    = 'none';
+        btnOpen.style.display = 'block';
+        btnClose.style.display= 'none';
+        block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+</script>
