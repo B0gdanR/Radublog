@@ -1,0 +1,6 @@
+# Permanently removed pages - tell Google to stop indexing these
+Redirect 410 /post/how-to-setup-powershell-with-oh-my-posh/
+Redirect 410 /pt/
+Redirect 410 /categories/microsoft/
+Redirect 410 /tags/vmware/
+Redirect 410 /tags/efficiency/

@@ -3,8 +3,8 @@ title: "Part 1: Autopilot Automated Device Naming: From Hash Capture to SharePoi
 date: 2026-03-07
 tags:
   - MSIntune
-  - "#Autopilot"
-  - "#Sharepoint"
+  - Autopilot
+  - Sharepoint
   - EntraID
 categories:
   - Cloud

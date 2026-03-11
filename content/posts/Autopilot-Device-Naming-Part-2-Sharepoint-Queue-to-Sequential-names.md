@@ -3,8 +3,8 @@ title: "Part 2: Autopilot Automated Device Naming: From SharePoint Queue to Sequ
 date: 2026-03-08
 tags:
   - MSIntune
-  - "#Autopilot"
-  - "#Sharepoint"
+  - Autopilot
+  - Sharepoint
   - EntraID
 categories:
   - Cloud
