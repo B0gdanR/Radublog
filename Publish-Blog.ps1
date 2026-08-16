@@ -374,6 +374,11 @@ try {
     git branch -D new-hostinger 2>$null
     
     Write-Success "Hostinger branch updated successfully!"
+    $ghToken = $env:GITHUB_PAGES_TOKEN
+    $ghHeaders = @{ Authorization = "token $ghToken"; Accept = "application/vnd.github.v3+json" }
+    $ghBody = '{"source":{"branch":"hostinger","path":"/"}}'
+    Invoke-RestMethod -Uri "https://api.github.com/repos/B0gdanR/Radublog/pages" -Method Put -Headers $ghHeaders -Body $ghBody -     ContentType "application/json" -ErrorAction SilentlyContinue
+    Write-Success "GitHub Pages re-enabled via API!"
     
 } catch {
     Write-Error "Hostinger branch update failed (this is common)"
