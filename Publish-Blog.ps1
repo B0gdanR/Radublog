@@ -377,7 +377,7 @@ try {
     $ghToken = $env:GITHUB_PAGES_TOKEN
     $ghHeaders = @{ Authorization = "token $ghToken"; Accept = "application/vnd.github.v3+json" }
     $ghBody = '{"source":{"branch":"hostinger","path":"/"}}'
-    Invoke-RestMethod -Uri "https://api.github.com/repos/B0gdanR/Radublog/pages" -Method Put -Headers $ghHeaders -Body $ghBody -     ContentType "application/json" -ErrorAction SilentlyContinue
+    Invoke-RestMethod -Uri "https://api.github.com/repos/B0gdanR/Radublog/pages" -Method Put -Headers $ghHeaders -Body $ghBody -ContentType "application/json" -ErrorAction SilentlyContinue
     Write-Success "GitHub Pages re-enabled via API!"
     
 } catch {
@@ -412,3 +412,4 @@ Write-Host "  Next steps:" -ForegroundColor Yellow
 Write-Host "  1. Check https://halfoncloud.com to verify deployment" -ForegroundColor White
 Write-Host "  2. If site not updated, check GitHub Actions tab for errors" -ForegroundColor White
 Write-Host ""
+
