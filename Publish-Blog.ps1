@@ -311,6 +311,7 @@ Write-Step "STEP 2: Building Hugo Site"
 
 # Clean and build
 hugo --cleanDestinationDir --minify --baseURL "https://halfoncloud.com/"
+"halfoncloud.com" | Set-Content "public\CNAME" -NoNewline
 
 if ($LASTEXITCODE -eq 0) {
     Write-Success "Hugo build completed successfully"
@@ -352,9 +353,9 @@ if ($gitStatus) {
 # ============================================================================
 # STEP 4: Update Hostinger Branch
 # ============================================================================
-Write-Step "STEP 4: Updating Hostinger Branch"
+Write-Step "STEP 4: Updating GitHub Pages Branch"
 
-Write-Info "This step often fails with git subtree. Attempting anyway..."
+Write-Info "Pushing built site to hostinger branch for GitHub Pages..."
 
 try {
     # Delete remote hostinger branch
@@ -384,7 +385,7 @@ try {
     Write-Host "  git push origin new-hostinger:hostinger" -ForegroundColor White
     Write-Host "  git branch -D new-hostinger" -ForegroundColor White
     Write-Host ""
-    Write-Host "  Or manually upload public\ folder to Hostinger" -ForegroundColor Yellow
+    Write-Host "  Or check GitHub Pages settings at github.com/B0gdanR/Radublog/settings/pages" -ForegroundColor Yellow
 }
 
 # ============================================================================
@@ -404,5 +405,5 @@ Write-Host "  Live:     https://halfoncloud.com" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "  Next steps:" -ForegroundColor Yellow
 Write-Host "  1. Check https://halfoncloud.com to verify deployment" -ForegroundColor White
-Write-Host "  2. If site not updated, manually upload public\ to Hostinger" -ForegroundColor White
+Write-Host "  2. If site not updated, check GitHub Actions tab for errors" -ForegroundColor White
 Write-Host ""

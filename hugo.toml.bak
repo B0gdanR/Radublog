@@ -24,7 +24,6 @@ summaryLength = 100
   autoCover = true
   showLastUpdated = false
   description = "Tutorials, Automation scripts and Microsoft technology insights"
-  subtitle = "IT tutorials, automation scripts and real-world Microsoft technology insights from production environments"
   author = "Radu Bogdan"
 
 [languages]
@@ -54,4 +53,6 @@ summaryLength = 100
 	  
 [outputs]
   home = ["HTML", "JSON"]
+  subtitle = "IT tutorials, automation scripts, and real-world Microsoft technology insights from production environments"
 
+  subtitle = "IT tutorials, automation scripts and real-world Microsoft technology insights from production environments"
