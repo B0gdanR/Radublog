@@ -53,5 +53,5 @@ summaryLength = 100
       weight = 3
 	  
 [outputs]
-  home = ["HTML", "JSON"]
+  home = ["HTML", "JSON", "RSS"]
 

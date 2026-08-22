@@ -7,7 +7,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: A complete Intune deployment that enforces Adobe Acrobat Reader as the default PDF handler, covering the DefaultAssociationsConfiguration CSP, Edge PDF takeover suppression, ADMX-based handler locking, ownership popup remediation and the kernel driver that silently blocks the CSP on most enrolled devices.
+description: Step-by-step guide to making Adobe Acrobat Reader the default PDF viewer via Intune, including why Edge keeps taking it back, how to stop the ownership popup, and the hidden kernel driver that silently blocks your policy on most enrolled devices.
 draft: false
 ---
 ## Overview 

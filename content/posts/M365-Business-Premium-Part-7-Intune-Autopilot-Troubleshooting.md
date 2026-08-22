@@ -9,6 +9,8 @@ categories:
   - Cloud
 author: Radu Bogdan
 description: An end-to-end walkthrough of Windows Autopilot deployment with Intune, highlighting real world configuration decisions, troubleshooting insights and field-tested best practices.
+aliases:
+  - /posts/m365-business-premium-part-7-intune-autopilot/
 draft: false
 ---
 ## What is Windows Autopilot?
