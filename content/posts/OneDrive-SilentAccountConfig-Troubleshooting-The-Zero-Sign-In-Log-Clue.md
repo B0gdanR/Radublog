@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: A structured diagnostic walkthrough of an OneDrive SilentAccountConfig failure on an Entra ID joined device from registry validation and PRT health checks to Entra sign-in logs, where the complete absence of authentication attempts reveals the real root cause.
+description: OneDrive not signing in silently on Entra ID joined devices? This diagnostic walkthrough covers registry validation, PRT health checks and sign-in logs, including what to do when there are no authentication attempts at all.
 draft: false
 ---
 ## When Silent Config Refuses to Stay Silent

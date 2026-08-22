@@ -8,7 +8,7 @@ tags:
 categories:
   - Cloud
 author: Radu Bogdan
-description: A deep technical walkthrough of an ESP failure encountered during Windows Autopilot provisioning. This guide traces the error path across enrollment phases, log artifacts and application processing to reveal where and why the deployment breaks.
+description: Autopilot ESP stuck or failing during app installation? This walkthrough traces the exact error path through enrollment phases, Win32 app logs and ESP timeline to show where the deployment breaks and why.
 draft: false
 ---
 ## When the Enrollment Status Page Fails
